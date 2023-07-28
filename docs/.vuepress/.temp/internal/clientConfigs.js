@@ -4,10 +4,11 @@ import clientConfig2 from 'I:/php/blog/node_modules/.pnpm/@vuepress+plugin-theme
 import clientConfig3 from 'I:/php/blog/node_modules/.pnpm/@vuepress+theme-default@2.0.0-beta.66/node_modules/@vuepress/theme-default/lib/client/config.js'
 import clientConfig4 from 'I:/php/blog/node_modules/.pnpm/@vuepress+plugin-nprogress@2.0.0-beta.66/node_modules/@vuepress/plugin-nprogress/lib/client/config.js'
 import clientConfig5 from 'I:/php/blog/node_modules/.pnpm/@vuepress+plugin-back-to-top@2.0.0-beta.66/node_modules/@vuepress/plugin-back-to-top/lib/client/config.js'
-import clientConfig6 from 'I:/php/blog/docs/.vuepress/.temp/register-components/clientConfig.130c6d92.js'
-import clientConfig7 from 'I:/php/blog/node_modules/.pnpm/@vuepress+plugin-external-link-icon@2.0.0-beta.66/node_modules/@vuepress/plugin-external-link-icon/lib/client/config.js'
-import clientConfig8 from 'I:/php/blog/node_modules/.pnpm/@vuepress+plugin-search@2.0.0-beta.66/node_modules/@vuepress/plugin-search/lib/client/config.js'
-import clientConfig9 from 'I:/php/blog/docs/.vuepress/client.ts'
+import clientConfig6 from 'I:/php/blog/node_modules/.pnpm/@vuepress+plugin-pwa@2.0.0-beta.66/node_modules/@vuepress/plugin-pwa/lib/client/config.js'
+import clientConfig7 from 'I:/php/blog/docs/.vuepress/.temp/register-components/clientConfig.130c6d92.js'
+import clientConfig8 from 'I:/php/blog/node_modules/.pnpm/@vuepress+plugin-external-link-icon@2.0.0-beta.66/node_modules/@vuepress/plugin-external-link-icon/lib/client/config.js'
+import clientConfig9 from 'I:/php/blog/node_modules/.pnpm/@vuepress+plugin-search@2.0.0-beta.66/node_modules/@vuepress/plugin-search/lib/client/config.js'
+import clientConfig10 from 'I:/php/blog/docs/.vuepress/client.ts'
 
 export const clientConfigs = [
   clientConfig0,
@@ -20,4 +21,5 @@ export const clientConfigs = [
   clientConfig7,
   clientConfig8,
   clientConfig9,
+  clientConfig10,
 ]
