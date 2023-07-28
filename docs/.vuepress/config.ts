@@ -40,7 +40,6 @@ export default defineUserConfig({
       },
       // 排除首页
       isSearchable: (page) => page.path !== '/',
-      getExtraFields: (page) => page.frontmatter.tags ?? [],
     }),
     // activeHeaderLinksPlugin({
     //   headerLinkSelector: '.level.level-2',
