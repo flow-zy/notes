@@ -1,0 +1,159 @@
+:root {
+  --c-white: #ffffff;
+  --c-white-dark: #f8f8f8;
+  --c-black: #000000;
+  --c-divider-light: rgba(60, 60, 67, 0.12);
+  --c-divider-dark: rgba(84, 84, 88, 0.48);
+  --c-text-light-1: #2c3e50;
+  --c-text-light-2: #476582;
+  --c-text-light-3: #90a4b7;
+  --c-brand: #3eaf7c;
+  --c-brand-light: #4abf8a;
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-family-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  --z-index-navbar: 10;
+  --z-index-sidebar: 6;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07);
+  --shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.12);
+  --shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.16);
+  --header-height: 3.6rem;
+  --c-brand: #23d0d0;
+  --c-brand-light: #1dbdd2;
+
+  // 主色调
+  --color-main: var(--c-brand);
+  // 底部栏色调
+  --color-border: #4dd0e1;
+  // 引用字体色
+  --color-block: #4dd0e1;
+  // 加粗色调
+  --color-strong: #26c6da;
+  // 代码样式
+  --color-code: #26c6da;
+  // 引用边框色
+  --color-border-left: #26c6da;
+
+  // 代码背景色
+  --color-code-bg: rgba(77, 208, 225, 0.08);
+  // 引用背景色
+  --color-block-bg: rgba(77, 208, 225, 0.15);
+  --c-divider: var(--c-divider-light);
+  --c-text: var(--c-text-light-1);
+  --c-text-light: var(--c-text-light-2);
+  --c-text-lighter: var(--c-text-light-3);
+  --c-bg: var(--c-white);
+  --c-bg-accent: var(--c-white-dark);
+  --code-line-height: 24px;
+  --code-font-family: var(--font-family-mono);
+  --code-font-size: 14px;
+  --code-inline-bg-color: rgba(27, 31, 35, 0.05);
+  --code-bg-color: #282c34;
+  --search-bg-color: #ffffff;
+  --search-accent-color: #3eaf7c;
+  --search-text-color: #2c3e50;
+  --search-border-color: #eaecef;
+
+  --search-item-text-color: #5d81a5;
+  --search-item-focus-bg-color: #f3f4f5;
+
+  --search-input-width: 8rem;
+  --search-result-width: 20rem;
+  --sidebar-width: 12rem;
+}
+.page .theme-default-content {
+  margin-left: 0;
+}
+html.dark {
+  --c-brand: #b1fafa;
+  --c-brand-light: #22d1e8;
+  // 主色调
+  --color-main: var(--c-brand);
+  // 底部栏色调
+  --color-border: #0a272b;
+  // 引用字体色
+  --color-block: #66e2f2;
+  // 加粗色调
+  --color-strong: #6febfc;
+  // 代码样式
+  --color-code: #74eaf9;
+  // 引用边框色
+  --color-border-left: #35d1e6;
+
+  // 代码背景色
+  --color-code-bg: rgba(90, 215, 231, 0.08);
+  // 引用背景色
+  --color-block-bg: rgba(108, 214, 228, 0.15);
+}
+
+.navbar .site-name {
+  color: var(--c-brand) !important;
+}
+
+#main-title {
+  color: var(--c-brand);
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: var(--c-text-light);
+}
+
+.features h2:after {
+  display: none;
+}
+
+p.description {
+  font-size: 1.4rem !important;
+}
+
+#main-title {
+  color: var(--c-brand);
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  margin-bottom: 10px;
+}
+
+.nav-bar a.nav-bar-title {
+  color: var(--c-brand) !important;
+}
+
+.hero,
+.features {
+  color: #555 !important;
+  background-image: linear-gradient(
+      90deg,
+      rgba(159, 219, 252, 0.15) 3%,
+      transparent 0
+    ),
+    linear-gradient(1turn, rgba(159, 219, 252, 0.15) 3%, transparent 0);
+  background-size: 20px 20px;
+  background-position: 50%;
+}
+.features h2,
+html.dark .features h2 {
+  position: relative;
+  line-height: 56px;
+  padding-bottom: 0;
+  font-size: 1.4rem;
+  padding-left: 50px;
+  color: var(--color-main) !important;
+}
+.features h2:before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 18px;
+  width: 26px;
+  height: 26px;
+  background-image: url(/eletron.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
