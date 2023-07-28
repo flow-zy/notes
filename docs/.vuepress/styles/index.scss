@@ -64,10 +64,19 @@
   --search-input-width: 8rem;
   --search-result-width: 20rem;
   --sidebar-width: 12rem;
+  --content-width: 880px;
+  --search-bg-color: #ffffff;
+  --search-accent-color: #3eaf7c;
+  --search-text-color: #2c3e50;
+  --search-border-color: #eaecef;
+
+  --search-item-text-color: #5d81a5;
+  --search-item-focus-bg-color: #f3f4f5;
+
+  --search-input-width: 8rem;
+  --search-result-width: 20rem;
 }
-.page .theme-default-content {
-  margin-left: 0;
-}
+
 html.dark {
   --c-brand: #b1fafa;
   --c-brand-light: #22d1e8;
@@ -136,6 +145,16 @@ p.description {
   background-size: 20px 20px;
   background-position: 50%;
 }
+.page .theme-default-content {
+  background-image: linear-gradient(
+      90deg,
+      rgba(159, 219, 252, 0.15) 3%,
+      transparent 0
+    ),
+    linear-gradient(1turn, rgba(159, 219, 252, 0.15) 3%, transparent 0);
+  background-size: 20px 20px;
+  background-position: 50%;
+}
 .features h2,
 html.dark .features h2 {
   position: relative;
@@ -156,4 +175,66 @@ html.dark .features h2 {
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.page h2 {
+  position: relative;
+  color: var(--c-text-accent);
+  font-size: 24px;
+  border-bottom: 4px solid var(--color-border);
+  line-height: 50px;
+  padding-left: 50px;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 90px;
+    width: 26px;
+    height: 26px;
+    background-image: url(/eletron.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    height: 10px;
+    border-top-right-radius: 24px;
+    background: linear-gradient(90deg, #fff, var(--color-main));
+    max-width: 50vw;
+  }
+}
+strong {
+  color: var(--color-strong);
+}
+
+.anchor-right-content::-webkit-scrollbar {
+  width: 4px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 0px;
+}
+
+.anchor-right-content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.anchor-right-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(255, 255, 255, 1);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.anchor-right-content1 {
+  width: 474px;
+  height: 150px;
+  margin-right: 20px;
+  overflow-y: auto;
+  background: darkseagreen;
+  margin: 10px;
 }

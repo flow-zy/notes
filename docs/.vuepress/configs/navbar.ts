@@ -6,7 +6,7 @@ export default [
       {
         text: '前端',
         link: '/front/html',
-        activeMatch: '^/front',
+        activeMatch: '^/front/html',
       },
       {
         text: '后端',
@@ -19,7 +19,7 @@ export default [
         activeMatch: '^/git',
       },
       {
-        text: '传输协议',
+        text: '网络',
         link: '/http/',
         activeMatch: '^/http',
       },
@@ -60,6 +60,10 @@ export default [
         children: [],
       },
     ],
+  },
+  {
+    text: '面试题',
+    link: '/interview',
   },
   {
     text: 'UI框架',
