@@ -68,4 +68,5 @@ const travel = (dir) => {
 }
 
 const sidebar = travel('docs/')
+console.log('🚀 ~ file: sidebar.ts:71 ~ sidebar:', sidebar)
 export default sidebar
