@@ -1,1 +1,11 @@
-{"/front/":[{"text":"HTML","link":"/front/html.md"},{"text":"CSS","link":"/front/css.md"}],"/git/":[],"/http/":[],"/other/":[],"/pack/":[],"/rear/":[]}
+{
+  "/front/": [
+    { "text": "HTML", "link": "/front/html.md" },
+    { "text": "CSS", "link": "/front/css.md" }
+  ],
+  "/git/": [],
+  "/http/": [],
+  "/other/": [],
+  "/pack/": [],
+  "/rear/": []
+}

@@ -103,6 +103,13 @@ html.dark {
   color: var(--c-brand) !important;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 60px);
+}
+
 #main-title {
   color: var(--c-brand);
   font-weight: 700;
@@ -131,6 +138,10 @@ p.description {
 
 .nav-bar a.nav-bar-title {
   color: var(--c-brand) !important;
+}
+
+.home .hero {
+  margin-top: 50px;
 }
 
 .hero,

@@ -121,6 +121,5 @@ Object.entries(sidebar).forEach(([key, value], i) => {
     navbar[index].children = value;
   }
 });
-console.log('🚀 ~ file: navbar.ts:125 ~ navbar:', navbar);
 
 export default navbar;
