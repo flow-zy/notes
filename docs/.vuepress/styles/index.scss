@@ -106,6 +106,7 @@ html.dark {
 .footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   background-color: #fff;
   z-index: 999;
@@ -144,6 +145,10 @@ p.description {
 
 .home .hero {
   margin-top: 50px;
+}
+
+.home .features {
+  margin-bottom: 102px;
 }
 
 .hero,
