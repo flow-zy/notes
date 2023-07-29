@@ -1,39 +1,35 @@
-export default [
+import sidebar from './sidebar'
+const navbar = [
   // NavbarItem
   {
-    text: '学习知识',
-    children: [
-      {
-        text: '前端',
-        link: '/front/html',
-        activeMatch: '^/front/html',
-      },
-      {
-        text: '后端',
-        link: '/rear/node',
-        activeMatch: '^/rear',
-      },
-      {
-        text: '项目管理',
-        link: '/git/',
-        activeMatch: '^/git',
-      },
-      {
-        text: '网络',
-        link: '/http/',
-        activeMatch: '^/http',
-      },
-      {
-        text: '打包工具',
-        link: '/pack/webpack',
-        activeMatch: '^/pack',
-      },
-      {
-        text: '其他',
-        link: '/other/',
-        activeMatch: '^/other',
-      },
-    ],
+    text: '前端',
+    link: '/front/html',
+    activeMatch: '^/front/html',
+  },
+  {
+    text: '后端',
+    link: '/rear/node',
+    activeMatch: '^/rear',
+  },
+  {
+    text: '项目管理',
+    link: '/git/',
+    activeMatch: '^/git',
+  },
+  {
+    text: '网络',
+    link: '/http/',
+    activeMatch: '^/http',
+  },
+  {
+    text: '打包工具',
+    link: '/pack/webpack',
+    activeMatch: '^/pack',
+  },
+  {
+    text: '其他',
+    link: '/other/',
+    activeMatch: '^/other',
   },
   {
     text: '工具软件',
@@ -115,3 +111,9 @@ export default [
   },
   { text: 'Gitee', link: 'https://gitee.com' },
 ]
+Object.entries(sidebar).forEach(([key, value], i) => {
+  if (Array.isArray(value) && value.length !== 0) {
+    navbar[i].children = value
+  }
+})
+export default navbar
