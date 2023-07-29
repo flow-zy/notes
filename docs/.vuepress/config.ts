@@ -45,12 +45,12 @@ export default defineUserConfig({
     // activeHeaderLinksPlugin({
     //   headerLinkSelector: '.level.level-2',
     // }),
-    copy({
-      copyText: '复制代码',
-      tip: {
-        content: '复制成功',
-      },
-    }),
+    // copy({
+    //   copyText: '复制代码',
+    //   tip: {
+    //     content: '复制成功',
+    //   },
+    // }),
     cursorEffects({
       size: 3, // size of the particle, default: 2
       shape: ['start'], // shape of the particle, default: 'star'
