@@ -1,4 +1,8 @@
-import sidebar from './sidebar'
+import s1 from './sidebar';
+import s2 from '../sidebar.json';
+const isDev = process.env.NODE_ENV === 'development';
+const sidebar = isDev ? s1 : s2;
+
 const navbar = [
   // NavbarItem
   {
@@ -110,10 +114,11 @@ const navbar = [
     ],
   },
   { text: 'Gitee', link: 'https://gitee.com' },
-]
+];
 Object.entries(sidebar).forEach(([key, value], i) => {
   if (Array.isArray(value) && value.length !== 0) {
-    navbar[i].children = value
+    const index = navbar.findIndex((item) => item.text.indexOf(key));
+    navbar[index].children = value;
   }
-})
-export default navbar
+});
+export default navbar;

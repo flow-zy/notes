@@ -1,13 +1,7 @@
 import {
-  del,
-  isVue2,
-  isVue3,
-  set
-} from "./chunk-QB7HZYP3.js";
-import {
   Fragment,
   TransitionGroup,
-  computed2 as computed,
+  computed,
   customRef,
   defineComponent,
   effectScope,
@@ -39,9 +33,28 @@ import {
   version,
   watch,
   watchEffect
-} from "./chunk-E5IFXXOL.js";
-import "./chunk-TI575KSE.js";
-import "./chunk-UXIASGQL.js";
+} from "./chunk-3TUUMKET.js";
+import "./chunk-L52MBEYQ.js";
+
+// node_modules/.pnpm/vue-demi@0.14.5_vue@3.3.4/node_modules/vue-demi/lib/index.mjs
+var isVue2 = false;
+var isVue3 = true;
+function set(target, key, val) {
+  if (Array.isArray(target)) {
+    target.length = Math.max(target.length, key);
+    target.splice(key, 1, val);
+    return val;
+  }
+  target[key] = val;
+  return val;
+}
+function del(target, key) {
+  if (Array.isArray(target)) {
+    target.splice(key, 1);
+    return;
+  }
+  delete target[key];
+}
 
 // node_modules/.pnpm/@vueuse+shared@10.2.1_vue@3.3.4/node_modules/@vueuse/shared/index.mjs
 var __defProp$b = Object.defineProperty;
