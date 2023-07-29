@@ -11,12 +11,12 @@ import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
 import { containerPlugin } from '@vuepress/plugin-container';
 // import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
 import { copyCodePlugin } from 'vuepress-plugin-copy-code2';
-import vuepressVssue from '@vssue/vuepress-plugin-vssue'
+import vuepressVssue from '@vssue/vuepress-plugin-vssue';
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  title: '编程导航',
-  description: '包涵编程语言大部分的知识',
+  title: 'flow Personal blog',
+  description: 'Includes most of the knowledge of programming languages',
   base: '/blog/',
   plugins: [
     nprogressPlugin(),
@@ -49,11 +49,11 @@ export default defineUserConfig({
       platform: 'github-v4',
       owner: 'flow-zy',
       repo: 'blog',
-      locale:true,
-      clientId:'e741708defe21c7308ec',
-      clientSecret:'65c7cfe6ef45ce3972fb9e1f35bc36f8d9620216',
-      autoCreateIssue:true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
-    })
+      locale: true,
+      clientId: 'e741708defe21c7308ec',
+      clientSecret: '65c7cfe6ef45ce3972fb9e1f35bc36f8d9620216',
+      autoCreateIssue: true, // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
+    }),
   ],
   theme: defaultTheme({
     sidebar: 'auto',

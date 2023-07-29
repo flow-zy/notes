@@ -70,7 +70,71 @@ export const searchIndex = [
         "title": "CSS3 功能",
         "slug": "css3-功能",
         "link": "#css3-功能",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "2D和3D转换（2D and 3D Transforms）",
+            "slug": "_2d和3d转换-2d-and-3d-transforms",
+            "link": "#_2d和3d转换-2d-and-3d-transforms",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "过渡（Transitions）",
+            "slug": "过渡-transitions",
+            "link": "#过渡-transitions",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "动画（Animations）",
+            "slug": "动画-animations",
+            "link": "#动画-animations",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "渐变（Gradients）",
+            "slug": "渐变-gradients",
+            "link": "#渐变-gradients",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "多列布局（Multi-column Layout）",
+            "slug": "多列布局-multi-column-layout",
+            "link": "#多列布局-multi-column-layout",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "弹性盒子（Flexbox）",
+            "slug": "弹性盒子-flexbox",
+            "link": "#弹性盒子-flexbox",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "网格布局（CSS Grid）",
+            "slug": "网格布局-css-grid",
+            "link": "#网格布局-css-grid",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "媒体查询（Media Queries）",
+            "slug": "媒体查询-media-queries",
+            "link": "#媒体查询-media-queries",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "背景（BackGround）",
+            "slug": "背景-background",
+            "link": "#背景-background",
+            "children": []
+          }
+        ]
       }
     ],
     "path": "/front/css.html",
