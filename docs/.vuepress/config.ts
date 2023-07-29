@@ -69,5 +69,5 @@ export default defineUserConfig({
     lastUpdatedText: '上次更新',
     // 启动页面丝滑滚动
   }),
-  head,
+  // head,
 });
