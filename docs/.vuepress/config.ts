@@ -1,7 +1,7 @@
-import { defineUserConfig, defaultTheme } from 'vuepress';
+import { defineUserConfig, defaultTheme, HeadConfig } from 'vuepress';
 import { nprogressPlugin } from '@vuepress/plugin-nprogress';
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top';
-import { navbar } from './configs/index.js';
+import { navbar, head as header } from './configs/index.js';
 // import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { pwaPlugin } from '@vuepress/plugin-pwa';
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
@@ -12,6 +12,14 @@ import { containerPlugin } from '@vuepress/plugin-container';
 // import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
 import { copyCodePlugin } from 'vuepress-plugin-copy-code2';
 import vuepressVssue from '@vssue/vuepress-plugin-vssue';
+function isIterable(obj: any): Boolean {
+  return (
+    obj !== null &&
+    obj !== undefined &&
+    typeof obj[Symbol.iterator] === 'function'
+  );
+}
+const head: HeadConfig[] = isIterable(header) && header.map((i) => i);
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -61,4 +69,5 @@ export default defineUserConfig({
     lastUpdatedText: '上次更新',
     // 启动页面丝滑滚动
   }),
+  head,
 });

@@ -2,9 +2,9 @@
 # 是否是首页，false表示是普通页面
 home: true
 # heroImage: /favicon.png
-heroText: 编程导航
-description: 包涵编程语言大部分的知识
-tagline: 包涵编程语言大部分的知识
+heroText: flow Personal blog
+description: Includes most of the knowledge of programming languages
+tagline: Includes most of the knowledge of programming languages
 # pageClass: container
 actions:
     - text: 开始学习
@@ -20,5 +20,4 @@ features:
 footer: MIT Licensed | Copyright © 2023-present CoolDream
 footerHtml: true
 ---
-
 
