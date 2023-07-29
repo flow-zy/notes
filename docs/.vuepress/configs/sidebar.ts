@@ -1,4 +1,4 @@
-import { readdirSync, statSync } from 'fs'
+import { readdirSync, statSync, writeFileSync } from 'fs'
 import path from 'path'
 // 此脚本用于vuepress生成菜单 支持不同路由对应不同目录（我这里只支持两层嵌套目录）
 const travel = (dir) => {
@@ -66,5 +66,5 @@ const travel = (dir) => {
 }
 
 const sidebar = travel('docs/')
-// console.log('🚀 ~ file: sidebar.ts:71 ~ sidebar:', sidebar)
+writeFileSync('sidebar.json', JSON.stringify(sidebar))
 export default sidebar

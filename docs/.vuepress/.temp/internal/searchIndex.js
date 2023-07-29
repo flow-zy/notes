@@ -223,6 +223,13 @@ export const searchIndex = [
   {
     "title": "",
     "headers": [],
+    "path": "/git/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
     "path": "/http/",
     "pathLocale": "/",
     "extraFields": []
@@ -238,13 +245,6 @@ export const searchIndex = [
     "title": "",
     "headers": [],
     "path": "/pack/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/git/",
     "pathLocale": "/",
     "extraFields": []
   },

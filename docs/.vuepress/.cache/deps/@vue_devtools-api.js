@@ -3,6 +3,7 @@ import {
   now,
   setupDevtoolsPlugin
 } from "./chunk-OQKHIZIR.js";
+import "./chunk-UXIASGQL.js";
 export {
   isPerformanceSupported,
   now,
