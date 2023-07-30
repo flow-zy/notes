@@ -192,7 +192,304 @@ export const searchIndex = [
   },
   {
     "title": "ECMAScript",
-    "headers": [],
+    "headers": [
+      {
+        "level": 2,
+        "title": "简介",
+        "slug": "简介",
+        "link": "#简介",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "ECMAScript 和 JavaScript 的关系",
+        "slug": "ecmascript-和-javascript-的关系",
+        "link": "#ecmascript-和-javascript-的关系",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "变量",
+        "slug": "变量",
+        "link": "#变量",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "解构赋值",
+        "slug": "解构赋值",
+        "link": "#解构赋值",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "字符串",
+        "slug": "字符串",
+        "link": "#字符串",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "正则表达式",
+        "slug": "正则表达式",
+        "link": "#正则表达式",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "数值（Number）",
+        "slug": "数值-number",
+        "link": "#数值-number",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "数组（Array）",
+        "slug": "数组-array",
+        "link": "#数组-array",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "对象（Object）",
+        "slug": "对象-object",
+        "link": "#对象-object",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "函数（Function）",
+        "slug": "函数-function",
+        "link": "#函数-function",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "运算符",
+        "slug": "运算符",
+        "link": "#运算符",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Symbol",
+        "slug": "symbol",
+        "link": "#symbol",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "数据结构",
+        "slug": "数据结构",
+        "link": "#数据结构",
+        "children": [
+          {
+            "level": 3,
+            "title": "Set（集合）",
+            "slug": "set-集合",
+            "link": "#set-集合",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Map（映射）",
+            "slug": "map-映射",
+            "link": "#map-映射",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "WeakSet（弱集合）",
+            "slug": "weakset-弱集合",
+            "link": "#weakset-弱集合",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "WeakMap（弱映射）",
+            "slug": "weakmap-弱映射",
+            "link": "#weakmap-弱映射",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ArrayBuffer（数组缓冲区）",
+            "slug": "arraybuffer-数组缓冲区",
+            "link": "#arraybuffer-数组缓冲区",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "TypedArray（类型化数组）",
+            "slug": "typedarray-类型化数组",
+            "link": "#typedarray-类型化数组",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "DataView（数据视图）",
+            "slug": "dataview-数据视图",
+            "link": "#dataview-数据视图",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "类（Class）",
+        "slug": "类-class",
+        "link": "#类-class",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "迭代器（Iterator）",
+        "slug": "迭代器-iterator",
+        "link": "#迭代器-iterator",
+        "children": [
+          {
+            "level": 3,
+            "title": "用法",
+            "slug": "用法",
+            "link": "#用法",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "生成器（Generator ）",
+        "slug": "生成器-generator",
+        "link": "#生成器-generator",
+        "children": [
+          {
+            "level": 3,
+            "title": "用法",
+            "slug": "用法-1",
+            "link": "#用法-1",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "代理（Proxy）",
+        "slug": "代理-proxy",
+        "link": "#代理-proxy",
+        "children": [
+          {
+            "level": 3,
+            "title": "用法",
+            "slug": "用法-2",
+            "link": "#用法-2",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "反映（Reflect）",
+        "slug": "反映-reflect",
+        "link": "#反映-reflect",
+        "children": [
+          {
+            "level": 3,
+            "title": "常用方法：",
+            "slug": "常用方法",
+            "link": "#常用方法",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Promise",
+        "slug": "promise",
+        "link": "#promise",
+        "children": [
+          {
+            "level": 3,
+            "title": "常用方法",
+            "slug": "常用方法-1",
+            "link": "#常用方法-1",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "async 函数",
+        "slug": "async-函数",
+        "link": "#async-函数",
+        "children": [
+          {
+            "level": 3,
+            "title": "实现原理",
+            "slug": "实现原理",
+            "link": "#实现原理",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "特点和用法",
+            "slug": "特点和用法",
+            "link": "#特点和用法",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Generator函数的异步应用",
+        "slug": "generator函数的异步应用",
+        "link": "#generator函数的异步应用",
+        "children": [
+          {
+            "level": 3,
+            "title": "常见场景",
+            "slug": "常见场景",
+            "link": "#常见场景",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "模块化",
+        "slug": "模块化",
+        "link": "#模块化",
+        "children": [
+          {
+            "level": 3,
+            "title": "CommonJS模块化",
+            "slug": "commonjs模块化",
+            "link": "#commonjs模块化",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ES模块化",
+            "slug": "es模块化",
+            "link": "#es模块化",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "CommonJs和ES模块的区别",
+            "slug": "commonjs和es模块的区别",
+            "link": "#commonjs和es模块的区别",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "装饰器",
+        "slug": "装饰器",
+        "link": "#装饰器",
+        "children": []
+      }
+    ],
     "path": "/front/ECMAScript.html",
     "pathLocale": "/",
     "extraFields": []
@@ -662,6 +959,13 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "消息队列",
+        "slug": "消息队列",
+        "link": "#消息队列",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "异步编程",
         "slug": "异步编程",
         "link": "#异步编程",
@@ -708,6 +1012,28 @@ export const searchIndex = [
         "slug": "开发模式",
         "link": "#开发模式",
         "children": []
+      },
+      {
+        "level": 2,
+        "title": "正则表达式",
+        "slug": "正则表达式",
+        "link": "#正则表达式",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "词法环境与作用域",
+        "slug": "词法环境与作用域",
+        "link": "#词法环境与作用域",
+        "children": [
+          {
+            "level": 3,
+            "title": "拷贝",
+            "slug": "拷贝",
+            "link": "#拷贝",
+            "children": []
+          }
+        ]
       }
     ],
     "path": "/front/JavaScript.html",
@@ -963,20 +1289,6 @@ export const searchIndex = [
   {
     "title": "",
     "headers": [],
-    "path": "/management/git.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/management/svn.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
     "path": "/network/ajax.html",
     "pathLocale": "/",
     "extraFields": []
@@ -985,6 +1297,20 @@ export const searchIndex = [
     "title": "",
     "headers": [],
     "path": "/network/http.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/management/git.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/management/svn.html",
     "pathLocale": "/",
     "extraFields": []
   },

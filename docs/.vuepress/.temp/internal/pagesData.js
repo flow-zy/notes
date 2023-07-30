@@ -39,14 +39,14 @@ export const pagesData = {
   "v-05c6f081": () => import(/* webpackChunkName: "v-05c6f081" */"D:/blog/docs/.vuepress/.temp/pages/interview/react.html.js").then(({ data }) => data),
   // path: /interview/vue.html
   "v-ff5a9acc": () => import(/* webpackChunkName: "v-ff5a9acc" */"D:/blog/docs/.vuepress/.temp/pages/interview/vue.html.js").then(({ data }) => data),
-  // path: /management/git.html
-  "v-4f3198fa": () => import(/* webpackChunkName: "v-4f3198fa" */"D:/blog/docs/.vuepress/.temp/pages/management/git.html.js").then(({ data }) => data),
-  // path: /management/svn.html
-  "v-5998bbfe": () => import(/* webpackChunkName: "v-5998bbfe" */"D:/blog/docs/.vuepress/.temp/pages/management/svn.html.js").then(({ data }) => data),
   // path: /network/ajax.html
   "v-20a24382": () => import(/* webpackChunkName: "v-20a24382" */"D:/blog/docs/.vuepress/.temp/pages/network/ajax.html.js").then(({ data }) => data),
   // path: /network/http.html
   "v-286d6e52": () => import(/* webpackChunkName: "v-286d6e52" */"D:/blog/docs/.vuepress/.temp/pages/network/http.html.js").then(({ data }) => data),
+  // path: /management/git.html
+  "v-4f3198fa": () => import(/* webpackChunkName: "v-4f3198fa" */"D:/blog/docs/.vuepress/.temp/pages/management/git.html.js").then(({ data }) => data),
+  // path: /management/svn.html
+  "v-5998bbfe": () => import(/* webpackChunkName: "v-5998bbfe" */"D:/blog/docs/.vuepress/.temp/pages/management/svn.html.js").then(({ data }) => data),
   // path: /other/linux.html
   "v-5d54dc86": () => import(/* webpackChunkName: "v-5d54dc86" */"D:/blog/docs/.vuepress/.temp/pages/other/linux.html.js").then(({ data }) => data),
   // path: /pack/vite.html
