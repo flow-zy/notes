@@ -17,8 +17,8 @@ export const pagesData = {
   "v-58f2a8e2": () => import(/* webpackChunkName: "v-58f2a8e2" */"D:/blog/docs/.vuepress/.temp/pages/front/html.html.js").then(({ data }) => data),
   // path: /front/JavaScript.html
   "v-43d79e0d": () => import(/* webpackChunkName: "v-43d79e0d" */"D:/blog/docs/.vuepress/.temp/pages/front/JavaScript.html.js").then(({ data }) => data),
-  // path: /front/Jquey.html
-  "v-ed2e6cd4": () => import(/* webpackChunkName: "v-ed2e6cd4" */"D:/blog/docs/.vuepress/.temp/pages/front/Jquey.html.js").then(({ data }) => data),
+  // path: /front/Jquery.html
+  "v-a3acd7c8": () => import(/* webpackChunkName: "v-a3acd7c8" */"D:/blog/docs/.vuepress/.temp/pages/front/Jquery.html.js").then(({ data }) => data),
   // path: /front/React.html
   "v-aeda290e": () => import(/* webpackChunkName: "v-aeda290e" */"D:/blog/docs/.vuepress/.temp/pages/front/React.html.js").then(({ data }) => data),
   // path: /front/TypeScript.html

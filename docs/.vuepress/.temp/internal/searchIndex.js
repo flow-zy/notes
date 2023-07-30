@@ -191,7 +191,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "",
+    "title": "ECMAScript",
     "headers": [],
     "path": "/front/ECMAScript.html",
     "pathLocale": "/",
@@ -496,7 +496,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "",
+    "title": "Javascript",
     "headers": [
       {
         "level": 2,
@@ -715,7 +715,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "",
+    "title": "jQuery",
     "headers": [
       {
         "level": 2,
@@ -886,7 +886,7 @@ export const searchIndex = [
         "children": []
       }
     ],
-    "path": "/front/Jquey.html",
+    "path": "/front/Jquery.html",
     "pathLocale": "/",
     "extraFields": []
   },

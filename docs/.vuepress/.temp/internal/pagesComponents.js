@@ -19,8 +19,8 @@ export const pagesComponents = {
   "v-58f2a8e2": defineAsyncComponent(() => import(/* webpackChunkName: "v-58f2a8e2" */"D:/blog/docs/.vuepress/.temp/pages/front/html.html.vue")),
   // path: /front/JavaScript.html
   "v-43d79e0d": defineAsyncComponent(() => import(/* webpackChunkName: "v-43d79e0d" */"D:/blog/docs/.vuepress/.temp/pages/front/JavaScript.html.vue")),
-  // path: /front/Jquey.html
-  "v-ed2e6cd4": defineAsyncComponent(() => import(/* webpackChunkName: "v-ed2e6cd4" */"D:/blog/docs/.vuepress/.temp/pages/front/Jquey.html.vue")),
+  // path: /front/Jquery.html
+  "v-a3acd7c8": defineAsyncComponent(() => import(/* webpackChunkName: "v-a3acd7c8" */"D:/blog/docs/.vuepress/.temp/pages/front/Jquery.html.vue")),
   // path: /front/React.html
   "v-aeda290e": defineAsyncComponent(() => import(/* webpackChunkName: "v-aeda290e" */"D:/blog/docs/.vuepress/.temp/pages/front/React.html.vue")),
   // path: /front/TypeScript.html

@@ -6,7 +6,7 @@ prev:
   link: /front/css
 next:
   text: jQuery
-  link: /front/Jquey
+  link: /front/Jquery
 
 ---
 
@@ -1684,6 +1684,85 @@ Async task 1
 
 请注意，任务队列并非仅限于定时器和网络请求，还可以包括其他异步任务，如用户交互事件、Promise 的异步操作、动画回调等。任务队列使我们能够以一种有序和非阻塞的方式处理这些异步任务。
 
+## 消息队列
+
+JavaScript消息队列是一种处理异步操作的机制，用于管理和调度待处理的任务。以下是关于JavaScript消息队列的一些基本概念：
+
+1. 事件循环(Event Loop)：JavaScript是单线程的，事件循环是管理JavaScript引擎如何处理事件的机制。它负责处理消息队列中的任务，并将它们依次放入执行栈中进行处理。
+
+2. 执行栈(Execution Stack)：执行栈是一种数据结构，用于存储要执行的函数调用。JavaScript代码在执行时，会按顺序将函数调用添加到执行栈中，并在完成执行后从栈顶弹出。
+
+3. 消息队列(Message Queue)：消息队列是一个FIFO（先进先出）的数据结构，用于存储待处理的任务。当异步操作完成或事件触发时，相关的回调函数会被添加到消息队列中。
+
+4. 宏任务(Macro Task)：宏任务代表一组要在事件循环中处理的任务，它们被添加到消息队列中。例如，setTimeout和setInterval中的回调函数、DOM事件处理函数等都属于宏任务。
+
+5. 微任务(Micro Task)：微任务是一个细粒度的任务，它们比宏任务优先级更高，会在当前宏任务执行完成后立即执行。常见的微任务包括Promise的回调函数和使用MutationObserver监听DOM变化的回调函数。
+
+在事件循环中，当执行栈为空时，事件循环会从消息队列中取出一个任务，将其添加到执行栈中执行。先执行所有的微任务，然后执行一个宏任务，再回到执行微任务的阶段。
+
+JavaScript消息队列的机制确保异步任务能够以正确的顺序执行，避免阻塞主线程。这是JavaScript处理异步操作的关键部分，使得我们能够编写更高效和响应性的代码。
+
+以下是一个基本的JavaScript消息队列的示例代码：
+
+```javascript
+// 定义一个异步任务，模拟一个Ajax请求
+function fetchData(url) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const data = `Data from ${url}`;
+      resolve(data);
+    }, 2000);
+  });
+}
+
+console.log('Start');
+
+// 添加一个宏任务
+setTimeout(() => {
+  console.log('Timeout callback');
+}, 0);
+
+// 添加一个微任务
+Promise.resolve().then(() => {
+  console.log('Promise callback');
+});
+
+// 发起异步任务，并设置回调函数
+fetchData('https://example.com/api/data').then((data) => {
+  console.log('Received data:', data);
+});
+
+console.log('End');
+```
+
+输出结果将是：
+
+```
+Start
+End
+Promise callback
+Received data: Data from https://example.com/api/data
+Timeout callback
+```
+
+解释示例代码的执行过程：
+
+1. 首先，打印出 "Start" 和 "End"。
+
+2. 通过setTimeout添加一个宏任务，设置延迟为0毫秒。
+
+3. 通过Promise.resolve().then()添加一个微任务。
+
+4. 调用fetchData函数发起一个模拟的异步任务，设置一个回调函数。注意，由于模拟的异步操作具有2秒的延迟，因此在此期间事件循环可以做其他事情。
+
+5. 打印出 "Promise callback"，这是微任务在当前宏任务执行完成后立即执行的结果。
+
+6. 2秒后，异步任务完成，打印出 "Received data: Data from https://example.com/api/data"。
+
+7. 打印出 "Timeout callback"，这是之前设置的宏任务。
+
+这个示例展示了消息队列如何处理宏任务和微任务，并且说明了它们的执行顺序。
+
 ## 异步编程
 
 JavaScript 异步编程是一种处理非阻塞操作的编程范式。它允许在执行时间较长的操作（如网络请求、文件读写等）时，不会阻塞后续的代码执行，从而提高程序的性能和响应能力。
@@ -2056,3 +2135,141 @@ import { greet } from './moduleA.js';
 var message = greet('John');
 console.log(message); // 输出 'Hello, John!'xxxxxxxxxx // moduleA.jsexport function greet(name) {  return '// moduleA.jsexport function greet(name) {  return 'Hello, ' + name + '!';}// moduleB.jsimport { greet } from './moduleA.js';var message = greet('John');console.log(message); // 输出 'Hello, John!'
 ```
+
+## 正则表达式
+
+正则表达式（Regular Expression）是一种用来进行文本匹配和查找的强大工具，在JavaScript中也可以使用正则表达式来处理字符串。以下是一些常用的JavaScript正则表达式相关操作：
+
+创建正则表达式：
+```javascript
+let regex = /pattern/; // 使用正斜杠（/）包裹模式字符串
+let regex = new RegExp("pattern"); // 使用RegExp对象构造函数创建正则表达式
+```
+
+测试匹配：
+```javascript
+let regex = /pattern/;
+let result = regex.test("string"); // 检测字符串是否匹配正则表达式
+```
+
+查找匹配：
+```javascript
+let regex = /pattern/;
+let result = "string".match(regex); // 返回匹配到的结果数组，如果没有匹配则返回null
+```
+
+替换匹配：
+```javascript
+let regex = /pattern/;
+let result = "string".replace(regex, "replacement"); // 用指定的替换字符串替换匹配到的部分
+```
+
+常用的正则表达式模式：
+- `/abc/`: 匹配abc字符串
+- `/[a-z]/`: 匹配任意小写字母
+- `/[0-9]/`: 匹配任意数字
+- `/[A-Za-z0-9]/`: 匹配任意字母或数字
+- `/^pattern/`: 匹配以pattern开头的字符串
+- `/pattern$/`: 匹配以pattern结尾的字符串
+- `/[aeiou]/`: 匹配任意元音字母
+- `/[^aeiou]/`: 匹配任意非元音字母
+- `/[0-9]+/`: 匹配一个或多个数字
+
+## 词法环境与作用域
+
+词法环境（Lexical Environment）和词法作用域（Lexical Scope）是两个相关的概念，用于描述变量和函数在代码中的可访问性和作用域规则。下面对它们进行简要说明：
+
+1. 词法环境（Lexical Environment）：
+   词法环境是在执行 JavaScript 代码时用来存储变量和函数声明的容器。每次进入一个新的作用域（例如，函数或块级作用域），就会创建一个新的词法环境，并将其与该作用域相关联。词法环境由两个主要组成部分构成：
+
+   - 环境记录器（Environment Record）：用于存储变量、函数和形参等标识符的具体定义和值。
+   - 对外部环境的引用（Outer Environment Reference）：用于连接并形成一个词法环境链，以便在嵌套作用域中查找变量和函数。
+
+2. 词法作用域（Lexical Scope）：
+   词法作用域是由代码中的变量和函数声明的位置决定的，也称为静态作用域。它指定了在函数被定义时变量和函数可被访问的范围。
+
+   在词法作用域下，一个函数可以访问其外部作用域中定义的变量，但反之不行。这意味着函数可以访问它的父级作用域、全局作用域以及嵌套的内部作用域中的变量。这种作用域链的查找是在词法环境中进行的。
+
+总结来说，词法环境是变量和函数声明的存储位置和管理机制，而词法作用域则决定了代码中标识符的可见范围和访问规则。
+
+需要注意的是，词法环境和词法作用域是 JavaScript 引擎在代码解析和执行过程中的内部概念，对于我们开发者来说，主要关注的是如何在不同的作用域中定义和使用变量以及理解作用域链的机制。
+
+### 拷贝
+
+拷贝（Copy）一个对象或数组有多种方法，具体使用哪种方法取决于你所需的拷贝方式。下面介绍几种常见的拷贝方法：
+
+1. 浅拷贝（Shallow Copy）：
+   浅拷贝创建一个新的对象或数组，并复制原始对象或数组中的属性/元素的引用。这意味着如果原始对象或数组中的属性或元素是对象，那么拷贝后的对象或数组中的相应属性或元素仍然引用同一个对象。常用的浅拷贝方法包括：
+
+   - 对象：使用 ES6 的展开运算符（Spread Operator）或 `Object.assign()` 方法：
+     ```javascript
+     let originalObj = { a: 1, b: 2 };
+     let shallowCopyObj = { ...originalObj }; // 或 Object.assign({}, originalObj);
+     ```
+
+   - 数组：使用 `Array.from()` 方法或 `slice()` 方法：
+     ```javascript
+     let originalArr = [1, 2, 3];
+     let shallowCopyArr = Array.from(originalArr); // 或 originalArr.slice();
+     ```
+
+2. 深拷贝（Deep Copy）：
+   深拷贝创建一个全新的对象或数组，并复制原始对象或数组中的属性/元素的值，而不是引用。这样拷贝后的对象或数组与原始对象或数组完全独立，修改它们互不影响。常用的深拷贝方法包括：
+
+   - 手写深拷贝，它可以对包含对象和数组的复杂数据结构进行深拷贝：
+
+     ```javascript
+     function deepCopy(obj) {
+       if (typeof obj !== "object" || obj === null) {
+         return obj; // 如果是基本类型或 null，则直接返回
+       }
+     
+       let copy;
+       if (Array.isArray(obj)) {
+         copy = [];
+         for (let i = 0; i < obj.length; i++) {
+           copy[i] = deepCopy(obj[i]); // 递归拷贝数组元素
+         }
+       } else {
+         copy = {};
+         for (let key in obj) {
+           if (obj.hasOwnProperty(key)) {
+             copy[key] = deepCopy(obj[key]); // 递归拷贝对象属性
+           }
+         }
+       }
+     
+       return copy;
+     }
+     ```
+
+     使用示例：
+
+     ```javascript
+     let originalObj = { a: 1, b: { c: 2 } };
+     let deepCopyObj = deepCopy(originalObj);
+     
+     console.log(deepCopyObj); // { a: 1, b: { c: 2 } }
+     console.log(deepCopyObj === originalObj); // false，不是同一个对象
+     console.log(deepCopyObj.b === originalObj.b); // false，嵌套对象也是深拷贝
+     ```
+
+     该深拷贝函数会先检查传入的值的类型。如果是基本类型或 null，直接返回该值。如果是数组，则创建一个新的空数组，并递归地拷贝原数组的每个元素。如果是对象，则创建一个新的空对象，并递归地拷贝原对象的每个属性。在拷贝对象属性时，通过 `hasOwnProperty()` 方法过滤掉原型链上的属性。
+
+     需要注意的是，该函数仅处理对象和数组的深拷贝，对于包含其他特殊类型（如函数、正则表达式等）或循环引用的对象，可能需要进行额外的处理。此外，对于非常大的数据结构，递归拷贝可能会导致栈溢出，需要使用更高级的算法或库来处理。
+
+   - 使用 JSON 序列化和反序列化：
+     ```javascript
+     let originalObj = { a: 1, b: { c: 2 } };
+     let deepCopyObj = JSON.parse(JSON.stringify(originalObj));
+     ```
+
+   - 使用第三方库，如 Lodash 的 `cloneDeep()` 方法：
+     ```javascript
+     let deepCopyObj = _.cloneDeep(originalObj);
+     ```
+
+     
+
+
+需要注意的是，深拷贝方法有时会有性能和限制方面的考量，特别是在处理包含循环引用、函数、正则表达式等特殊对象时。使用时要酌情选择。另外，对于拷贝大型对象或嵌套层级很深的对象，可能需要考虑性能和内存消耗。
