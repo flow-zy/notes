@@ -28,6 +28,55 @@ export const searchIndex = [
     "extraFields": []
   },
   {
+    "title": "",
+    "headers": [],
+    "path": "/interview/css.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/html.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/java.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/JavaScript.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/php.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/react.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/vue.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "CSS",
     "headers": [
       {
@@ -1025,15 +1074,14 @@ export const searchIndex = [
         "title": "词法环境与作用域",
         "slug": "词法环境与作用域",
         "link": "#词法环境与作用域",
-        "children": [
-          {
-            "level": 3,
-            "title": "拷贝",
-            "slug": "拷贝",
-            "link": "#拷贝",
-            "children": []
-          }
-        ]
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "拷贝",
+        "slug": "拷贝",
+        "link": "#拷贝",
+        "children": []
       }
     ],
     "path": "/front/JavaScript.html",
@@ -1240,49 +1288,14 @@ export const searchIndex = [
   {
     "title": "",
     "headers": [],
-    "path": "/interview/css.html",
+    "path": "/management/git.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
     "title": "",
     "headers": [],
-    "path": "/interview/html.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/interview/java.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/interview/JavaScript.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/interview/php.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/interview/react.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/interview/vue.html",
+    "path": "/management/svn.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1297,20 +1310,6 @@ export const searchIndex = [
     "title": "",
     "headers": [],
     "path": "/network/http.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/management/git.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/management/svn.html",
     "pathLocale": "/",
     "extraFields": []
   },

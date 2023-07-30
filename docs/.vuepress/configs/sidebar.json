@@ -1,0 +1,50 @@
+{
+  "/frame/": [
+    { "text": "VUE", "link": "/frame/vue.md" },
+    { "text": "THINKPHP", "link": "/frame/thinkphp.md" },
+    { "text": "SPRINGBOOT", "link": "/frame/springboot.md" },
+    { "text": "REACT", "link": "/frame/react.md" }
+  ],
+  "/front/": [
+    { "text": "VUE", "link": "/front/Vue.md" },
+    { "text": "TYPESCRIPT", "link": "/front/TypeScript.md" },
+    { "text": "REACT", "link": "/front/React.md" },
+    { "text": "JQUERY", "link": "/front/Jquery.md" },
+    { "text": "JAVASCRIPT", "link": "/front/JavaScript.md" },
+    { "text": "HTML", "link": "/front/html.md" },
+    { "text": "ECMASCRIPT", "link": "/front/ECMAScript.md" },
+    { "text": "CSS", "link": "/front/css.md" }
+  ],
+  "/interview/": [
+    { "text": "VUE", "link": "/interview/vue.md" },
+    { "text": "REACT", "link": "/interview/react.md" },
+    { "text": "PHP", "link": "/interview/php.md" },
+    { "text": "JAVASCRIPT", "link": "/interview/JavaScript.md" },
+    { "text": "JAVA", "link": "/interview/java.md" },
+    { "text": "HTML", "link": "/interview/html.md" },
+    { "text": "CSS", "link": "/interview/css.md" }
+  ],
+  "/management/": [
+    { "text": "SVN", "link": "/management/svn.md" },
+    { "text": "GIT", "link": "/management/git.md" }
+  ],
+  "/network/": [
+    { "text": "HTTP", "link": "/network/http.md" },
+    { "text": "AJAX", "link": "/network/ajax.md" }
+  ],
+  "/other/": [{ "text": "LINUX", "link": "/other/linux.md" }],
+  "/pack/": [
+    { "text": "WEBPACK", "link": "/pack/webpack.md" },
+    { "text": "VITE", "link": "/pack/vite.md" }
+  ],
+  "/program/": [
+    { "text": "微信小程序", "link": "/program/微信小程序.md" },
+    { "text": "UNIAPP", "link": "/program/uniapp.md" }
+  ],
+  "/project/": [],
+  "/rear/": [
+    { "text": "PHP", "link": "/rear/php.md" },
+    { "text": "NODE", "link": "/rear/node.md" },
+    { "text": "JAVA", "link": "/rear/java.md" }
+  ]
+}
