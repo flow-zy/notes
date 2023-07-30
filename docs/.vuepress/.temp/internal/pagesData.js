@@ -5,6 +5,8 @@ export const pagesData = {
   "v-5dd7b515": () => import(/* webpackChunkName: "v-5dd7b515" */"D:/blog/docs/.vuepress/.temp/pages/front/css.html.js").then(({ data }) => data),
   // path: /front/html.html
   "v-58f2a8e2": () => import(/* webpackChunkName: "v-58f2a8e2" */"D:/blog/docs/.vuepress/.temp/pages/front/html.html.js").then(({ data }) => data),
+  // path: /front/Javascript.html
+  "v-3f2413a6": () => import(/* webpackChunkName: "v-3f2413a6" */"D:/blog/docs/.vuepress/.temp/pages/front/Javascript.html.js").then(({ data }) => data),
   // path: /git/
   "v-74473916": () => import(/* webpackChunkName: "v-74473916" */"D:/blog/docs/.vuepress/.temp/pages/git/index.html.js").then(({ data }) => data),
   // path: /http/

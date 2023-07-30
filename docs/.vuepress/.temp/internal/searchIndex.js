@@ -442,6 +442,13 @@ export const searchIndex = [
   {
     "title": "",
     "headers": [],
+    "path": "/front/Javascript.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
     "path": "/git/",
     "pathLocale": "/",
     "extraFields": []

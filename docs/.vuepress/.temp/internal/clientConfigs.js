@@ -9,7 +9,8 @@ import clientConfig7 from 'D:/blog/node_modules/.pnpm/@vuepress+plugin-medium-zo
 import clientConfig8 from 'D:/blog/node_modules/.pnpm/@vuepress+plugin-search@2.0.0-beta.66/node_modules/@vuepress/plugin-search/lib/client/config.js'
 import clientConfig9 from 'D:/blog/docs/.vuepress/.temp/sass-palette/load-hope.js'
 import clientConfig10 from 'D:/blog/node_modules/.pnpm/vuepress-plugin-copy-code2@2.0.0-beta.233_vuepress@2.0.0-beta.66/node_modules/vuepress-plugin-copy-code2/lib/client/config.js'
-import clientConfig11 from 'D:/blog/docs/.vuepress/client.ts'
+import clientConfig11 from 'D:/blog/node_modules/.pnpm/@vuepress-denaro+vuepress-plugin-dynamic-title@1.1.1-beta.0/node_modules/@vuepress-denaro/vuepress-plugin-dynamic-title/lib/client/config.js'
+import clientConfig12 from 'D:/blog/docs/.vuepress/client.ts'
 
 export const clientConfigs = [
   clientConfig0,
@@ -24,4 +25,5 @@ export const clientConfigs = [
   clientConfig9,
   clientConfig10,
   clientConfig11,
+  clientConfig12,
 ]

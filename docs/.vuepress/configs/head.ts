@@ -1,7 +1,7 @@
 import type { HeadConfig } from '@vuepress/core';
 
 const head: HeadConfig[] = [
-  ['link', { rel: 'icon', href: 'favicon.ico' }],
+  ['link', { rel: 'icon', href: '/images/favicon.ico' }],
   ,
   ['meta', { name: 'description', content: '包涵大量的编程知识' }],
   ['meta', { name: 'keywords', content: '前端, 编程, 知识, 学习, 分享' }],

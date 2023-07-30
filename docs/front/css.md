@@ -32,51 +32,51 @@ p {
 1. 外部样式表（External Stylesheet）：
    创建一个独立的CSS文件（通常以`.css`为后缀），然后使用`link`标签将该文件连接到HTML文档中。`link`标签应放置在HTML文档的`head`标签内。示例：
 
-   ```html
-   <head>
-     <link rel="stylesheet" href="styles.css">
-   </head>
-   ```
+```html
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+```
 
-   然后，在`styles.css`文件中编写CSS代码：
+然后，在`styles.css`文件中编写CSS代码：
 
-   ```css
-   body {
-     background-color: #f1f1f1;
-   }
+```css
+body {
+  background-color: #f1f1f1;
+}
    
-   h1 {
-     color: blue;
-   }
-   ```
+h1 {
+  color: blue;
+}
+```
 
    这种方式适用于对多个页面同时应用相同的样式。
 
 2. 内部样式表（Internal Stylesheet）：
    在HTML文档的`head`标签内，使用`style`标签定义CSS样式。在`style`标签中，可以直接编写CSS代码。示例：
 
-   ```html
-   <head>
-     <style>
-       body {
-         background-color: #f1f1f1;
-       }
-       
-       h1 {
-         color: blue;
-       }
-     </style>
-   </head>
-   ```
+```html
+<head>
+  <style>
+    body {
+     background-color: #f1f1f1;
+   }
+   
+   h1 {
+     color: blue;
+   }
+  </style>
+</head>
+```
 
-   这种方式适用于仅对当前HTML文档应用特定样式。
+这种方式适用于仅对当前HTML文档应用特定样式。
 
 3. 内联样式（Inline Styles）：
    在HTML元素的`style`属性中，直接编写CSS样式。示例：
 
-   ```html
-   <h1 style="color: blue;">Hello, World!</h1>
-   ```
+```html
+  <h1 style="color: blue;">Hello, World!</h1>
+```
 
    这种方式适用于仅对个别元素应用特定样式。
 
@@ -294,18 +294,26 @@ CSS样式属性是用于设置HTML元素的外观和布局的属性。以下是�
 }
 ```
 
-7.尺寸属性（Dimension Properties）：
+7. 尺寸属性（Dimension Properties）：			
 
-   - `width`：设置元素的宽度。
+      - `width`：设置元素的宽度。
 
-   - `height`：设置元素的高度。
 
-   - `max-width`：设置元素的最大宽度限制。
+      - `height`：设置元素的高度。
 
-   - `max-height`：设置元素的最大高度限制。
-   - `min-width`：设置元素的最小宽度限制。
-   - `min-height`：设置元素的最小高度限制。
-   - `box-sizing`：控制元素包含的内容对宽度和高度的影响。
+
+      - `max-width`：设置元素的最大宽度限制。
+
+
+      - `max-height`：设置元素的最大高度限制。
+
+      - `min-width`：设置元素的最小宽度限制。
+
+      - `min-height`：设置元素的最小高度限制。
+
+      - `box-sizing`：控制元素包含的内容对宽度和高度的影响。
+
+   
 
 ```css
 .image {
@@ -320,7 +328,7 @@ CSS样式属性是用于设置HTML元素的外观和布局的属性。以下是�
 
 .btn {
   min-width: 120px;
-}
+}	
 ```
 
 8. 动画属性（Animation Properties）：
@@ -415,7 +423,7 @@ div {
 }
 ```
 
-2.`%`（百分比）： 百分比基于父元素的尺寸进行计算。
+2. `%`（百分比）： 百分比基于父元素的尺寸进行计算。
 
 ```css
 div {
@@ -424,7 +432,7 @@ div {
 }
 ```
 
-3.`em`：相对于元素的字体大小（font-size）来计算。
+3. `em`：相对于元素的字体大小（font-size）来计算。
 
 ```css
 p {
@@ -433,7 +441,7 @@ p {
 }
 ```
 
-4.`rem`： 相对于根元素（html）的字体大小（font-size）来计算。
+4. `rem`： 相对于根元素（html）的字体大小（font-size）来计算。
 
 ```css
 p {
@@ -442,7 +450,7 @@ p {
 }
 ```
 
-5.vh` / `vw`： 视口高度（viewport height）和视口宽度（viewport width）的百分比。
+5. vh` / `vw`： 视口高度（viewport height）和视口宽度（viewport width）的百分比。
 
 ```css
 div {
@@ -451,7 +459,7 @@ div {
 }
 ```
 
-6.`pt`（点）： 1英寸的1/72大小。
+6. `pt`（点）： 1英寸的1/72大小。
 
 ```css
 h1 {
@@ -459,7 +467,7 @@ h1 {
 }
 ```
 
-7.`cm`（厘米）、`mm`（毫米）： 以厘米和毫米为单位的长度。
+7. `cm`（厘米）、`mm`（毫米）： 以厘米和毫米为单位的长度。
 
 ```css
 img {
@@ -468,7 +476,7 @@ img {
 }
 ```
 
-8.`ex`：相对于当前字体中小写字母x的高度。
+8. `ex`：相对于当前字体中小写字母x的高度。
 
 ```css
 p {
@@ -476,7 +484,7 @@ p {
 }
 ```
 
-9.`ch`：相对于当前字体中数字0的宽度。
+9. `ch`：相对于当前字体中数字0的宽度。
 
 ```css
 p {
@@ -529,12 +537,12 @@ CSS盒模型是一种用于描述网页元素的布局和尺寸的概念。它�
 1. 标准盒模型：
    标准盒模型是CSS中的默认盒模型。它包括内容区域、内边距、边框和外边距。元素的宽度和高度属性（如`width`和`height`）只会影响内容区域的尺寸，而内边距和边框会增加元素的总尺寸。
 
-   `<img src="https://img1.baidu.com/it/u=3153382498,1133393016&fm=253&fmt=auto&app=138&f=PNG?w=646&h=500" alt="Standard Box Model" style="zoom:50%;" />`
+   <img src="https://img1.baidu.com/it/u=3153382498,1133393016&fm=253&fmt=auto&app=138&f=PNG?w=646&h=500" alt="Standard Box Model" style="zoom:50%;" />
 
 2. IE盒模型（怪异盒模型）：
    IE盒模型是在早期的Internet Explorer版本中引入的盒模型。在IE盒模型中，元素的宽度和高度属性（如`width`和`height`）会包括内容区域、内边距和边框，而不会计算外边距。这导致元素的总尺寸大于在标准盒模型下相同的宽度和高度属性。
 
-  `<img src="https://img1.sycdn.imooc.com/5d01f11c00013e1712800720.jpg" alt="IE Box Model" style="zoom:50%;" />`
+  <img src="https://img1.sycdn.imooc.com/5d01f11c00013e1712800720.jpg" alt="IE Box Model" style="zoom:50%;" />
 
 为了改变盒模型的类型，可以使用`box-sizing`属性。默认情况下，`box-sizing`属性的值为`content-box`，即标准盒模型。如果想切换到IE盒模型（怪异盒模型），可以将`box-sizing`属性设置为`border-box`。示例如下：
 

@@ -1,0 +1,21 @@
+{
+  "name": "blog",
+  "short_name": "blog",
+  "description": "包涵大量的编程知识",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#23d0d0",
+  "icons": [
+    {
+      "src": "/images/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon.ico",
+      "sizes": "384x384",
+      "type": "image/png"
+    }
+  ]
+}

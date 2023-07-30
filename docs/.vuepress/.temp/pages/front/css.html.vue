@@ -15,9 +15,9 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="书写方式" tabindex="-1"><a class="header-anchor" href="#书写方式" aria-hidden="true">#</a> 书写方式</h2>
 <p>在HTML文档中，可以通过以下几种方式来书写CSS代码：</p>
 <ol>
-<li>
-<p>外部样式表（External Stylesheet）：
-创建一个独立的CSS文件（通常以<code v-pre>.css</code>为后缀），然后使用<code v-pre>link</code>标签将该文件连接到HTML文档中。<code v-pre>link</code>标签应放置在HTML文档的<code v-pre>head</code>标签内。示例：</p>
+<li>外部样式表（External Stylesheet）：
+创建一个独立的CSS文件（通常以<code v-pre>.css</code>为后缀），然后使用<code v-pre>link</code>标签将该文件连接到HTML文档中。<code v-pre>link</code>标签应放置在HTML文档的<code v-pre>head</code>标签内。示例：</li>
+</ol>
 <div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>styles.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
@@ -25,35 +25,33 @@
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">body</span> <span class="token punctuation">{</span>
   <span class="token property">background-color</span><span class="token punctuation">:</span> #f1f1f1<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-
+   
 <span class="token selector">h1</span> <span class="token punctuation">{</span>
   <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这种方式适用于对多个页面同时应用相同的样式。</p>
-</li>
-<li>
-<p>内部样式表（Internal Stylesheet）：
-在HTML文档的<code v-pre>head</code>标签内，使用<code v-pre>style</code>标签定义CSS样式。在<code v-pre>style</code>标签中，可以直接编写CSS代码。示例：</p>
+<ol start="2">
+<li>内部样式表（Internal Stylesheet）：
+在HTML文档的<code v-pre>head</code>标签内，使用<code v-pre>style</code>标签定义CSS样式。在<code v-pre>style</code>标签中，可以直接编写CSS代码。示例：</li>
+</ol>
 <div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
     <span class="token selector">body</span> <span class="token punctuation">{</span>
-      <span class="token property">background-color</span><span class="token punctuation">:</span> #f1f1f1<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    
-    <span class="token selector">h1</span> <span class="token punctuation">{</span>
-      <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+     <span class="token property">background-color</span><span class="token punctuation">:</span> #f1f1f1<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   
+   <span class="token selector">h1</span> <span class="token punctuation">{</span>
+     <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
   </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这种方式适用于仅对当前HTML文档应用特定样式。</p>
-</li>
-<li>
-<p>内联样式（Inline Styles）：
-在HTML元素的<code v-pre>style</code>属性中，直接编写CSS样式。示例：</p>
-<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Hello, World!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>这种方式适用于仅对个别元素应用特定样式。</p>
-</li>
+<ol start="3">
+<li>内联样式（Inline Styles）：
+在HTML元素的<code v-pre>style</code>属性中，直接编写CSS样式。示例：</li>
 </ol>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Hello, World!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>这种方式适用于仅对个别元素应用特定样式。</p>
 <p>使用外部样式表和内部样式表可以使CSS代码与HTML代码相分离，更易于维护和管理。内联样式适用于需要对个别元素应用直接的样式调整，但不推荐在整个网页中广泛使用。根据具体需求，在合适的地方选择合适的CSS书写方式。</p>
 <h2 id="选择器" tabindex="-1"><a class="header-anchor" href="#选择器" aria-hidden="true">#</a> 选择器</h2>
 <p>CSS选择器用于选择要应用样式的HTML元素。以下是一些常见的CSS选择器及其详细解释：</p>
@@ -245,7 +243,9 @@ ID选择器通过元素的<code v-pre>id</code>属性选择元素。ID选择器�
   <span class="token property">border</span><span class="token punctuation">:</span> 1px solid red<span class="token punctuation">;</span>
   <span class="token property">border-radius</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>7.尺寸属性（Dimension Properties）：</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="7">
+<li>
+<p>尺寸属性（Dimension Properties）：</p>
 <ul>
 <li>
 <p><code v-pre>width</code>：设置元素的宽度。</p>
@@ -269,6 +269,8 @@ ID选择器通过元素的<code v-pre>id</code>属性选择元素。ID选择器�
 <p><code v-pre>box-sizing</code>：控制元素包含的内容对宽度和高度的影响。</p>
 </li>
 </ul>
+</li>
+</ol>
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.image</span> <span class="token punctuation">{</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
@@ -281,7 +283,7 @@ ID选择器通过元素的<code v-pre>id</code>属性选择元素。ID选择器�
 
 <span class="token selector">.btn</span> <span class="token punctuation">{</span>
   <span class="token property">min-width</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>	
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="8">
 <li>
 <p>动画属性（Animation Properties）：</p>
@@ -380,40 +382,56 @@ ID选择器通过元素的<code v-pre>id</code>属性选择元素。ID选择器�
   <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2.<code v-pre>%</code>（百分比）： 百分比基于父元素的尺寸进行计算。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2">
+<li><code v-pre>%</code>（百分比）： 百分比基于父元素的尺寸进行计算。</li>
+</ol>
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>3.<code v-pre>em</code>：相对于元素的字体大小（font-size）来计算。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="3">
+<li><code v-pre>em</code>：相对于元素的字体大小（font-size）来计算。</li>
+</ol>
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
   <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>4.<code v-pre>rem</code>： 相对于根元素（html）的字体大小（font-size）来计算。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="4">
+<li><code v-pre>rem</code>： 相对于根元素（html）的字体大小（font-size）来计算。</li>
+</ol>
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
   <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>5.vh<code v-pre>/</code>vw`： 视口高度（viewport height）和视口宽度（viewport width）的百分比。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="5">
+<li>vh<code v-pre>/</code>vw`： 视口高度（viewport height）和视口宽度（viewport width）的百分比。</li>
+</ol>
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
   <span class="token property">height</span><span class="token punctuation">:</span> 50vh<span class="token punctuation">;</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 75vw<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>6.<code v-pre>pt</code>（点）： 1英寸的1/72大小。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="6">
+<li><code v-pre>pt</code>（点）： 1英寸的1/72大小。</li>
+</ol>
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">h1</span> <span class="token punctuation">{</span>
   <span class="token property">font-size</span><span class="token punctuation">:</span> 24pt<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>7.<code v-pre>cm</code>（厘米）、<code v-pre>mm</code>（毫米）： 以厘米和毫米为单位的长度。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="7">
+<li><code v-pre>cm</code>（厘米）、<code v-pre>mm</code>（毫米）： 以厘米和毫米为单位的长度。</li>
+</ol>
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">img</span> <span class="token punctuation">{</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 5cm<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> 3mm<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>8.<code v-pre>ex</code>：相对于当前字体中小写字母x的高度。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="8">
+<li><code v-pre>ex</code>：相对于当前字体中小写字母x的高度。</li>
+</ol>
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
   <span class="token property">line-height</span><span class="token punctuation">:</span> 2ex<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>9.<code v-pre>ch</code>：相对于当前字体中数字0的宽度。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="9">
+<li><code v-pre>ch</code>：相对于当前字体中数字0的宽度。</li>
+</ol>
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 10ch<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -460,14 +478,14 @@ ID选择器通过元素的<code v-pre>id</code>属性选择元素。ID选择器�
 <li>
 <p>标准盒模型：
 标准盒模型是CSS中的默认盒模型。它包括内容区域、内边距、边框和外边距。元素的宽度和高度属性（如<code v-pre>width</code>和<code v-pre>height</code>）只会影响内容区域的尺寸，而内边距和边框会增加元素的总尺寸。</p>
-<p><code v-pre>&lt;img src=&quot;https://img1.baidu.com/it/u=3153382498,1133393016&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=646&amp;h=500&quot; alt=&quot;Standard Box Model&quot; style=&quot;zoom:50%;&quot; /&gt;</code></p>
+<img src="https://img1.baidu.com/it/u=3153382498,1133393016&fm=253&fmt=auto&app=138&f=PNG?w=646&h=500" alt="Standard Box Model" style="zoom:50%;" />
 </li>
 <li>
 <p>IE盒模型（怪异盒模型）：
 IE盒模型是在早期的Internet Explorer版本中引入的盒模型。在IE盒模型中，元素的宽度和高度属性（如<code v-pre>width</code>和<code v-pre>height</code>）会包括内容区域、内边距和边框，而不会计算外边距。这导致元素的总尺寸大于在标准盒模型下相同的宽度和高度属性。</p>
 </li>
 </ol>
-<p><code v-pre>&lt;img src=&quot;https://img1.sycdn.imooc.com/5d01f11c00013e1712800720.jpg&quot; alt=&quot;IE Box Model&quot; style=&quot;zoom:50%;&quot; /&gt;</code></p>
+  <img src="https://img1.sycdn.imooc.com/5d01f11c00013e1712800720.jpg" alt="IE Box Model" style="zoom:50%;" />
 <p>为了改变盒模型的类型，可以使用<code v-pre>box-sizing</code>属性。默认情况下，<code v-pre>box-sizing</code>属性的值为<code v-pre>content-box</code>，即标准盒模型。如果想切换到IE盒模型（怪异盒模型），可以将<code v-pre>box-sizing</code>属性设置为<code v-pre>border-box</code>。示例如下：</p>
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
   <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>

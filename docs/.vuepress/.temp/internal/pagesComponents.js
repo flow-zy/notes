@@ -7,6 +7,8 @@ export const pagesComponents = {
   "v-5dd7b515": defineAsyncComponent(() => import(/* webpackChunkName: "v-5dd7b515" */"D:/blog/docs/.vuepress/.temp/pages/front/css.html.vue")),
   // path: /front/html.html
   "v-58f2a8e2": defineAsyncComponent(() => import(/* webpackChunkName: "v-58f2a8e2" */"D:/blog/docs/.vuepress/.temp/pages/front/html.html.vue")),
+  // path: /front/Javascript.html
+  "v-3f2413a6": defineAsyncComponent(() => import(/* webpackChunkName: "v-3f2413a6" */"D:/blog/docs/.vuepress/.temp/pages/front/Javascript.html.vue")),
   // path: /git/
   "v-74473916": defineAsyncComponent(() => import(/* webpackChunkName: "v-74473916" */"D:/blog/docs/.vuepress/.temp/pages/git/index.html.vue")),
   // path: /http/
