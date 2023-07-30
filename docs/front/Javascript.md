@@ -1,3 +1,17 @@
+---
+title: Javascript
+#NavLink
+prev:
+  text: CSS
+  link: /front/css
+next:
+  text: jQuery
+  link: /front/Jquey
+
+---
+
+
+
 ## 介绍
 
 javaScript（简称JS）是一种非常有用的编程语言。它可以用来为网页添加交互性、处理用户输入、操作网页元素以及与服务器进行通信等。

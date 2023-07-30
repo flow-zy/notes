@@ -1,3 +1,18 @@
+---
+title: jQuery
+#NavLink
+prev:
+  text: JavaScript
+  link: /front/JavaScript
+next:
+  text: Es6
+  link: /front/ECMAScript
+
+
+---
+
+
+
 ## 引入jQuery库
 
 - 下载最新版本的jQuery库并将其引入到HTML文件中。例如：
