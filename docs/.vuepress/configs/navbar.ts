@@ -132,8 +132,9 @@ Object.entries(sidebar).forEach(([key, value]) => {
           side.activeMatch = `^${side.link.slice(0, -3)}`;
         });
 
-      navbar[i].children =
-        Array.isArray(value) && value.length !== 0 ? value.reverse() : [];
+      Array.isArray(value) && value.length !== 0
+        ? (navbar[i].children = value.reverse())
+        : '';
     }
   });
 });
