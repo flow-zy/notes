@@ -128,6 +128,10 @@ Object.entries(sidebar).forEach(([key, value]) => {
         value.length !== 0 &&
         value.forEach((side) => {
           side.activeMatch = `^${side.link.slice(0, -3)}`;
+          console.log(
+            '🚀 ~ file: navbar.ts:132 ~ value.forEach ~ side.activeMatch :',
+            side.activeMatch
+          );
         });
 
       navbar[i].children =
@@ -135,6 +139,5 @@ Object.entries(sidebar).forEach(([key, value]) => {
     }
   });
 });
-console.log('🚀 ~ file: navbar.ts:136 ~ navbar:', navbar);
 
 export default navbar;
