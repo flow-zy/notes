@@ -1,6 +1,7 @@
 import s1 from './sidebar';
+import s2 from './sidebar.json';
 const isDev = process.env.NODE_ENV == 'development';
-const sidebar = isDev ? s1 : import('./sidebar.json');
+const sidebar = isDev ? s1 : s2;
 console.log('🚀 ~ file: navbar.ts:4 ~ sidebar:', sidebar);
 const navbar = [
   // NavbarItem
