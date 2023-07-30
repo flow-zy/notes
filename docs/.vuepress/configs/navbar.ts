@@ -131,7 +131,7 @@ Object.entries(sidebar).forEach(([key, value]) => {
         });
 
       navbar[i].children =
-        Array.isArray(value) && value.length !== 0 ? value : [];
+        Array.isArray(value) && value.length !== 0 ? value.reverse() : [];
     }
   });
 });
