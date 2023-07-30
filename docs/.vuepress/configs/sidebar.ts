@@ -66,5 +66,4 @@ const travel = (dir) => {
 };
 
 const sidebar = travel('docs/');
-writeFileSync('../sidebar.json', JSON.stringify(sidebar));
 export default sidebar;

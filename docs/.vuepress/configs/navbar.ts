@@ -1,39 +1,39 @@
-import s1 from './sidebar';
-import s2 from '../sidebar.json';
-const isDev = process.env.NODE_ENV === 'development';
-const sidebar = isDev ? s1 : s2;
+import sidebar from './sidebar';
 
 const navbar = [
   // NavbarItem
   {
     text: '前端',
-    link: '/front/html',
-    activeMatch: '^/front/html',
+    link: '/front',
   },
   {
     text: '后端',
-    link: '/rear/node',
-    activeMatch: '^/rear',
+    link: '/rear',
   },
   {
     text: '项目管理',
-    link: '/git/',
-    activeMatch: '^/git',
+    link: '/management',
   },
   {
     text: '网络',
-    link: '/http/',
-    activeMatch: '^/http',
+    link: '/network',
+  },
+  {
+    text: '小程序',
+    link: '/program',
+  },
+  {
+    text: '框架',
+    link: '/frame',
   },
   {
     text: '打包工具',
-    link: '/pack/webpack',
+    link: '/pack',
     activeMatch: '^/pack',
   },
   {
     text: '其他',
-    link: '/other/',
-    activeMatch: '^/other',
+    link: '/other',
   },
   {
     text: '工具软件',
@@ -113,13 +113,28 @@ const navbar = [
       },
     ],
   },
-  { text: 'Gitee', link: 'https://gitee.com' },
+  {
+    text: '项目',
+    link: '/project',
+  },
+  { text: 'Gitee', link: 'https://gitee.com/flow-zy/blog' },
+  { text: 'Github', link: 'https://github.com/flow-zy/blog' },
 ];
-Object.entries(sidebar).forEach(([key, value], i) => {
-  if (Array.isArray(value) && value.length !== 0) {
-    const index = navbar.findIndex((item) => item.text.indexOf(key));
-    navbar[index].children = value;
-  }
+Object.entries(sidebar).forEach(([key, value]) => {
+  navbar.forEach((nav, i) => {
+    if (nav.link && key.includes(nav.link)) {
+      // console.log(value);
+      Array.isArray(value) &&
+        value.length !== 0 &&
+        value.forEach((side) => {
+          side.activeMatch = `^${side.link.slice(0, -3)}`;
+        });
+
+      navbar[i].children =
+        Array.isArray(value) && value.length !== 0 ? value : [];
+    }
+  });
 });
+console.log('🚀 ~ file: navbar.ts:136 ~ navbar:', navbar);
 
 export default navbar;

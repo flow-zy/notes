@@ -1,5 +1,33 @@
 export const searchIndex = [
   {
+    "title": "",
+    "headers": [],
+    "path": "/frame/react.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/frame/springboot.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/frame/thinkphp.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/frame/vue.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "CSS",
     "headers": [
       {
@@ -449,35 +477,133 @@ export const searchIndex = [
   {
     "title": "",
     "headers": [],
-    "path": "/git/",
+    "path": "/interview.md/css.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
     "title": "",
     "headers": [],
-    "path": "/http/",
+    "path": "/interview.md/html.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
     "title": "",
     "headers": [],
-    "path": "/other/",
+    "path": "/interview.md/java.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
     "title": "",
     "headers": [],
-    "path": "/pack/",
+    "path": "/interview.md/javascript.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
     "title": "",
     "headers": [],
-    "path": "/rear/",
+    "path": "/interview.md/php.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview.md/react.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview.md/vue.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/management/git.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/management/svn.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/network/ajax.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/network/http.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/other/linux.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/pack/vite.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/pack/webpack.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/program/uniapp.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/program/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/rear/java.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/rear/node.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/rear/php.html",
     "pathLocale": "/",
     "extraFields": []
   },
