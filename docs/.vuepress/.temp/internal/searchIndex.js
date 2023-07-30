@@ -28,55 +28,6 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "",
-    "headers": [],
-    "path": "/interview/css.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/interview/html.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/interview/java.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/interview/JavaScript.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/interview/php.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/interview/react.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/interview/vue.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
     "title": "CSS",
     "headers": [
       {
@@ -1272,8 +1223,170 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "",
-    "headers": [],
+    "title": "TypeScript",
+    "headers": [
+      {
+        "level": 2,
+        "title": "介绍",
+        "slug": "介绍",
+        "link": "#介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "数据类型",
+        "slug": "数据类型",
+        "link": "#数据类型",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "变量",
+        "slug": "变量",
+        "link": "#变量",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "接口和 类",
+        "slug": "接口和-类",
+        "link": "#接口和-类",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "函数",
+        "slug": "函数",
+        "link": "#函数",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "枚举",
+        "slug": "枚举",
+        "link": "#枚举",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "类型注解",
+        "slug": "类型注解",
+        "link": "#类型注解",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "类型推断",
+        "slug": "类型推断",
+        "link": "#类型推断",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "类型守卫",
+        "slug": "类型守卫",
+        "link": "#类型守卫",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "自定义类型",
+        "slug": "自定义类型",
+        "link": "#自定义类型",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "高级类型",
+        "slug": "高级类型",
+        "link": "#高级类型",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "泛型",
+        "slug": "泛型",
+        "link": "#泛型",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "高级类型操作符",
+        "slug": "高级类型操作符",
+        "link": "#高级类型操作符",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "异步编程",
+        "slug": "异步编程",
+        "link": "#异步编程",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "迭代器和生成器",
+        "slug": "迭代器和生成器",
+        "link": "#迭代器和生成器",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "类装饰器",
+        "slug": "类装饰器",
+        "link": "#类装饰器",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "声明文件",
+        "slug": "声明文件",
+        "link": "#声明文件",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "命名空间",
+        "slug": "命名空间",
+        "link": "#命名空间",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "模块化",
+        "slug": "模块化",
+        "link": "#模块化",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "模块解析",
+        "slug": "模块解析",
+        "link": "#模块解析",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "声明合并",
+        "slug": "声明合并",
+        "link": "#声明合并",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "mixins",
+        "slug": "mixins",
+        "link": "#mixins",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "三斜线指令",
+        "slug": "三斜线指令",
+        "link": "#三斜线指令",
+        "children": []
+      }
+    ],
     "path": "/front/TypeScript.html",
     "pathLocale": "/",
     "extraFields": []
@@ -1282,6 +1395,55 @@ export const searchIndex = [
     "title": "",
     "headers": [],
     "path": "/front/Vue.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/css.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/html.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/java.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/JavaScript.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/php.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/react.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/interview/vue.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1363,8 +1525,622 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "",
-    "headers": [],
+    "title": "PHP",
+    "headers": [
+      {
+        "level": 2,
+        "title": "语法",
+        "slug": "语法",
+        "link": "#语法",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "输出方式",
+        "slug": "输出方式",
+        "link": "#输出方式",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "变量",
+        "slug": "变量",
+        "link": "#变量",
+        "children": [
+          {
+            "level": 3,
+            "title": "变量规则",
+            "slug": "变量规则",
+            "link": "#变量规则",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "常量",
+            "slug": "常量",
+            "link": "#常量",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "弱类型语言",
+            "slug": "弱类型语言",
+            "link": "#弱类型语言",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "变量作用域",
+            "slug": "变量作用域",
+            "link": "#变量作用域",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "全局作用域和局部作用域",
+            "slug": "全局作用域和局部作用域",
+            "link": "#全局作用域和局部作用域",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "参数作用域",
+            "slug": "参数作用域",
+            "link": "#参数作用域",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "EOF(heredoc)",
+        "slug": "eof-heredoc",
+        "link": "#eof-heredoc",
+        "children": [
+          {
+            "level": 3,
+            "title": "使用概述",
+            "slug": "使用概述",
+            "link": "#使用概述",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "类型",
+        "slug": "类型",
+        "link": "#类型",
+        "children": [
+          {
+            "level": 3,
+            "title": "String（字符串）",
+            "slug": "string-字符串",
+            "link": "#string-字符串",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Integer（整型）",
+            "slug": "integer-整型",
+            "link": "#integer-整型",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Float（浮点型）",
+            "slug": "float-浮点型",
+            "link": "#float-浮点型",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Boolean（布尔型）",
+            "slug": "boolean-布尔型",
+            "link": "#boolean-布尔型",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Array（数组）",
+            "slug": "array-数组",
+            "link": "#array-数组",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Object（对象）",
+            "slug": "object-对象",
+            "link": "#object-对象",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "NULL（空值）",
+            "slug": "null-空值",
+            "link": "#null-空值",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Enum 枚举",
+            "slug": "enum-枚举",
+            "link": "#enum-枚举",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Resource（资源类型）",
+            "slug": "resource-资源类型",
+            "link": "#resource-资源类型",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Callback / Callable 类型",
+            "slug": "callback-callable-类型",
+            "link": "#callback-callable-类型",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "类型比较",
+            "slug": "类型比较",
+            "link": "#类型比较",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "比较 0、false、null",
+            "slug": "比较-0、false、null",
+            "link": "#比较-0、false、null",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "字符串",
+        "slug": "字符串",
+        "link": "#字符串",
+        "children": [
+          {
+            "level": 3,
+            "title": "长度",
+            "slug": "长度",
+            "link": "#长度",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "连接",
+            "slug": "连接",
+            "link": "#连接",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "截取",
+            "slug": "截取",
+            "link": "#截取",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "替换",
+            "slug": "替换",
+            "link": "#替换",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "转换为小写或大写",
+            "slug": "转换为小写或大写",
+            "link": "#转换为小写或大写",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "去除首尾空格",
+            "slug": "去除首尾空格",
+            "link": "#去除首尾空格",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "转义",
+            "slug": "转义",
+            "link": "#转义",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "运算符",
+        "slug": "运算符",
+        "link": "#运算符",
+        "children": [
+          {
+            "level": 3,
+            "title": "算术运算符",
+            "slug": "算术运算符",
+            "link": "#算术运算符",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "赋值运算符",
+            "slug": "赋值运算符",
+            "link": "#赋值运算符",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "比较运算符",
+            "slug": "比较运算符",
+            "link": "#比较运算符",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "条件语句",
+        "slug": "条件语句",
+        "link": "#条件语句",
+        "children": [
+          {
+            "level": 3,
+            "title": "if语句",
+            "slug": "if语句",
+            "link": "#if语句",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "elseif语句",
+            "slug": "elseif语句",
+            "link": "#elseif语句",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "switch语句：",
+            "slug": "switch语句",
+            "link": "#switch语句",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "三元运算符",
+            "slug": "三元运算符",
+            "link": "#三元运算符",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "循环语句",
+        "slug": "循环语句",
+        "link": "#循环语句",
+        "children": [
+          {
+            "level": 3,
+            "title": "for循环",
+            "slug": "for循环",
+            "link": "#for循环",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "while循环",
+            "slug": "while循环",
+            "link": "#while循环",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "do-while循环",
+            "slug": "do-while循环",
+            "link": "#do-while循环",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "foreach循环",
+            "slug": "foreach循环",
+            "link": "#foreach循环",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "break语句",
+            "slug": "break语句",
+            "link": "#break语句",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "函数",
+        "slug": "函数",
+        "link": "#函数",
+        "children": [
+          {
+            "level": 3,
+            "title": "定义函数",
+            "slug": "定义函数",
+            "link": "#定义函数",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "调用函数",
+            "slug": "调用函数",
+            "link": "#调用函数",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "返回值",
+            "slug": "返回值",
+            "link": "#返回值",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "可变函数",
+            "slug": "可变函数",
+            "link": "#可变函数",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "内置函数",
+            "slug": "内置函数",
+            "link": "#内置函数",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "箭头函数",
+            "slug": "箭头函数",
+            "link": "#箭头函数",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "数组",
+        "slug": "数组",
+        "link": "#数组",
+        "children": [
+          {
+            "level": 3,
+            "title": "索引数组",
+            "slug": "索引数组",
+            "link": "#索引数组",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "关联数组",
+            "slug": "关联数组",
+            "link": "#关联数组",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "访问数组元素",
+            "slug": "访问数组元素",
+            "link": "#访问数组元素",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "修改数组元素",
+            "slug": "修改数组元素",
+            "link": "#修改数组元素",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "遍历数组",
+            "slug": "遍历数组",
+            "link": "#遍历数组",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "方法",
+            "slug": "方法",
+            "link": "#方法",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "对象",
+        "slug": "对象",
+        "link": "#对象",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "表单",
+        "slug": "表单",
+        "link": "#表单",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "迭代器和生成器",
+        "slug": "迭代器和生成器",
+        "link": "#迭代器和生成器",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "面向对象",
+        "slug": "面向对象",
+        "link": "#面向对象",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "命名空间",
+        "slug": "命名空间",
+        "link": "#命名空间",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "异常处理",
+        "slug": "异常处理",
+        "link": "#异常处理",
+        "children": [
+          {
+            "level": 3,
+            "title": "错误报告级别",
+            "slug": "错误报告级别",
+            "link": "#错误报告级别",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "自定义错误处理函数",
+            "slug": "自定义错误处理函数",
+            "link": "#自定义错误处理函数",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "异常处理",
+            "slug": "异常处理-1",
+            "link": "#异常处理-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "异常类",
+            "slug": "异常类",
+            "link": "#异常类",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "匿名函数和闭包",
+        "slug": "匿名函数和闭包",
+        "link": "#匿名函数和闭包",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "接口和抽象类",
+        "slug": "接口和抽象类",
+        "link": "#接口和抽象类",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "设计模式",
+        "slug": "设计模式",
+        "link": "#设计模式",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "文件操作",
+        "slug": "文件操作",
+        "link": "#文件操作",
+        "children": [
+          {
+            "level": 3,
+            "title": "打开和关闭文件",
+            "slug": "打开和关闭文件",
+            "link": "#打开和关闭文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "读取文件内容",
+            "slug": "读取文件内容",
+            "link": "#读取文件内容",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "写入文件",
+            "slug": "写入文件",
+            "link": "#写入文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "复制、重命名和删除文件",
+            "slug": "复制、重命名和删除文件",
+            "link": "#复制、重命名和删除文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "获取文件信息",
+            "slug": "获取文件信息",
+            "link": "#获取文件信息",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "包含文件",
+            "slug": "包含文件",
+            "link": "#包含文件",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "数据库连接与操作",
+        "slug": "数据库连接与操作",
+        "link": "#数据库连接与操作",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "缓存技术",
+        "slug": "缓存技术",
+        "link": "#缓存技术",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "安全性和防护",
+        "slug": "安全性和防护",
+        "link": "#安全性和防护",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "过滤器",
+        "slug": "过滤器",
+        "link": "#过滤器",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "JSON",
+        "slug": "json",
+        "link": "#json",
+        "children": []
+      }
+    ],
     "path": "/rear/php.html",
     "pathLocale": "/",
     "extraFields": []
