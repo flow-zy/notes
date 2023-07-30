@@ -161,8 +161,29 @@ export const searchIndex = [
             "slug": "背景-background",
             "link": "#背景-background",
             "children": []
+          },
+          {
+            "level": 3,
+            "title": "选择器（Selector）",
+            "slug": "选择器-selector",
+            "link": "#选择器-selector",
+            "children": []
           }
         ]
+      },
+      {
+        "level": 2,
+        "title": "Css框架",
+        "slug": "css框架",
+        "link": "#css框架",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Css预处理器",
+        "slug": "css预处理器",
+        "link": "#css预处理器",
+        "children": []
       }
     ],
     "path": "/front/css.html",
@@ -470,21 +491,28 @@ export const searchIndex = [
   {
     "title": "",
     "headers": [],
-    "path": "/front/Javascript.html",
+    "path": "/front/JavaScript.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
     "title": "",
     "headers": [],
-    "path": "/management/git.html",
+    "path": "/front/Jquey.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
     "title": "",
     "headers": [],
-    "path": "/management/svn.html",
+    "path": "/front/React.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/front/Vue.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -534,6 +562,20 @@ export const searchIndex = [
     "title": "",
     "headers": [],
     "path": "/interview/vue.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/management/git.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/management/svn.html",
     "pathLocale": "/",
     "extraFields": []
   },

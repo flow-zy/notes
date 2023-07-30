@@ -591,68 +591,288 @@ CSS弹性布局是一种用于创建灵活和响应式布局的技术。通过�
 </ol>
 <p>通过结合使用这些技术和方法，可以创建出具有良好响应性的网页设计，使网页在各种设备上都能提供优秀的用户体验。</p>
 <h2 id="css3-功能" tabindex="-1"><a class="header-anchor" href="#css3-功能" aria-hidden="true">#</a> CSS3 功能</h2>
-<p>当涉及到CSS3的新功能时，以下是更详细的介绍：</p>
 <h3 id="_2d和3d转换-2d-and-3d-transforms" tabindex="-1"><a class="header-anchor" href="#_2d和3d转换-2d-and-3d-transforms" aria-hidden="true">#</a> 2D和3D转换（2D and 3D Transforms）</h3>
-<p>CSS3引入了一组转换属性（<code v-pre>transform</code>）来改变元素的形状、大小和方向。这些属性包括<code v-pre>translate</code>、<code v-pre>scale</code>、<code v-pre>rotate</code>和<code v-pre>skew</code>等。可以通过指定不同的转换属性值将元素平移、缩放、旋转和倾斜，创造出一些有趣和交互性的效果。还可以使用<code v-pre>perspective</code>属性创建一个3D透视效果，使元素看起来具有立体感。</p>
-<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
-  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="过渡-transitions" tabindex="-1"><a class="header-anchor" href="#过渡-transitions" aria-hidden="true">#</a> 过渡（Transitions）</h3>
-<p>过渡属性（<code v-pre>transition</code>）允许你在元素的属性发生改变时，应用一种平滑的效果来实现过渡。通过指定过渡的属性、持续时间、延迟和过渡函数等，可以控制过渡效果的速度和样式。过渡可以应用于许多属性，如颜色、大小、位置和透明度等。</p>
-<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
-  <span class="token property">transition</span><span class="token punctuation">:</span> width 1s ease-in-out<span class="token punctuation">;</span>
+<p>CSS提供了丰富的2D和3D转换功能，可以通过调整元素的位置、旋转、缩放和倾斜等来实现各种炫酷的效果。下面是一些常用的2D和3D转换方法：</p>
+<p>2D转换：</p>
+<ol>
+<li>
+<p>平移（translate）：通过<code v-pre>translate()</code>函数可以在水平和垂直方向上移动元素。例如：<code v-pre>transform: translate(100px, 50px);</code> 将元素向右移动100px，向下移动50px。</p>
+</li>
+<li>
+<p>缩放（scale）：通过<code v-pre>scale()</code>函数可以在水平和垂直方向上缩放元素。例如：<code v-pre>transform: scale(1.5, 0.5);</code> 将元素水平方向上缩放1.5倍，垂直方向上缩放0.5倍。</p>
+</li>
+<li>
+<p>旋转（rotate）：通过<code v-pre>rotate()</code>函数可以旋转元素。例如：<code v-pre>transform: rotate(45deg);</code> 将元素逆时针旋转45度。</p>
+</li>
+<li>
+<p>倾斜（skew）：通过<code v-pre>skew()</code>函数可以在水平和垂直方向上倾斜元素。例如：<code v-pre>transform: skew(20deg, -10deg);</code> 将元素水平方向上倾斜20度，垂直方向上倾斜-10度。</p>
+</li>
+</ol>
+<p>3D转换：</p>
+<ol>
+<li>
+<p>透视（perspective）：通过<code v-pre>perspective</code>属性可以设置透视效果，使元素具有三维感。例如：<code v-pre>perspective: 500px;</code> 设置透视点的距离为500px。</p>
+</li>
+<li>
+<p>旋转X轴（rotateX）：通过<code v-pre>rotateX()</code>函数可以绕X轴旋转元素。例如：<code v-pre>transform: rotateX(45deg);</code> 将元素绕X轴逆时针旋转45度。</p>
+</li>
+<li>
+<p>旋转Y轴（rotateY）：通过<code v-pre>rotateY()</code>函数可以绕Y轴旋转元素。例如：<code v-pre>transform: rotateY(45deg);</code> 将元素绕Y轴逆时针旋转45度。</p>
+</li>
+<li>
+<p>旋转Z轴（rotateZ）：通过<code v-pre>rotateZ()</code>函数可以绕Z轴旋转元素。例如：<code v-pre>transform: rotateZ(45deg);</code> 将元素绕Z轴逆时针旋转45度。</p>
+</li>
+</ol>
+<p>这些只是2D和3D转换的一些基本方法，你可以组合使用这些转换方法，也可以使用其他属性来进一步扩展效果。同时，还可以结合过渡（transition）和关键帧动画（keyframes）来实现更复杂的转换动画。记得在使用转换时，要考虑兼容性，并根据需要进行浏览器前缀处理。</p>
+<p>当然，这里有一个简单的例子来演示CSS的2D转换和3D转换。</p>
+<p>HTML：</p>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>CSS：</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.box</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> transform 1s<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token selector">div:hover</span> <span class="token punctuation">{</span>
+<span class="token selector">.box:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span>45deg<span class="token punctuation">)</span> <span class="token function">scale</span><span class="token punctuation">(</span>1.5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在上述例子中，我们创建了一个名为&quot;box&quot;的<code v-pre>&lt;div&gt;</code>元素。初始状态下，它的宽度、高度和背景颜色分别为100px、100px和红色。通过<code v-pre>transition</code>属性，我们为<code v-pre>transform</code>属性添加了过渡效果，过渡时间为1秒。</p>
+<p>当鼠标悬停在这个元素上时，添加了<code v-pre>:hover</code>伪类选择器的CSS规则会生效。在这个规则中，我们使用了<code v-pre>rotate()</code>和<code v-pre>scale()</code>函数，将元素逆时针旋转45度并放大1.5倍。由于之前定义了过渡效果，元素将以平滑动画效果在1秒的时间内从初始状态过渡到悬停状态。</p>
+<p>这是一个简单的例子，展示了如何使用CSS的2D转换方法来创建基本的元素动画效果。你可以根据需要调整转换方法的参数，以及添加其他样式规则和选择器来创建更复杂和独特的转换效果，也可以参考CSS的3D转换方法来实现立体效果的转换动画。</p>
+<h3 id="过渡-transitions" tabindex="-1"><a class="header-anchor" href="#过渡-transitions" aria-hidden="true">#</a> 过渡（Transitions）</h3>
+<p>CSS过渡（Transition）是一种定义元素从一个样式状态到另一个样式状态之间的平滑动画效果的方法。通过指定过渡的属性、持续时间、延迟时间和过渡速度曲线，可以创建各种各样的过渡效果。</p>
+<p>下面是使用CSS过渡的基本语法：</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.element</span> <span class="token punctuation">{</span>
+  <span class="token property">transition-property</span><span class="token punctuation">:</span> property1<span class="token punctuation">,</span> property2<span class="token punctuation">,</span> ...<span class="token punctuation">;</span>
+  <span class="token property">transition-duration</span><span class="token punctuation">:</span> time<span class="token punctuation">;</span>
+  <span class="token property">transition-timing-function</span><span class="token punctuation">:</span> timing-function<span class="token punctuation">;</span>
+  <span class="token property">transition-delay</span><span class="token punctuation">:</span> time<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>
+<p><code v-pre>transition-property</code>：指定需要过渡的属性。可以同时指定多个属性，用逗号分隔。例如：<code v-pre>transition-property: width, height;</code>将同时对宽度和高度属性进行过渡动画。</p>
+</li>
+<li>
+<p><code v-pre>transition-duration</code>：指定过渡的持续时间，即从一个状态过渡到另一个状态所需的时间。时间的单位可以是毫秒（ms）或秒（s）。例如：<code v-pre>transition-duration: 1s;</code>将过渡持续1秒。</p>
+</li>
+<li>
+<p><code v-pre>transition-timing-function</code>：指定过渡的速度曲线。速度曲线定义了过渡的加速和减速效果。常用的速度曲线包括<code v-pre>ease</code>（默认值，缓慢开始和结束）、<code v-pre>linear</code>（匀速）以及<code v-pre>ease-in</code>、<code v-pre>ease-out</code>、<code v-pre>ease-in-out</code>等。也可以使用贝塞尔曲线函数来自定义速度曲线。</p>
+</li>
+<li>
+<p><code v-pre>transition-delay</code>：指定过渡效果开始前的延迟时间。时间的单位可以是毫秒（ms）或秒（s）。例如：<code v-pre>transition-delay: 0.5s;</code>将在0.5秒后开始过渡效果。</p>
+</li>
+</ul>
+<p>以下是一个简单的示例：</p>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.box</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">transition-property</span><span class="token punctuation">:</span> width<span class="token punctuation">,</span> height<span class="token punctuation">;</span>
+  <span class="token property">transition-duration</span><span class="token punctuation">:</span> 1s<span class="token punctuation">;</span>
+  <span class="token property">transition-timing-function</span><span class="token punctuation">:</span> ease-in-out<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.box:hover</span> <span class="token punctuation">{</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="动画-animations" tabindex="-1"><a class="header-anchor" href="#动画-animations" aria-hidden="true">#</a> 动画（Animations）</h3>
-<p>动画功能通过<code v-pre>@keyframes</code>规则和<code v-pre>animation</code>属性，可以让元素实现更复杂和精细的动画效果。通过在<code v-pre>@keyframes</code>规则中定义关键帧（关键时间点）和关键帧之间的过渡状态，然后使用<code v-pre>animation</code>属性将动画应用到元素上，可以指定动画的名称、持续时间、延迟、重复次数和播放模式等。</p>
-<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token atrule"><span class="token rule">@keyframes</span> slide-in</span> <span class="token punctuation">{</span>
-  <span class="token selector">0%</span> <span class="token punctuation">{</span>
-    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token selector">100%</span> <span class="token punctuation">{</span>
-    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在上述示例中，<code v-pre>.box</code>的初始状态是一个100px * 100px的红色方块。当鼠标悬停在方块上时，使用过渡效果从初始状态过渡到悬停状态，宽度和高度分别变为200px。由于定义了过渡属性、持续时间和速度曲线，过渡效果将在1秒内平滑进行。</p>
+<p>通过调整过渡的属性、持续时间、速度曲线和延迟时间，以及在不同的状态之间应用过渡，可以创建更丰富和复杂的过渡动画效果。同时，你也可以使用CSS关键帧动画（@keyframes）来实现更高级的动画效果。</p>
+<h3 id="动画-animations" tabindex="-1"><a class="header-anchor" href="#动画-animations" aria-hidden="true">#</a> 动画（Animations）</h3>
+<p>CSS动画是通过CSS属性的变化和过渡效果来创建元素的动画效果。CSS动画提供了一种简单但强大的方式来实现各种动态效果，而无需编写复杂的JavaScript代码。</p>
+<p>以下是一些常用的CSS动画特性和方法：</p>
+<ol>
+<li>
+<p>过渡（Transitions）：过渡是一种在状态之间平滑过渡的效果。通过指定一个或多个属性的开始值、结束值和过渡时间，可以实现元素属性从一种状态到另一种状态的平滑过渡效果。使用<code v-pre>transition</code>属性可以为元素的某个或多个属性添加过渡效果。</p>
+</li>
+<li>
+<p>关键帧动画（Keyframe Animations）：关键帧动画允许在动画过程中定义多个关键帧，每个关键帧定义了属性的特定值。通过在关键帧之间定义过渡效果，可以在不同的状态之间创建平滑的动画效果。使用<code v-pre>@keyframes</code>规则可以定义关键帧动画。</p>
+</li>
+<li>
+<p>动画属性（Animation Properties）：动画属性用于定义动画的持续时间、延迟时间、重复次数等。例如，<code v-pre>animation-duration</code>用于指定动画的持续时间，<code v-pre>animation-delay</code>用于指定动画的延迟时间。</p>
+</li>
+<li>
+<p>动画速度曲线（Animation Timing Function）：动画速度曲线用于定义动画属性在动画过程中的变化速度。通过使用不同的速度曲线，可以实现不同的动画效果，如匀速、渐入、渐出等。常见的速度曲线有<code v-pre>ease</code>、<code v-pre>linear</code>、<code v-pre>ease-in</code>、<code v-pre>ease-out</code>等。</p>
+</li>
+<li>
+<p>动画填充模式（Animation Fill Mode）：动画填充模式用于定义动画在播放前和播放后的状态。可以指定动画结束后是否回到初始状态，或者保持动画结束时的状态。常见的填充模式有<code v-pre>forwards</code>、<code v-pre>backwards</code>、<code v-pre>both</code>等。</p>
+</li>
+</ol>
+<p>使用CSS动画时，我们可以根据需要选择适合的特性和方法，通过控制属性的变化和过渡，创建出丰富多样的动画效果。除了上述特性和方法之外，CSS还提供了许多其他的动画相关属性和选择器，允许开发者更加灵活地控制和定制动画效果。</p>
+<p>当然，这里有一个简单的例子来演示CSS动画的使用。</p>
+<p>HTML：</p>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>CSS：</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.box</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> width 1s<span class="token punctuation">,</span> height 1s<span class="token punctuation">,</span> background-color 1s<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token selector">div</span> <span class="token punctuation">{</span>
-  <span class="token property">animation</span><span class="token punctuation">:</span> slide-in 1s ease-in-out<span class="token punctuation">;</span>
+<span class="token selector">.box:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="渐变-gradients" tabindex="-1"><a class="header-anchor" href="#渐变-gradients" aria-hidden="true">#</a> 渐变（Gradients）</h3>
-<p>渐变可用于创建平滑过渡的背景。CSS3提供了线性渐变（由一种颜色向另一种颜色逐渐过渡）和径向渐变（从中心点向外辐射的颜色过渡）两种类型。可以通过<code v-pre>linear-gradient()</code>和<code v-pre>radial-gradient()</code>函数来指定渐变的颜色和起止位置，可以在背景属性中使用渐变作为背景图像。</p>
-<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
-  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> red<span class="token punctuation">,</span> blue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在上述例子中，我们创建了一个名为&quot;box&quot;的<code v-pre>&lt;div&gt;</code>元素。初始状态下，它的宽度、高度和背景颜色分别为100px、100px和红色。通过将这些属性添加到<code v-pre>transition</code>属性中，我们为这些属性添加了过渡效果，过渡时间为1秒。</p>
+<p>当鼠标悬停在这个元素上时，添加了<code v-pre>:hover</code>伪类选择器的CSS规则会生效。在这个规则中，我们将宽度、高度和背景颜色分别更改为200px、200px和蓝色。由于之前定义了过渡效果，元素将以平滑的动画效果在1秒的时间内从初始状态过渡到悬停状态。</p>
+<p>这是一个简单的例子，展示了如何使用CSS过渡来创建基本的元素动画效果。你可以根据需要调整属性的值和过渡时间，以及添加其他样式规则和选择器来创建更复杂和独特的动画效果。</p>
+<h3 id="渐变-gradients" tabindex="-1"><a class="header-anchor" href="#渐变-gradients" aria-hidden="true">#</a> 渐变（Gradients）</h3>
+<p>CSS渐变（Gradient）是一种在元素的背景、边框或文本中创建平滑过渡效果的方法。渐变可以是从一种颜色到另一种颜色的过渡，也可以是多种颜色之间的过渡。</p>
+<p>CSS提供了两种类型的渐变：线性渐变（Linear Gradient）和径向渐变（Radial Gradient）。</p>
+<ol>
+<li>线性渐变（Linear Gradient）：
+线性渐变沿着一条直线方向进行过渡。可以通过定义起始点和结束点来控制渐变的方向和长度。</li>
+</ol>
+<p>线性渐变的语法如下：</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>direction<span class="token punctuation">,</span> color-stop1<span class="token punctuation">,</span> color-stop2<span class="token punctuation">,</span> ...<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
+<li><code v-pre>direction</code>：指定渐变的方向，可以是角度（表示从起点到终点的旋转角度）或关键词（例如：<code v-pre>to top</code>、<code v-pre>to bottom</code>、<code v-pre>to left</code>、<code v-pre>to right</code>等）。</li>
+<li><code v-pre>color-stop</code>：定义渐变的颜色。可以指定颜色的位置和颜色值，例如：<code v-pre>color-stop: 0% red, 50% blue, 100% green;</code>表示从0%位置（起始点）到50%位置过渡为蓝色，再从50%位置到100%位置过渡为绿色。</li>
+</ul>
+<p>以下是一个示例：</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.bg-gradient</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> red<span class="token punctuation">,</span> orange<span class="token punctuation">,</span> yellow<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="多列布局-multi-column-layout" tabindex="-1"><a class="header-anchor" href="#多列布局-multi-column-layout" aria-hidden="true">#</a> 多列布局（Multi-column Layout）</h3>
-<p>多列布局允许将文本内容分割成多个列来显示。通过<code v-pre>column-count</code>和<code v-pre>column-width</code>等属性，可以控制列的数量和宽度。这种布局类似于报纸的版面布局，可以让文本内容更好地利用空间。</p>
-<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上述示例表示创建一个从红色到橙色再到黄色的水平线性渐变。</p>
+<ol start="2">
+<li>径向渐变（Radial Gradient）：
+径向渐变以一个中心点为基准，向外辐射状进行颜色过渡。</li>
+</ol>
+<p>径向渐变的语法如下：</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>shape<span class="token punctuation">,</span> start<span class="token punctuation">,</span> end<span class="token punctuation">,</span> color-stop1<span class="token punctuation">,</span> color-stop2<span class="token punctuation">,</span> ...<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
+<li><code v-pre>shape</code>：指定渐变的形状，可以是圆形（<code v-pre>circle</code>）或椭圆形（<code v-pre>ellipse</code>）。</li>
+<li><code v-pre>start</code> 和 <code v-pre>end</code>：分别定义径向渐变的起始点和结束点。</li>
+<li><code v-pre>color-stop</code>：和线性渐变的<code v-pre>color-stop</code>属性相同，用于定义径向渐变的颜色过渡。</li>
+</ul>
+<p>以下是一个示例：</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.bg-gradient</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle<span class="token punctuation">,</span> red<span class="token punctuation">,</span> orange<span class="token punctuation">,</span> yellow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上述示例表示创建一个以圆形为形状的径向渐变，颜色从红色到橙色再到黄色。</p>
+<p>通过调整渐变的方向、形状、颜色以及添加更多的颜色过渡点，可以创建各种各样的渐变效果。同时，渐变可以应用于背景、边框和文本等元素的样式中，使得页面更具吸引力和多样性。</p>
+<h3 id="多列布局-multi-column-layout" tabindex="-1"><a class="header-anchor" href="#多列布局-multi-column-layout" aria-hidden="true">#</a> 多列布局（Multi-column Layout）</h3>
+<p>CSS多列布局（Multi-column Layout）是一种用于创建多列文本布局的技术。它可以将文本内容在多个列中呈现，类似于报纸或杂志的排版风格。</p>
+<p>使用多列布局，你可以通过设置容器元素的<code v-pre>column-count</code>属性来指定要创建的列数，以及通过<code v-pre>column-gap</code>属性来设置列之间的间距。</p>
+<p>以下是一个简单的多列布局示例：</p>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur rutrum felis at ornare. Aliquam erat volutpat. Ut commodo mi sit amet orci elementum consequat. Sed ullamcorper, sem at auctor ultrices, nisl ligula maximus erat, ut viverra sem odio sit amet orci.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Integer consectetur ipsum sed molestie finibus. Sed porttitor, massa vel rhoncus ultricies, turpis lorem dapibus mauris, at lobortis massa sem in enim. Sed varius finibus tortor vitae auctor. Mauris ut semper mauris. Vestibulum fringilla ex in aliquet molestie.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Nullam sit amet malesuada risus, ut ultricies enim. Maecenas at leo quis elit aliquam interdum. Donec aliquam massa non ex fringilla mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus sed metus libero.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
   <span class="token property">column-count</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
-  <span class="token property">column-width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">column-gap</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="弹性盒子-flexbox" tabindex="-1"><a class="header-anchor" href="#弹性盒子-flexbox" aria-hidden="true">#</a> 弹性盒子（Flexbox）</h3>
-<p>弹性盒子布局提供了一种简单、灵活的方法来创建响应式和可伸缩的布局。通过将容器元素的<code v-pre>display</code>属性设置为<code v-pre>flex</code>，可以使用弹性盒子属性来定位和排列子元素，如<code v-pre>justify-content</code>控制主轴上元素的对齐方式，<code v-pre>align-items</code>控制交叉轴上元素的对齐方式。</p>
-<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.container</span> <span class="token punctuation">{</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在上面的代码中，<code v-pre>.container</code>是包含文本内容的容器元素。我们通过设置<code v-pre>column-count</code>属性为3来将文本内容分为3列，同时使用<code v-pre>column-gap</code>属性设置列之间的间距为20像素。</p>
+<p>使用多列布局时，文本内容会自动在多个列中平均分布和流动，根据需要自动调整每列的高度。同时，在需要换行时，文本会自动跨列换行，保持整体的排版整齐和平衡。</p>
+<p>除了<code v-pre>column-count</code>和<code v-pre>column-gap</code>之外，还有其他一些属性可以用于进一步控制多列布局，如<code v-pre>column-width</code>设置列宽度、<code v-pre>column-rule</code>设置列之间的样式和边框等。</p>
+<p>多列布局可以帮助你有效地呈现大段文本内容，使其更具可读性和视觉吸引力。它适用于新闻、文章、博客等需要分栏显示的场景。</p>
+<h3 id="弹性盒子-flexbox" tabindex="-1"><a class="header-anchor" href="#弹性盒子-flexbox" aria-hidden="true">#</a> 弹性盒子（Flexbox）</h3>
+<p>CSS Flex布局（Flexible Box Layout）是一种用于创建灵活盒子布局的技术，它可以轻松实现自适应且可伸缩的布局结构。</p>
+<p>使用Flex布局，你可以将容器元素的<code v-pre>display</code>属性设置为<code v-pre>flex</code>或<code v-pre>inline-flex</code>，从而将其转换为一个Flex容器。然后，你可以通过设置Flex容器的属性来控制内部元素的布局。</p>
+<p>下面是一个使用Flex布局的简单示例：</p>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
-  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="网格布局-css-grid" tabindex="-1"><a class="header-anchor" href="#网格布局-css-grid" aria-hidden="true">#</a> 网格布局（CSS Grid）</h3>
-<p>网格布局是一种二维布局系统，通过将元素划分为行和列的网格，可以创建复杂的布局。通过设置容器元素的<code v-pre>display</code>属性为<code v-pre>grid</code>，并使用网格属性（如<code v-pre>grid-template-columns</code>、<code v-pre>grid-template-rows</code>、<code v-pre>grid-gap</code>等）来定义和调整网格布局。</p>
-<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.container</span> <span class="token punctuation">{</span>
+
+<span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">flex</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #ccc<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在上面的代码中，<code v-pre>.container</code>是Flex容器，我们将它的<code v-pre>display</code>属性设置为<code v-pre>flex</code>。这将使<code v-pre>.container</code>内部的元素按照Flex布局进行排列。</p>
+<p><code v-pre>.item</code>是Flex容器的子项，我们将它们的<code v-pre>flex</code>属性设置为<code v-pre>1</code>。这意味着它们将平均分配可用空间，使它们的宽度自动伸缩。</p>
+<p>除了<code v-pre>flex</code>属性，Flex布局还有其他一些常用的属性，包括：</p>
+<ul>
+<li><code v-pre>flex-direction</code>：定义Flex容器中的主轴方向（row、row-reverse、column、column-reverse）。</li>
+<li><code v-pre>justify-content</code>：控制Flex容器中子项在主轴上的对齐方式（flex-start、flex-end、center、space-between、space-around）。</li>
+<li><code v-pre>align-items</code>：控制Flex容器中子项在交叉轴上的对齐方式（flex-start、flex-end、center、stretch、baseline）。</li>
+<li><code v-pre>flex-wrap</code>：指定Flex容器中子项的换行方式（nowrap、wrap、wrap-reverse）。</li>
+<li><code v-pre>align-content</code>：在发生换行时，控制多行子项在交叉轴方向上的对齐方式（flex-start、flex-end、center、stretch、space-between、space-around）。</li>
+</ul>
+<p>通过使用这些属性，你可以灵活地控制Flex容器和子项的布局，以适应不同的需求和布局要求。Flex布局适用于响应式设计和快速构建简单而灵活的布局结构。</p>
+<h3 id="网格布局-css-grid" tabindex="-1"><a class="header-anchor" href="#网格布局-css-grid" aria-hidden="true">#</a> 网格布局（CSS Grid）</h3>
+<p>CSS Grid布局是一种强大的网格布局系统，它可以实现复杂的多行多列布局。通过定义网格容器和网格项，我们可以控制网格内的元素的位置和大小。</p>
+<p>要使用CSS Grid布局，首先需要创建一个网格容器，可以是<code v-pre>div</code>元素或其他具有<code v-pre>display: grid;</code>属性的元素。然后，通过控制网格容器的属性和网格项的位置，来定义网格布局。</p>
+<p>下面是一个使用CSS Grid布局的简单示例：</p>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
-  <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> 1fr 1fr 1fr<span class="token punctuation">;</span>
-  <span class="token property">grid-gap</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> 1fr 1fr<span class="token punctuation">;</span> <span class="token comment">/* 定义两列网格 */</span>
+  <span class="token property">grid-gap</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span> <span class="token comment">/* 设置网格间距 */</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="媒体查询-media-queries" tabindex="-1"><a class="header-anchor" href="#媒体查询-media-queries" aria-hidden="true">#</a> 媒体查询（Media Queries）</h3>
-<p>媒体查询允许根据设备特性和视口尺寸应用不同的样式。通过在CSS样式表中使用<code v-pre>@media</code>规则，可以针对不同的媒体类型（如屏幕或打印机）、不同的设备宽度和高度等条件，编写对应的样式规则。这使得可以创建响应式设计，从而在不同的设备上提供最佳的用户体验。</p>
+
+<span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在上面的代码中，<code v-pre>.container</code>是网格容器，我们将它的<code v-pre>display</code>属性设置为<code v-pre>grid</code>。通过<code v-pre>grid-template-columns</code>属性，我们定义了网格容器的两列，<code v-pre>1fr</code>表示每列的宽度相等。通过<code v-pre>grid-gap</code>属性，我们设置了网格项之间的间距为10px。</p>
+<p>内部的<code v-pre>.item</code>是网格项，它们将自动填充网格容器的单元格。我们可以使用CSS属性和样式来控制网格项的外观。</p>
+<p>此外，CSS Grid布局还支持更复杂的功能，如媒体查询、自动布局、对齐方式等。你可以使用<code v-pre>grid-template-rows</code>属性定义网格的行，使用<code v-pre>grid-area</code>属性来控制网格项在网格中的位置，使用<code v-pre>grid-auto-flow</code>属性来定义网格的自动放置方式等等。</p>
+<p>通过灵活使用CSS Grid布局，你可以轻松创建多种多样的网格布局，适用于响应式设计和不同设备上的布局需求。</p>
+<h3 id="媒体查询-media-queries" tabindex="-1"><a class="header-anchor" href="#媒体查询-media-queries" aria-hidden="true">#</a> 媒体查询（Media Queries）</h3>
+<p>CSS媒体查询（Media Queries）是一种CSS技术，它允许你根据设备的属性（如屏幕尺寸、屏幕方向、分辨率等）来应用不同的CSS样式。</p>
+<p>使用媒体查询，你可以为不同设备（如手机、平板电脑、桌面电脑）提供适当的样式和布局，从而实现响应式设计。</p>
+<p>媒体查询的基本语法如下：</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token atrule"><span class="token rule">@media</span> mediaType <span class="token keyword">and</span> <span class="token punctuation">(</span>mediaFeature<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token comment">/* CSS样式规则 */</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li><code v-pre>mediaType</code>可以是以下三种之一：
+<ul>
+<li><code v-pre>all</code>：适用于所有媒体设备。</li>
+<li><code v-pre>screen</code>：适用于计算机屏幕、平板电脑、智能手机等。</li>
+<li><code v-pre>print</code>：适用于打印预览和打印。</li>
+</ul>
+</li>
+<li><code v-pre>mediaFeature</code>是设备属性或条件，例如：
+<ul>
+<li><code v-pre>width</code>：屏幕宽度。</li>
+<li><code v-pre>height</code>：屏幕高度。</li>
+<li><code v-pre>orientation</code>：屏幕方向（横向或纵向）。</li>
+<li><code v-pre>resolution</code>：屏幕分辨率。</li>
+<li>等等。</li>
+</ul>
+</li>
+</ul>
+<p>下面是一个简单的媒体查询的示例，当屏幕宽度小于等于600像素时，应用特定的CSS样式：</p>
 <div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 600px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token comment">/* 在宽度小于等于600px时应用的CSS样式 */</span>
   <span class="token selector">body</span> <span class="token punctuation">{</span>
     <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
+  <span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="背景-background" tabindex="-1"><a class="header-anchor" href="#背景-background" aria-hidden="true">#</a> 背景（BackGround）</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在上面的代码中，当屏幕宽度小于等于600像素时，<code v-pre>.container</code>会应用<code v-pre>display: flex;</code>的样式，同时<code v-pre>body</code>元素中的文本会使用14像素的字体大小。</p>
+<p>通过使用媒体查询，你可以针对不同的设备、不同的屏幕尺寸、不同的方向等情况，应用不同的样式和布局。这使得你可以为用户提供更好的用户体验，使网页在不同设备上都能良好地显示和运行。</p>
+<h3 id="背景-background" tabindex="-1"><a class="header-anchor" href="#背景-background" aria-hidden="true">#</a> 背景（BackGround）</h3>
 <p>能够更灵活地控制元素的背景效果，实现更多样化和富有创意的设计.</p>
 <ul>
 <li>
@@ -685,6 +905,216 @@ CSS弹性布局是一种用于创建灵活和响应式布局的技术。通过�
 <p><code v-pre>background-image</code>：允许使用多个背景图像来创建复合背景效果。可以使用逗号分隔多个值，每个值表示一个背景图像的URL。</p>
 </li>
 </ul>
+<h3 id="选择器-selector" tabindex="-1"><a class="header-anchor" href="#选择器-selector" aria-hidden="true">#</a> 选择器（Selector）</h3>
+<ul>
+<li>结构性伪类选择器（Structural Pseudo-class Selectors）：结构性伪类选择器选取的是符合文档结构特定条件的元素。例如，<code v-pre>:first-child</code>可以选择作为父元素第一个子元素的元素，<code v-pre>:nth-child</code>可以选择作为父元素中特定位置的子元素。</li>
+<li>通用兄弟选择器（General Sibling Selectors）：通用兄弟选择器可以选择在指定元素后的所有兄弟元素。例如，<code v-pre>element1 ~ element2</code>可以选择与<code v-pre>element1</code>后面的同一父元素中的所有<code v-pre>element2</code>。</li>
+<li>列选择器（Column Selectors）：列选择器可以选择表格中特定列的元素。例如，<code v-pre>:nth-child(n)</code>可以选择表格中的第n列。</li>
+<li>:not()选择器（Negation Selector）：<code v-pre>:not()</code>选择器用于排除具有特定选择器的元素。例如，<code v-pre>:not(.class)</code>可以选择除了具有<code v-pre>.class</code>类的元素以外的所有元素。</li>
+<li>:empty选择器：<code v-pre>:empty</code>选择器用于选择没有子元素或者没有文本内容的元素。</li>
+<li>:target选择器：<code v-pre>:target</code>选择器用于选择URL片段标识符（URL fragment identifier）指向的元素。</li>
+<li>:checked选择器：<code v-pre>:checked</code>选择器可以选择被选中的复选框或单选按钮。</li>
+<li>:enabled和:disabled选择器：<code v-pre>:enabled</code>选择器用于选择可用（非禁用）的表单元素，而<code v-pre>:disabled</code>选择器用于选择禁用的表单元素。</li>
+<li>:first-of-type和:last-of-type选择器：<code v-pre>:first-of-type</code>选择器选择同类型的元素中的第一个元素，<code v-pre>:last-of-type</code>选择器选择同类型的元素中的最后一个元素。</li>
+<li>:nth-of-type选择器：<code v-pre>:nth-of-type(n)</code>选择器选择同类型的元素中的第n个元素。</li>
+<li>:nth-last-of-type选择器：<code v-pre>:nth-last-of-type(n)</code>选择器选择同类型的元素中的倒数第n个元素。</li>
+<li>:only-child选择器和:only-of-type选择器：<code v-pre>:only-child</code>选择器选择作为其父元素唯一子元素的元素，<code v-pre>:only-of-type</code>选择器选择同类型的元素中的唯一一个元素。</li>
+<li>:first-line和:first-letter选择器：<code v-pre>:first-line</code>选择器选择块级元素的首行文本，<code v-pre>:first-letter</code>选择器选择块级元素的首字母。</li>
+</ul>
+<h2 id="css框架" tabindex="-1"><a class="header-anchor" href="#css框架" aria-hidden="true">#</a> Css框架</h2>
+<p>CSS框架是预先编写好的CSS样式集合，旨在简化网页开发流程和提供一致的设计模式。通过使用CSS框架，开发者可以快速构建美观且响应式的网页布局，并且减少对样式的重复编写。</p>
+<p>以下是一些常见的CSS框架：</p>
+<ol>
+<li>
+<p>Bootstrap（https://getbootstrap.com）：Bootstrap是最受欢迎的CSS框架之一，提供了大量的CSS类和组件，用于创建响应式网页布局和常见的UI组件。</p>
+</li>
+<li>
+<p>Foundation（https://foundation.zurb.com）：Foundation是另一个流行的CSS框架，具有灵活的栅格系统和各种可定制的组件，适用于构建各种类型的网站和应用程序。</p>
+</li>
+<li>
+<p>Bulma（https://bulma.io）：Bulma是一个轻量级的CSS框架，以简洁和现代的设计风格为特点。它提供了直观的类和组件，易于使用和定制。</p>
+</li>
+<li>
+<p>Tailwind CSS（https://tailwindcss.com）：Tailwind CSS是一个功能丰富且高度可定制的CSS框架，使用一组小型类来构建网页布局和组件。</p>
+</li>
+<li>
+<p>Semantic UI（https://semantic-ui.com）：Semantic UI是一个语义化的CSS框架，通过使用具有表义的类名，提供了易于阅读和维护的代码，并支持响应式设计和大量的UI组件。</p>
+</li>
+</ol>
+<p>这些CSS框架都有自己的特点和优势，可以根据项目需求和个人喜好选择适合的框架。它们提供了一些常用的样式和组件，帮助开发者快速搭建网页，节省开发时间和精力。</p>
+<h2 id="css预处理器" tabindex="-1"><a class="header-anchor" href="#css预处理器" aria-hidden="true">#</a> Css预处理器</h2>
+<p>CSS预处理器是一种将具有扩展语法的CSS代码转换成标准CSS的工具。它们引入了一些功能和语法，使得CSS的编写更加模块化、可复用和易于维护。</p>
+<p>以下是几个常见的CSS预处理器：</p>
+<ol>
+<li>
+<p>Sass（Syntactically Awesome Style Sheets）：Sass是最受欢迎的CSS预处理器之一，它提供了许多有用的特性，如变量、嵌套选择器、混合器（Mixin）、函数等。Sass文件使用<code v-pre>.scss</code>扩展名。</p>
+<div class="language-scss line-numbers-mode" data-ext="scss"><pre v-pre class="language-scss"><code><span class="token comment">// 定义变量</span>
+<span class="token property"><span class="token variable">$primary-color</span></span><span class="token punctuation">:</span> #3498db<span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$secondary-color</span></span><span class="token punctuation">:</span> #e74c3c<span class="token punctuation">;</span>
+
+<span class="token comment">// 定义混合器</span>
+<span class="token keyword">@mixin</span> <span class="token selector">gradient-background </span><span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> <span class="token variable">$primary-color</span><span class="token punctuation">,</span> <span class="token variable">$secondary-color</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 定义样式规则</span>
+<span class="token selector">.container </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 80%<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token keyword">@include</span> gradient-background<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.button </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px 20px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token variable">$primary-color</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> background-color 0.3s<span class="token punctuation">;</span>
+
+  <span class="token selector"><span class="token parent important">&amp;</span>:hover </span><span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">darken</span><span class="token punctuation">(</span><span class="token variable">$primary-color</span><span class="token punctuation">,</span> 10%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在上面的示例中，我们首先定义了两个Sass变量：<code v-pre>$primary-color</code>和<code v-pre>$secondary-color</code>，分别代表主要颜色和次要颜色。然后，我们创建了一个混合器<code v-pre>gradient-background</code>，它会在生成的CSS中插入一个线性渐变背景样式。</p>
+<p>接下来，我们在<code v-pre>.container</code>类中使用了混合器<code v-pre>gradient-background</code>，这样每个<code v-pre>.container</code>元素都会具有一个渐变背景。</p>
+<p>在<code v-pre>.button</code>类中，我们使用了Sass变量<code v-pre>$primary-color</code>来设置背景颜色，并使用了Sass的<code v-pre>darken</code>函数来定义鼠标悬停时的背景颜色。</p>
+<p>这样，当我们编译这段Sass代码后，会得到以下的CSS输出：</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 80%<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> #3498db<span class="token punctuation">,</span> #e74c3c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.button</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px 20px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #3498db<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> background-color 0.3s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.button:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #2980b9<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这个例子展示了如何使用Sass的变量、混合器和嵌套选择器来简化CSS的编写，并提供了更灵活和可维护的样式规则。</p>
+</li>
+<li>
+<p>Less（Leaner Style Sheets）：Less是另一个流行的CSS预处理器，语法比较简单，与传统的CSS较为接近。它支持变量、嵌套选择器、Mixin等功能。Less文件使用<code v-pre>.less</code>扩展名。</p>
+<div class="language-less line-numbers-mode" data-ext="less"><pre v-pre class="language-less"><code><span class="token comment">// 定义变量</span>
+<span class="token variable">@primary-color<span class="token punctuation">:</span></span> #3498db<span class="token punctuation">;</span>
+<span class="token variable">@secondary-color<span class="token punctuation">:</span></span> #e74c3c<span class="token punctuation">;</span>
+
+<span class="token comment">// 定义混合器</span>
+<span class="token selector">.gradient-background()</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> <span class="token variable">@primary-color</span><span class="token punctuation">,</span> <span class="token variable">@secondary-color</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 定义样式规则</span>
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 80%<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token mixin-usage function">.gradient-background</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.button</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px 20px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token variable">@primary-color</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> background<span class="token operator">-</span>color 0.3s<span class="token punctuation">;</span>
+
+  <span class="token selector">&amp;:hover</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">darken</span><span class="token punctuation">(</span><span class="token variable">@primary-color</span><span class="token punctuation">,</span> 10%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在上面的示例中，我们使用Less语法进行变量和混合器的定义。与Sass不同的是，在Less中使用<code v-pre>@</code>符号表示变量。我们定义了两个变量：<code v-pre>@primary-color</code>和<code v-pre>@secondary-color</code>，分别代表主要颜色和次要颜色。</p>
+<p>然后，我们创建了一个混合器<code v-pre>.gradient-background()</code>，它将在生成的CSS中插入一个线性渐变背景样式。</p>
+<p>接下来，我们在<code v-pre>.container</code>类中使用了混合器<code v-pre>.gradient-background()</code>，这样每个<code v-pre>.container</code>元素都会具有一个渐变背景。</p>
+<p>在<code v-pre>.button</code>类中，我们使用了Less变量<code v-pre>@primary-color</code>来设置背景颜色，并使用了Less的<code v-pre>darken()</code>函数来定义鼠标悬停时的背景颜色。</p>
+<p>这样，当我们编译这段Less代码后，会得到以下的CSS输出：</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 80%<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> #3498db<span class="token punctuation">,</span> #e74c3c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.button</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px 20px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #3498db<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> background-color 0.3s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.button:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #2980b9<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这个例子展示了如何使用Less的变量、混合器和嵌套选择器来简化CSS的编写，并提供了更灵活和可维护的样式规则。Less与Sass类似，但使用了不同的语法和变量表示方式。</p>
+</li>
+<li>
+<p>Stylus：Stylus是一个非常灵活和简化的CSS预处理器，它的语法更像是一种轻量级的编程语言。Stylus具有动态特性，可以通过简单的操作实现复杂的样式生成。Stylus文件使用<code v-pre>.styl</code>扩展名。</p>
+<div class="language-stylus line-numbers-mode" data-ext="styl"><pre v-pre class="language-stylus"><code><span class="token comment">// 定义变量</span>
+<span class="token variable-declaration"><span class="token variable">primary-color</span> <span class="token operator">=</span> <span class="token hexcode">#3498db</span></span>
+<span class="token variable-declaration"><span class="token variable">secondary-color</span> <span class="token operator">=</span> <span class="token hexcode">#e74c3c</span></span>
+
+<span class="token comment">// 定义混合器</span>
+<span class="token func"><span class="token function">gradient-background</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+  <span class="token property-declaration"><span class="token property">background</span> <span class="token func"><span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> primary-color<span class="token punctuation">,</span> secondary-color<span class="token punctuation">)</span></span></span>
+
+<span class="token selector"><span class="token comment">// 定义样式规则</span>
+.container</span>
+  <span class="token property-declaration"><span class="token property">width</span> <span class="token number">80</span><span class="token unit">%</span></span>
+  <span class="token property-declaration"><span class="token property">margin</span> <span class="token number">0</span> auto</span>
+  <span class="token property-declaration"><span class="token property">padding</span> <span class="token number">20</span><span class="token unit">px</span></span>
+  <span class="token func"><span class="token function">gradient-background</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+
+<span class="token selector">.button</span>
+  <span class="token property-declaration"><span class="token property">display</span> inline-block</span>
+  <span class="token property-declaration"><span class="token property">padding</span> <span class="token number">10</span><span class="token unit">px</span> <span class="token number">20</span><span class="token unit">px</span></span>
+  <span class="token property-declaration"><span class="token property">background-color</span> primary-color</span>
+  <span class="token property-declaration"><span class="token property">color</span> <span class="token hexcode">#fff</span></span>
+  <span class="token property-declaration"><span class="token property">border-radius</span> <span class="token number">4</span><span class="token unit">px</span></span>
+  <span class="token property-declaration"><span class="token property">transition</span> background-color <span class="token number">0.3</span><span class="token unit">s</span></span>
+
+  <span class="token selector">&amp;:hover</span>
+    <span class="token property-declaration"><span class="token property">background-color</span> <span class="token func"><span class="token function">darken</span><span class="token punctuation">(</span>primary-color<span class="token punctuation">,</span> <span class="token number">10</span><span class="token unit">%</span><span class="token punctuation">)</span></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在上面的示例中，我们使用Stylus的语法来定义变量和混合器。在Stylus中，变量直接采用赋值符号<code v-pre>=</code>进行定义，而不需要添加<code v-pre>$</code>或<code v-pre>@</code>等符号。</p>
+<p>我们定义了两个变量：<code v-pre>primary-color</code>和<code v-pre>secondary-color</code>，分别代表主要颜色和次要颜色。</p>
+<p>然后，我们创建了一个混合器<code v-pre>gradient-background()</code>，它会在生成的CSS中插入一个线性渐变背景样式。</p>
+<p>接下来，我们在<code v-pre>.container</code>类中使用了混合器<code v-pre>gradient-background()</code>，这样每个<code v-pre>.container</code>元素都会具有一个渐变背景。</p>
+<p>在<code v-pre>.button</code>类中，我们使用了Stylus变量<code v-pre>primary-color</code>来设置背景颜色，并使用了Stylus的<code v-pre>darken()</code>函数来定义鼠标悬停时的背景颜色。</p>
+<p>这样，当我们编译这段Stylus代码后，会得到以下的CSS输出：</p>
+<div class="language-css line-numbers-mode" data-ext="css"><pre v-pre class="language-css"><code><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 80%<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> #3498db<span class="token punctuation">,</span> #e74c3c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.button</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px 20px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #3498db<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> background-color 0.3s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.button:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #2980b9<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这个例子展示了如何使用Stylus的变量、混合器和嵌套选择器来简化CSS的编写，并提供了更灵活和可维护的样式规则。Stylus使用了一种更简化和紧凑的语法，可以通过简单的操作实现复杂的样式生成。</p>
+</li>
+</ol>
+<p>这些CSS预处理器都提供了类似于变量、嵌套选择器、Mixin等功能，以及更强大的语法和特性，让开发者能够更高效地编写CSS样式。预处理器可以在开发过程中增加灵活性和可维护性，并自动转换为标准的CSS文件，以便在浏览器中使用。选择哪个预处理器取决于个人偏好、项目需求和团队共识。</p>
 </div></template>
 
 
