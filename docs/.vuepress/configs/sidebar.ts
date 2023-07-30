@@ -1,5 +1,8 @@
 import { readdirSync, statSync, writeFileSync } from 'fs';
 import path from 'path';
+function capitalizeFirstLetter(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 // 此脚本用于vuepress生成菜单 支持不同路由对应不同目录（我这里只支持两层嵌套目录）
 const travel = (dir) => {
   const sidebar = {};
@@ -20,7 +23,9 @@ const travel = (dir) => {
           // 遍历第2层的时候 将文件夹作为折叠导航，文件则不导航
           if (statSync(pathName).isDirectory()) {
             sidebar[`/${pathNameArr.at(1)}/`].unshift({
-              text: pathNameArr.at(-1).split('_').join(' ').toLocaleUpperCase(),
+              text: capitalizeFirstLetter(
+                pathNameArr.at(-1).split('_').join(' ')
+              ),
               link: (pathName.replace('docs', '') + '\\index.md')
                 .split('\\')
                 .join('/'),
@@ -29,12 +34,9 @@ const travel = (dir) => {
             });
           } else {
             sidebar[`/${pathNameArr.at(1)}/`].unshift({
-              text: pathNameArr
-                .at(-1)
-                .replace('.md', '')
-                .split('_')
-                .join(' ')
-                .toLocaleUpperCase(),
+              text: capitalizeFirstLetter(
+                pathNameArr.at(-1).replace('.md', '').split('_').join(' ')
+              ),
               link: pathName.replace('docs', '').split('\\').join('/'),
             });
           }
@@ -44,12 +46,9 @@ const travel = (dir) => {
             return item.text == pathNameArr.at(2).split('_').join(' ');
           });
           current.children.unshift({
-            text: pathNameArr
-              .at(-1)
-              .replace('.md', '')
-              .split('_')
-              .join(' ')
-              .toLocaleUpperCase(),
+            text: capitalizeFirstLetter(
+              pathNameArr.at(-1).replace('.md', '').split('_').join(' ')
+            ),
             link: pathName.replace('docs', '').split('\\').join('/'),
           });
         }
