@@ -117,7 +117,7 @@ const navbar = [
     text: '项目',
     link: '/project',
   },
-  { text: 'Gitee', link: 'https://gitee.com/flow-zy/blog' },
+  { text: 'Gitee', link: 'https://gitee.com/overflow_z/blog' },
   { text: 'Github', link: 'https://github.com/flow-zy/blog' },
 ];
 Object.entries(sidebar).forEach(([key, value]) => {
