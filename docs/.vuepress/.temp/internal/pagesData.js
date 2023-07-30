@@ -11,6 +11,8 @@ export const pagesData = {
   "v-148d48ae": () => import(/* webpackChunkName: "v-148d48ae" */"D:/blog/docs/.vuepress/.temp/pages/frame/vue.html.js").then(({ data }) => data),
   // path: /front/css.html
   "v-5dd7b515": () => import(/* webpackChunkName: "v-5dd7b515" */"D:/blog/docs/.vuepress/.temp/pages/front/css.html.js").then(({ data }) => data),
+  // path: /front/ECMAScript.html
+  "v-3d3f98c6": () => import(/* webpackChunkName: "v-3d3f98c6" */"D:/blog/docs/.vuepress/.temp/pages/front/ECMAScript.html.js").then(({ data }) => data),
   // path: /front/html.html
   "v-58f2a8e2": () => import(/* webpackChunkName: "v-58f2a8e2" */"D:/blog/docs/.vuepress/.temp/pages/front/html.html.js").then(({ data }) => data),
   // path: /front/JavaScript.html
@@ -19,6 +21,8 @@ export const pagesData = {
   "v-ed2e6cd4": () => import(/* webpackChunkName: "v-ed2e6cd4" */"D:/blog/docs/.vuepress/.temp/pages/front/Jquey.html.js").then(({ data }) => data),
   // path: /front/React.html
   "v-aeda290e": () => import(/* webpackChunkName: "v-aeda290e" */"D:/blog/docs/.vuepress/.temp/pages/front/React.html.js").then(({ data }) => data),
+  // path: /front/TypeScript.html
+  "v-7ae919f5": () => import(/* webpackChunkName: "v-7ae919f5" */"D:/blog/docs/.vuepress/.temp/pages/front/TypeScript.html.js").then(({ data }) => data),
   // path: /front/Vue.html
   "v-69510b92": () => import(/* webpackChunkName: "v-69510b92" */"D:/blog/docs/.vuepress/.temp/pages/front/Vue.html.js").then(({ data }) => data),
   // path: /interview/css.html

@@ -191,6 +191,13 @@ export const searchIndex = [
     "extraFields": []
   },
   {
+    "title": "",
+    "headers": [],
+    "path": "/front/ECMAScript.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "HTML",
     "headers": [
       {
@@ -490,7 +497,219 @@ export const searchIndex = [
   },
   {
     "title": "",
-    "headers": [],
+    "headers": [
+      {
+        "level": 2,
+        "title": "介绍",
+        "slug": "介绍",
+        "link": "#介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "变量",
+        "slug": "变量",
+        "link": "#变量",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "数据类型",
+        "slug": "数据类型",
+        "link": "#数据类型",
+        "children": [
+          {
+            "level": 3,
+            "title": "常见数据类型：",
+            "slug": "常见数据类型",
+            "link": "#常见数据类型",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "类型转换",
+            "slug": "类型转换",
+            "link": "#类型转换",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "类型检测",
+            "slug": "类型检测",
+            "link": "#类型检测",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "运算符",
+        "slug": "运算符",
+        "link": "#运算符",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "控制流程",
+        "slug": "控制流程",
+        "link": "#控制流程",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "字符串（String）",
+        "slug": "字符串-string",
+        "link": "#字符串-string",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "数组（Array）",
+        "slug": "数组-array",
+        "link": "#数组-array",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "函数（Function）",
+        "slug": "函数-function",
+        "link": "#函数-function",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "对象（Object）",
+        "slug": "对象-object",
+        "link": "#对象-object",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "定时器",
+        "slug": "定时器",
+        "link": "#定时器",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "作用域及作用域链",
+        "slug": "作用域及作用域链",
+        "link": "#作用域及作用域链",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "this指向",
+        "slug": "this指向",
+        "link": "#this指向",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "事件处理",
+        "slug": "事件处理",
+        "link": "#事件处理",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "事件流（Event Loop）",
+        "slug": "事件流-event-loop",
+        "link": "#事件流-event-loop",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "DOM操作",
+        "slug": "dom操作",
+        "link": "#dom操作",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "BOM操作",
+        "slug": "bom操作",
+        "link": "#bom操作",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "原型与原型链",
+        "slug": "原型与原型链",
+        "link": "#原型与原型链",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "闭包",
+        "slug": "闭包",
+        "link": "#闭包",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "递归",
+        "slug": "递归",
+        "link": "#递归",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "任务队列",
+        "slug": "任务队列",
+        "link": "#任务队列",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "异步编程",
+        "slug": "异步编程",
+        "link": "#异步编程",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "堆和栈",
+        "slug": "堆和栈",
+        "link": "#堆和栈",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "内存管理",
+        "slug": "内存管理",
+        "link": "#内存管理",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "内存泄漏",
+        "slug": "内存泄漏",
+        "link": "#内存泄漏",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "垃圾回收",
+        "slug": "垃圾回收",
+        "link": "#垃圾回收",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "堆栈溢出",
+        "slug": "堆栈溢出",
+        "link": "#堆栈溢出",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "开发模式",
+        "slug": "开发模式",
+        "link": "#开发模式",
+        "children": []
+      }
+    ],
     "path": "/front/JavaScript.html",
     "pathLocale": "/",
     "extraFields": []
@@ -506,6 +725,13 @@ export const searchIndex = [
     "title": "",
     "headers": [],
     "path": "/front/React.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [],
+    "path": "/front/TypeScript.html",
     "pathLocale": "/",
     "extraFields": []
   },
