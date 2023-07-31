@@ -1,6 +1,7 @@
-import type { HeadConfig } from '@vuepress/core';
+import type { HeadConfig } from '@vuepress/core'
 
 const head: HeadConfig[] = [
+  ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
   ['link', { rel: 'icon', href: '/images/favicon.ico' }],
   ,
   ['meta', { name: 'description', content: '包涵大量的编程知识' }],
@@ -18,5 +19,5 @@ const head: HeadConfig[] = [
   ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
   ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
   ['link', { rel: 'apple-touch-icon', sizes: '152x152', href: 'favicon.ico' }],
-] as HeadConfig[];
-export default head;
+] as HeadConfig[]
+export default head

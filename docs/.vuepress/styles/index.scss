@@ -155,18 +155,22 @@ p.description {
 .hero,
 .features {
   color: #555 !important;
-  background-image: linear-gradient(90deg,
+  background-image: linear-gradient(
+      90deg,
       rgba(159, 219, 252, 0.15) 3%,
-      transparent 0),
+      transparent 0
+    ),
     linear-gradient(1turn, rgba(159, 219, 252, 0.15) 3%, transparent 0);
   background-size: 20px 20px;
   background-position: 50%;
 }
 
 .page .theme-default-content {
-  background-image: linear-gradient(90deg,
+  background-image: linear-gradient(
+      90deg,
       rgba(159, 219, 252, 0.15) 3%,
-      transparent 0),
+      transparent 0
+    ),
     linear-gradient(1turn, rgba(159, 219, 252, 0.15) 3%, transparent 0);
   background-size: 20px 20px;
   background-position: 50%;
@@ -219,7 +223,7 @@ html.dark .features h2 {
   &::after {
     content: '';
     position: absolute;
-    right: 0;
+    left: 0;
     bottom: 0;
     width: 400px;
     height: 10px;
@@ -258,4 +262,54 @@ strong {
   overflow-y: auto;
   background: darkseagreen;
   margin: 10px;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media (min-width: 720px) {
+  .page h2 {
+    // border-bottom-style: none;
+    padding-left: 0;
+    transition: padding-left 0.6s ease-in-out;
+    &::before,
+    &::after {
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+    &:hover {
+      padding-left: 50px;
+      &::before {
+        opacity: 1;
+      }
+      &:after {
+        opacity: 1;
+        animation: trans 0.6s steps(20) forwards;
+      }
+    }
+    // &::after {
+    // }
+  }
+  @keyframes trans {
+    0% {
+      // right: 400px;
+      left: 0;
+    }
+    50% {
+      // right: 200px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    100% {
+      left: 100%;
+      transform: translate(-100%);
+    }
+  }
+}
+.navbar-dropdown-wrapper:not(.mobile) .navbar-dropdown {
+  transition: display 0.6s linear;
+  border: none;
+  border-bottom: none;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.04);
 }
