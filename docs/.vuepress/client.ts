@@ -21,7 +21,7 @@ const canvasOptions: CanvasOptions = {
 export default defineClientConfig({
   enhance({ app, router, siteData }) {},
   setup() {
-    const canvas = document.createElement('canvas')
+    const canvas = document && document.createElement('canvas')
     canvas.id = 'moefy-canvas'
     const doc = document.querySelector('#app') as HTMLDivElement
     doc.appendChild(canvas)
