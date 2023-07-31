@@ -17,7 +17,6 @@ const canvasOptions: CanvasOptions = {
   opacity: 1,
   zIndex: MAX_Z_INDEX,
 };
-
 export default defineClientConfig({
   enhance({ app, router, siteData }) {},
   setup() {
@@ -27,6 +26,7 @@ export default defineClientConfig({
       const doc = document.querySelector('#app') as HTMLDivElement;
       doc.appendChild(canvas);
     });
+
     onMounted(() => {
       const el = document.getElementById('moefy-canvas');
       const popper = new Popper(themeConfig, canvasOptions);

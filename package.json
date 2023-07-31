@@ -1,4 +1,13 @@
 {
+  "name": "blog",
+  "author": {
+    "name": "flow-zy",
+    "email": "wz19121@yeah.net",
+    "url": "https://flow-zy.github.io/blog/"
+  },
+  "private": "true",
+  "license": "MIT",
+  "description": "Includes most of the knowledge of programming languages",
   "scripts": {
     "docs:dev": "vuepress dev docs NODE_ENV=development",
     "docs:build": "vuepress build docs  NODE_ENV=production",
@@ -12,6 +21,7 @@
     "vuepress": "2.0.0-beta.66",
     "vuepress-plugin-comment2": "2.0.0-beta.234",
     "vuepress-plugin-copy-code2": "2.0.0-beta.233",
+    "vuepress-plugin-md-enhance": "2.0.0-beta.234",
     "vuepress-plugin-reading-time2": "2.0.0-beta.234",
     "vuepress-plugin-ribbon": "^1.1.6",
     "vuepress-plugin-search-pro": "2.0.0-beta.234"
@@ -21,8 +31,6 @@
     "@commitlint/config-conventional": "^17.6.7",
     "@docsearch/js": "3",
     "@moefy-canvas/theme-popper": "^0.5.2",
-    "@vssue/api-github-v4": "^1.4.7",
-    "@vssue/vuepress-plugin-vssue": "^1.4.8",
     "@vue/component-compiler-utils": "^3.3.0",
     "@vuepress-reco/vuepress-plugin-back-to-top": "^1.6.13",
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",

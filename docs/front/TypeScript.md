@@ -2004,3 +2004,5 @@ circle.print(); // 输出：Printing...
 - `/// <amd-module name="..." />`：在 AMD 模块中，指定模块的名称。
 
 需要注意的是，三斜线指令在较新的 TypeScript 版本中已经不再推荐使用。推荐的替代方案是使用 ES6 模块的 `import` 语法和 `tsconfig.json` 文件中的 `references` 字段来管理模块之间的依赖关系和声明文件的引入。
+
+<CommentService />
