@@ -31,6 +31,28 @@ MVVM 是一种软件架构模式，它将软件界面显示分离为两个部分
 MVVM 模式和 MVC 模式一样，也是模型 - 视图 - 控制器（Model-View-Controller）的简写。
 MVVM 模式和 MVC 模式的不同之处在于它实现了视图（View）和模型（Model）的数据绑定。
 
+
+## SPA单页面应用
+
+单页面应用（SPA）是指在Web应用程序中，整个应用的UI只有一个HTML页面，通过使用JavaScript和动态更新页面的方式，实现不同视图之间的切换，而无需进行页面的完整重载。
+
+在传统的多页面应用中，每次导航到不同的页面时，服务器都会传输新的HTML页面。而在SPA中，初始的HTML页面中会加载所需的JavaScript和CSS资源，然后通过JavaScript动态地更新页面内容。
+
+Vue作为一种现代的JavaScript框架，非常适合构建SPA。它提供了路由功能（Vue Router）和  组件化开发（Vue Components）等核心特性，使得开发者可以轻松地构建和管理SPA应用。
+
+在Vue的SPA中，通过Vue Router进行路由管理，将不同的视图映射到不同的URL，并在URL的变化时，加载对应的组件来更新页面的内容。这种动态的更新方式，使得用户在使用应用时可以获得更流畅的页面切换体验。
+
+SPA的优势包括：
+
+- 更快速的页面导航和响应速度，因为无需每次都从服务器加载新的HTML页面。
+- 更好的用户体验，通过无需页面刷新即可实现页面切换，用户感知的页面加载时间更短。
+- 更好的组件化和模块化，将应用程序拆分为多个组件，便于维护和重用。
+- 可以使用前端框架提供的功能来处理路由、状态管理和数据响应等问题，提高开发效率。
+
+需要注意的是，SPA也有一些限制和挑战，如对搜索引擎优化 (SEO) 的支持不如传统多页面应用，以及前端资源的加载过程需要特别注意，以防止过大的初始页面加载和性能问题。
+
+总结而言，SPA是一种通过动态更新页面的方式切换视图的Web应用程序架构，Vue提供了丰富的功能和工具来构建SPA。
+
 ## 第一个Vue应用
 
 ### 引入Vue.js
@@ -230,7 +252,7 @@ var app2 = new Vue({
     ```html
     <div id="app-2">
       <ol>
-        <li v-for="todo in todos">
+        <li v-for="todo in todos" :key="todo.text">
           {{ todo.text }}
         </li>
       </ol>
@@ -253,7 +275,7 @@ var app2 = new Vue({
 
     ```html
     <div id="app-2">
-      <li v-for="value in object">
+      <li v-for="value in object" :key="value"> 
         {{ value }}
       </li>
     </div>
@@ -270,6 +292,20 @@ var app2 = new Vue({
     })
     </script>
     ```
+
+> `v-for` 中的key起什么作用，为什么要加，起什么作用
+
+在`v-for`指令中，`key`属性用于追踪和标识每个被渲染的元素，以便在DOM更新期间进行高效的元素重用和更新。
+
+`key`的作用有以下几点：
+
+1. 唯一标识：`key`用于为每个生成的元素提供唯一的标识。Vue使用这个`key`来跟踪每个元素的身份，确保在重新渲染时能够正确地复用和更新元素，而不是重新创建或删除它们。
+
+2. 提高渲染效率：在使用`v-for`渲染列表时，Vue使用`key`来检测哪些元素被添加、修改或删除。通过提供`key`，Vue可以准确地确定元素之间的差异，只对需要进行修改的元素进行重新渲染，而不是重新渲染整个列表，从而提高性能。
+
+3. 解决状态保存问题：如果列表中的元素具有可变状态或用户的输入绑定，没有为每个元素提供`key`会导致在更新列表时出现意外的行为。例如，输入框的输入内容可能会被重新排序的元素"拖拽过来"导致错误地映射到不同的元素上，从而产生错误的状态。
+
+总结而言，为`v-for`中的元素提供`key`属性是一种最佳实践，它能够帮助Vue跟踪元素的身份，提高列表渲染的效率，并解决状态保存的问题。每个`key`应该是唯一且稳定的，通常使用数据的唯一标识符作为`key`值。
 
 7. `v-html`: 指令用于输出 HTML 代码
 
@@ -747,7 +783,7 @@ npm run serve
 
    示例代码：
 
-   ```html
+   ```
     <div id="app">
       <button-counter></button-counter>
     </div>
@@ -776,8 +812,8 @@ npm run serve
    示例代码：
 
    ```html
+
   <button-counter></button-counter>
-   
    <script>
     const buttonCounter={
       data: function () {
@@ -787,13 +823,14 @@ npm run serve
     },
     template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
     }
-    new Vue({
+    /**  new Vue({
       components:{
         'button-counter':ButtonCounter
       }
-    })
+    }) */
    </script>
-   ```
+
+  ```
 
    在上面的例子中，在components选项中将button-counter组件注册为局部组件。这样，只有当前组件及其子组件才能使用`<button-counter>`标签来引用和使用ButtonCounter组件。
 
@@ -1165,8 +1202,221 @@ export default {
 
 除了默认插槽外，Vue还支持具名插槽和作用域插槽。具名插槽可以通过`<template>`标签的`v-slot`指令来使用，而作用域插槽可以通过在`<slot>`标签中使用`v-bind`指令传递数据给父组件。
 
-学习组件知识，来个基础小案例
+## 混入
+
+混入（Mixins）是一种重用组件选项的机制。它允许开发者将一些公共的选项（如组件的生命周期钩子、数据、方法等）提取出来，定义为混入对象，然后将这些混入对象应用到多个组件中，从而实现代码的复用和共享。
+
+混入可以被全局注册，也可以在组件内部进行局部注册。
+
+以下是混入的一些使用方式和特点：
+
+1. 定义混入：混入对象是一个普通的JavaScript对象，它可以包含组件选项，例如`data`、`methods`、`created`等。可以通过`mixins`选项将混入对象添加到组件中。
+
+2. 应用混入：在单个组件上，可以通过`mixins`选项将混入对象应用到组件中。当组件和混入对象具有相同的选项时，混入对象的选项会在组件中的选项之前被合并。
+
+3. 合并规则：当混入对象和组件具有相同的选项时，Vue会根据一定的合并策略来处理。例如，对于`data`选项，混入对象的数据会被合并到组件的数据中；对于`methods`选项，混入对象的方法会被添加到组件的方法中。
+
+4. 混入链：在使用混入时，如果多个混入对象具有相同的选项，它们会按照混入的顺序依次被调用，形成一个混入链。这使得开发者可以按照一定的顺序定义和应用混入对象。
+
+混入的使用可以帮助实现多个组件之间的代码共享和复用，提高开发效率。它适用于共享一些通用的逻辑、方法或状态，但要注意避免滥用混入，以避免过多的依赖关系和命名冲突。
+
+当一个系统中有多个组件需要共享一些相同的逻辑或数据时，可以使用混入来提取和复用这些代码逻辑。以下是一个简单的混入的例子：
+
+```javascript
+// 定义混入对象
+const myMixin = {
+  data() {
+    return {
+      count: 0
+    };
+  },
+  methods: {
+    increment() {
+      this.count++;
+    },
+    logCount() {
+      console.log(this.count);
+    }
+  }
+};
+
+// 在组件中应用混入
+Vue.component('my-component', {
+  mixins: [myMixin],
+  template: `
+    <div>
+      <button @click="increment">Increment</button>
+      <button @click="logCount">Log Count</button>
+    </div>
+  `
+});
+```
+
+在上面的例子中，我们定义了一个混入对象`myMixin`，它包含了`data`和`methods`选项。`data`中有一个`count`变量用于计数，`methods`中有`increment`方法用于增加计数，以及`logCount`方法用于打印计数。
+
+然后，在一个组件中使用`mixins`选项将混入对象应用到组件上。在这个例子中，我们创建了一个名为`my-component`的组件，并应用了`myMixin`混入对象。组件模板中包含了两个按钮，一个用于增加计数，另一个用于打印计数。
+
+通过使用混入，我们可以实现多个组件共享相同的计数逻辑和方法，避免了代码的重复编写。
+
+这只是一个简单的例子，实际上混入可以包含更复杂的逻辑和多个选项。在工程化的项目中，混入可以帮助你更好地组织和复用代码，提高开发效率。
+
+## 过渡与动画
+
+过渡和动画是用于为组件在状态改变时添加平滑的效果和动画效果的功能。Vue提供了内置的过渡组件和过渡类名，以及可以使用第三方动画库的能力，使得在Vue应用中实现过渡和动画变得简单和灵活。
+
+以下是Vue中过渡和动画的基本概念和用法：
+
+1. CSS过渡：Vue通过内置的`<transition>`组件来实现CSS过渡效果。通过在组件间添加`<transition>`标签，并在需要过渡的元素上使用`<transition>`组件的特定属性，可以定义进入和离开过渡的效果。例如，可以使用`name`属性指定动画类名，使用`v-enter`和`v-leave-to`来定义过渡效果。
+
+2. 过渡类名：Vue在过渡过程中会自动添加和删除CSS类名，开发者可以利用这些类名来定义过渡的动画效果。常用的类名有：`v-enter`、`v-enter-active`、`v-enter-to`、`v-leave`、`v-leave-active`、`v-leave-to`等。可以通过这些类名设置CSS过渡和动画的属性，例如`transition`、`animation`等。
+
+3. JavaScript钩子函数：除了CSS过渡外，Vue还提供了一些JavaScript钩子函数来在过渡的不同阶段执行自定义逻辑。例如，在过渡开始前，可以使用`before-enter`钩子函数执行一些前置操作，或使用`after-leave`钩子函数在过渡结束后执行一些后置操作。
+
+4. 第三方动画库：Vue还可以与一些第三方动画库集成，例如Animate.css、Velocity.js等。通过使用`<transition>`组件的`name`属性与动画库提供的类名进行组合，可以使用这些库的动画效果。
+
+请注意，过渡和动画在Vue中的使用是基于CSS的，因此需要一些基本的CSS知识来定义过渡和动画效果。
+
+总结而言，Vue提供了内置的过渡组件和过渡类名，以及与第三方动画库集成的能力，使得在Vue应用中实现过渡和动画效果变得更加简单和灵活。通过为组件的状态改变添加平滑的动画效果，可以提升用户体验和界面交互的吸引力。
+
+当用户点击按钮时，让一个元素在显示和隐藏时具有淡入淡出的过渡效果。可以通过引入Vue的过渡组件`<transition>`和使用CSS属性来实现。
+
+首先，需要在Vue组件中引入`<transition>`标签，并设置一个唯一的`name`属性，用于控制过渡的类名。然后，在需要进行过渡的元素上添加特定的`class`和`v-if`指令，使其与过渡组件关联起来。
+
+```vue
+<template>
+  <div>
+    <button @click="toggleElement">Toggle Element</button>
+    <transition name="fade">
+      <div class="element" v-if="showElement">This is a transition element.</div>
+    </transition>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      showElement: false
+    };
+  },
+  methods: {
+    toggleElement() {
+      this.showElement = !this.showElement;
+    }
+  }
+};
+</script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
+```
+在上面的例子中，我们定义了一个按钮和一个具有过渡效果的元素。点击按钮时，通过改变`showElement`的值，控制元素的显示和隐藏。
+
+我们使用`<transition>`组件将目标元素包裹起来，并给它设置一个独立的`name`属性，这里设置为"fade"。而实际上要执行过渡效果的元素是被`v-if`指令绑定的`<div>`。
+
+在CSS中，我们定义了两个类名。`.fade-enter-active`和`.fade-leave-active`是用来描述过渡期间的样式，通过`transition`属性指定了过渡效果的持续时间。`.fade-enter`和`.fade-leave-to`则是用来描述元素在进入过渡状态和离开过渡状态时的样式变化，这里通过修改`opacity`属性来实现淡入和淡出的效果。
+
+通过上述代码，当点击按钮时，元素会以淡入淡出的效果进行过渡。
+
+::: tip
+看完上面的内容，接下来该进入到Vue3的学习之路了
+::: 
+
+## Vue3相对Vue2增加了那些东西
+
+1. **更快的渲染效率**：Vue 3采用了虚拟DOM的重写，它在渲染和更新方面比Vue 2更高效。新的虚拟DOM算法（Fragments + Static Trees）和编译器优化使得Vue 3在性能方面表现更好。
+
+2. **更小的包大小**：Vue 3的体积比Vue 2更小，这得益于对编译器的重构和优化，以及模块的拆分，使得开发者可以按需加载所需的功能。
+
+3. **Composition API（组合式API）**：Vue 3引入了Composition API，这是一个更灵活和可重用的API。与Vue 2的Options API相比，Composition API允许开发者根据逻辑相关性组织代码，提高了代码的可读性和维护性。
+
+4. **TypeScript支持**：Vue 3添加了对TypeScript的原生支持，提供了类型推导和完整的类型定义，使得开发者可以更方便地进行类型检查和开发。
+
+5. **响应式系统升级**：Vue 3中的响应式系统进行了重写，采用了Proxy代理作为底层实现，取代了Vue 2中的Object.defineProperty。这带来了更强大的响应式能力，提供了更细粒度的响应追踪，支持嵌套和数组响应。
+
+6. **更好的错误处理**：Vue 3改进了错误处理机制，提供了更好的错误捕获和报告方式，使得开发者能够更容易地定位并修复错误。
+
+7. **更好的TypeScript和IDE支持**：Vue 3针对TypeScript和IDE的支持进行了改进，提供了更准确的类型推断和代码编辑功能。
+
+除了上述的主要变化之外，Vue 3还增加了其他一些功能和改进，如Teleport、Suspense、多个根节点支持、全局API的调整等。
+
+需要注意的是，Vue 3在一些方面与Vue 2有一些不兼容之处，因此，如果要将现有的Vue 2项目迁移到Vue 3，可能需要进行一些修改和调整。
+
+## 节点、树和虚拟DOM
+
+### 虚拟DOM(Virtual DOM)
+虚拟DOM（Virtual DOM）是一种用于提高Web应用性能的技术，它是在内存中以JavaScript对象的形式表示整个DOM树的副本。虚拟DOM可以通过比较前后两次虚拟DOM之间的差异，最小化DOM操作，从而减少了对浏览器的重绘和回流，提高了应用的性能和响应速度。
+
+以下是虚拟DOM的基本原理和工作流程：
+
+1. 创建虚拟DOM树：当Vue或React应用启动时，会通过解析组件的模板或JSX语法，创建整个应用的初始虚拟DOM树。每个组件被表示为一个虚拟DOM节点，包含其对应的标签、属性、事件等信息。
+
+2. 进行修改和更新：当应用状态发生变化，需要重新渲染时，新的虚拟DOM树会与之前的虚拟DOM树进行比较和分析，找出二者之间的差异。
+
+3. 生成补丁：通过比较两个虚拟DOM树，会生成一棵描述如何将旧DOM树更新为新DOM树的补丁树（Patch Tree），也就是所谓的DOM操作的指令。
+
+4. 应用补丁：将补丁树应用于真实的DOM元素上，从而更新实际的用户界面。这些补丁操作通常是高效的，因为实际的DOM操作被最小化，只会修改必要的部分来保持视图的同步。
+
+通过使用虚拟DOM，可以减少直接对真实DOM的操作次数，从而提高渲染性能。虚拟DOM通过批量操作、优化重绘和回流等方式，将多次DOM操作转化为最小的修改，使得页面更新的效率更高。
+
+虽然虚拟DOM在Vue和React等框架中得到广泛应用，但它并非适用于所有场景。对于简单的应用或页面来说，直接操作真实DOM可能更为高效。虚拟DOM的主要目标是通过减少浏览器的DOM操作来提高复杂应用的性能。
+
+> 与真实DOM（Real DOM）的区别
+
+1. 性能：虚拟DOM可以提高应用的性能。它通过在内存中操作轻量级的JavaScript对象来表示整个DOM树，然后将这个虚拟DOM与真实DOM进行比较，并只对实际发生变化的部分进行更新。相比之下，直接对真实DOM进行操作可能会导致频繁的重绘和回流，影响性能。
+
+2. 批量操作：虚拟DOM可以对多个DOM更新操作进行批量处理，最小化对真实DOM的操作次数。相比之下，直接对真实DOM进行操作需要立即执行，无法进行批量处理。
+
+3. 简化开发：虚拟DOM可以简化开发过程。通过使用虚拟DOM，开发者可以将关注点从低级的DOM操作转移到更高级的应用状态管理和UI组件开发上。
+
+4. 跨平台：虚拟DOM是通过JavaScript对象表示的，因此可以在不同的平台上使用，例如浏览器、Node.js等。相比之下，真实DOM是平台特定的，与特定环境绑定。
+
+5. 内存消耗：虚拟DOM可能会占用更多的内存，因为需要将整个DOM结构以JavaScript对象的形式存储在内存中。而真实DOM只需要存储实际的DOM元素。
+
+6. 学习曲线：对于初学者来说，掌握虚拟DOM的概念和使用可能需要一些时间和学习成本。相比之下，直接对真实DOM进行操作更为直接和易于理解。
+
+总的来说，虚拟DOM在性能优化和开发便利性方面提供了一些优势，但它可能会带来额外的内存消耗，并且对于简单的应用来说，直接操作真实DOM可能更为简单和高效。
+
+## 节点、树
+
+节点树（Node Tree）是指由节点组成的层次结构。在Web开发中，常用的节点树就是DOM树（Document Object Model Tree），它是通过HTML文档解析而得到的，表示了HTML文档的结构和内容。
+
+DOM树是一个由各种类型的节点组成的树状结构。每个节点代表HTML中的一个元素、属性、文本等。节点可以有子节点和兄弟节点，形成父子和兄弟关系。根据节点的类型不同，可以将节点分为元素节点、属性节点、文本节点、注释节点等。
+
+以下是一个示例的DOM树结构：
+
+```
+- Document
+  - DocumentType (<!DOCTYPE html>)
+  - Element (HTML)
+    - Element (HEAD)
+      - Element (META charset="UTF-8")
+      - Element (TITLE)
+        - Text (Example Page)
+    - Element (BODY)
+      - Element (H1)
+        - Text (Hello, World!)
+      - Element (P)
+        - Text (This is a paragraph.)
+```
+
+在上面的示例中，根节点是`Document`，它有两个子节点`DocumentType`和`Element`。`Element`节点又有子节点和兄弟节点，形成了树状结构。每个节点都包含了它们的类型和内容，在DOM操作中可以使用节点的属性和方法来访问和修改节点的属性和内容。
+
+通过操作节点树，我们可以对HTML文档进行增加、删除、修改等操作，以实现对页面的动态更新和交互。
+
+需要注意的是，虽然DOM树是常用的节点树表示方式，但在其他领域，比如计算机科学中的树数据结构，节点树可以具有不同的定义和用途。
+
 
 1. [TODOMVC](/blog/code/todoMVC)
+
+2. [一个基于element-ui和vue2的后台管理系统](/blog/code/shop-admin)
 
 <CommentService />
