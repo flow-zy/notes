@@ -1,7 +1,7 @@
-import s1 from './sidebar';
-import s2 from './sidebar.json';
-const isDev = process.env.NODE_ENV == 'development';
-const sidebar = isDev ? s1 : s2;
+import s1 from './sidebar'
+import s2 from './sidebar.json'
+const isDev = process.env.NODE_ENV == 'development'
+const sidebar = isDev ? s1 : s2
 const navbar = [
   // NavbarItem
   {
@@ -68,60 +68,11 @@ const navbar = [
     link: '/interview',
   },
   {
-    text: 'UI框架',
-    children: [
-      {
-        text: 'Vue',
-        children: [
-          {
-            text: 'Element-ui',
-            link: 'https://element.eleme.cn/#/zh-CN',
-          },
-          {
-            text: 'Element-plus',
-            link: 'https://element-plus.gitee.io/zh-CN/guide/design.html',
-          },
-          {
-            text: 'Vant',
-            link: 'https://vant-contrib.gitee.io/vant/#/zh-CN',
-          },
-        ],
-      },
-      {
-        text: 'React',
-        children: [
-          {
-            text: 'Ant design',
-            link: 'https://ant.design/docs/react/introduce-cn',
-          },
-          {
-            text: 'Antd-mobile',
-            link: 'http://antd-mobile.gitee.io/index-cn',
-          },
-        ],
-      },
-      {
-        text: 'Css',
-        children: [
-          {
-            text: 'Bootstrap',
-            link: 'https://www.bootcss.com',
-          },
-          {
-            text: 'Tailwind Css',
-            link: 'https://www.tailwindcss.cn',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    text: '项目',
-    link: '/project',
+    text: '练习',
+    link: '/code',
   },
   { text: 'Gitee', link: 'https://gitee.com/overflow_z/blog' },
-  { text: 'Github', link: 'https://github.com/flow-zy/blog' },
-];
+]
 Object.entries(sidebar).forEach(([key, value]) => {
   navbar.forEach((nav, i) => {
     if (nav.link && key.includes(nav.link)) {
@@ -129,14 +80,14 @@ Object.entries(sidebar).forEach(([key, value]) => {
       Array.isArray(value) &&
         value.length !== 0 &&
         value.forEach((side) => {
-          side.activeMatch = `^${side.link.slice(0, -3)}`;
-        });
+          side.activeMatch = `^${side.link.slice(0, -3)}`
+        })
 
       Array.isArray(value) && value.length !== 0
         ? (navbar[i].children = value.reverse())
-        : '';
+        : ''
     }
-  });
-});
+  })
+})
 
-export default navbar;
+export default navbar

@@ -3,17 +3,8 @@ import type { HeadConfig } from '@vuepress/core'
 const head: HeadConfig[] = [
   ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
   ['link', { rel: 'icon', href: '/images/favicon.ico' }],
-  ,
   ['meta', { name: 'description', content: '包涵大量的编程知识' }],
   ['meta', { name: 'keywords', content: '前端, 编程, 知识, 学习, 分享' }],
-  [
-    'meta',
-    {
-      name: 'viewport',
-      content:
-        'width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no',
-    },
-  ],
   ['meta', { name: 'msapplication-TileColor', content: '#3eaf7c' }],
   ['meta', { name: 'theme-color', content: '#3eaf7c' }],
   ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
