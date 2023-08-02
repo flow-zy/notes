@@ -1,5 +1,5 @@
-import s1 from './sidebar'
-import s2 from './sidebar.json'
+import s1 from '../sidebar'
+import s2 from '../sidebar/index.json'
 const isDev = process.env.NODE_ENV == 'development'
 const sidebar = isDev ? s1 : s2
 const navbar = [

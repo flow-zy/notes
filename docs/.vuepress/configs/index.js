@@ -1,3 +1,3 @@
-export { default as navbar } from './navbar.ts'
-export { default as sidebar } from './sidebar.ts'
-export { default as head } from './head.ts'
+export { default as navbar } from './navbar'
+export { default as sidebar } from './sidebar'
+export { default as head } from './head'
