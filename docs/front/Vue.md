@@ -31,7 +31,6 @@ MVVM 是一种软件架构模式，它将软件界面显示分离为两个部分
 MVVM 模式和 MVC 模式一样，也是模型 - 视图 - 控制器（Model-View-Controller）的简写。
 MVVM 模式和 MVC 模式的不同之处在于它实现了视图（View）和模型（Model）的数据绑定。
 
-
 ## SPA单页面应用
 
 单页面应用（SPA）是指在Web应用程序中，整个应用的UI只有一个HTML页面，通过使用JavaScript和动态更新页面的方式，实现不同视图之间的切换，而无需进行页面的完整重载。
@@ -1318,6 +1317,7 @@ export default {
 }
 </style>
 ```
+
 在上面的例子中，我们定义了一个按钮和一个具有过渡效果的元素。点击按钮时，通过改变`showElement`的值，控制元素的显示和隐藏。
 
 我们使用`<transition>`组件将目标元素包裹起来，并给它设置一个独立的`name`属性，这里设置为"fade"。而实际上要执行过渡效果的元素是被`v-if`指令绑定的`<div>`。
@@ -1328,7 +1328,7 @@ export default {
 
 ::: tip
 看完上面的内容，接下来该进入到Vue3的学习之路了
-::: 
+:::
 
 ## Vue3相对Vue2增加了那些东西
 
@@ -1350,9 +1350,366 @@ export default {
 
 需要注意的是，Vue 3在一些方面与Vue 2有一些不兼容之处，因此，如果要将现有的Vue 2项目迁移到Vue 3，可能需要进行一些修改和调整。
 
+## 响应式
+
+响应式数据对象：在 Vue 3 中，可以通过使用 ref 函数或 reactive 函数将一个普通的 JavaScript 对象或基本类型转换为一个响应式数据对象。例如：
+
+```js
+  import { ref, reactive } from 'vue';
+  const count = ref(0); // 将基本类型转换为响应式数据
+  const state = reactive({      // 将普通对象转换为响应式数据
+    message: 'Hello Vue 3',
+    foo: ['bar']
+  });
+```
+
+1. `ref`函数：ref 函数接受一个参数，并返回一个响应式数据对象，该对象可以直接作为Vue实例的数据对象进行响应式处理。
+
+> 注意：ref 函数的返回值是一个对象，该对象包含一个指向响应式数据的单一属性 .value。
+
+ref函数的使用方式如下：
+
+```js
+  import { ref } from 'vue';
+  const count = ref(0); // 将基本类型转换为响应式数据
+  console.log(count.value)
+  count.value=3//修改响应式对象的值
+```
+
+上述代码中，使用`ref`函数创建了一个名为`count`的响应式对象，并初始化其值为0。通过访问`count.value`可以读取到响应式对象的值，通过修改`count.value`可以改变响应式对象的值。
+
+:::tip
+`ref`函数的返回值是一个包装了初始值的响应式对象，而不是像vue2中返回的是一个函数
+除了基本类型的初始值，`ref`函数还可以接受对象、数组等作为参数。这样，创建的响应式对象就可以追踪到更复杂数据的变化。
+:::
+
+2. `reactive`函数：reactive 函数接受一个普通对象，并返回一个响应式代理对象，该对象的所有属性也都是响应式代理。
+
+> 注意：reactive 函数的返回值是一个对象，该对象的所有属性也都是对象，这些对象都是响应式代理。
+> 不能替换整个对象
+>只能用于对象类型
+>解构会失去响应式
+
+:::tip
+`reactive`函数的返回值是一个对象，该对象的所有属性也都是对象，这些对象都是响应式代理。
+:::
+在组件中使用响应式对象： 在 Vue3 的组件中，可以直接将响应式对象用于渲染和操作视图。示例代码如下：
+
+```vue
+<template>
+  <div>
+    <p>Count: {{ state.count }}</p>
+    <p>Message: {{ state.message }}</p>
+    <button @click="increment">Increment</button>
+  </div>
+</template>
+
+<script>
+import { reactive } from 'vue';
+
+export default {
+  setup() {
+    const state = reactive({
+      count: 0,
+      message: 'Hello Vue3!',
+    });
+
+    const increment = () => {
+      state.count++;
+    };
+
+    return {
+      state,
+      increment,
+    };
+  },
+}
+</script>
+
+```
+
+在上述示例中，我们使用 reactive 函数将 state 对象转换为响应式对象，并在模板中直接使用它的属性和方法。每当点击按钮时，state.count 的值会自动更新，从而触发视图的重新渲染。
+
+动态跟踪数据的变化： 使用 reactive 函数创建的响应式对象会自动追踪数据的变化。这意味着当响应式对象的属性发生变化时，相关的视图会自动更新。示例代码如下：
+
+```js
+const state = reactive({
+  count: 0,
+});
+
+setTimeout(() => {
+  state.count++;
+}, 1000);
+
+```
+
+在上述示例中，通过 setTimeout 函数在 1 秒后增加 state.count 的值，由于 state.count 是响应式的，所以视图会自动更新显示新的值。
+
+> 练习实战
+
+::: vue-playground ref和reactive练习
+
+@file App.vue
+
+```vue
+<script >
+import { ref } from "vue";
+const msg = ref("hello world!");
+export default {
+  setup(){
+    return {
+      msg
+    }
+  }
+}
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+</template>
+```
+
+:::
+
+3. `toRefs`:接受一个响应式对象作为参数，返回一个对象，该对象的每个属性都是 ref 对象，且是响应式的。
+
+```js
+import { toRefs, reactive } from 'vue';
+
+const state = reactive({
+  name: 'John',
+  age: 25,
+  email: 'john@example.com'
+});
+
+const converted = toRefs(state);
+
+console.log(converted.name.value); // 'John'
+console.log(converted.age.value);  // 25
+console.log(converted.email.value); // 'john@example.com'
+
+state.name = 'Jane';
+
+console.log(converted.name.value); // 'Jane'
+
+```
+
+在上面的示例中，我们首先创建了一个名为state的响应式对象，包含了三个属性：name、age和email。然后，我们使用toRefs函数将state对象转化为ref对象，并将结果保存在converted变量中。最后，我们可以通过converted对象访问state对象的属性和值，例如通过converted.name.value访问name属性的值。
+
+>特点
+
+- toRefs函数的返回值是一个包含所有属性的ref对象。这意味着每个属性都会被转化为一个独立的ref对象，以便在模板中使用。
+- 转化后的ref对象是响应式的，当原始对象的属性值发生变化时，相应的ref对象也会更新。
+- 通过toRefs转化后的属性是只读的，不能直接修改属性的值。如果要修改属性的值，需要通过修改原始对象来实现。
+
+:::warning
+toRefs只会将顶层属性转化为ref对象，而不会进行递归转化。如果state对象中的某个属性是另一个嵌套的响应式对象，那么toRefs只会将该属性本身转化为ref对象，而不会将其内部的属性转化为ref对象。如果需要将嵌套的响应式对象转化为ref对象，可以使用toRef或toRefs函数递归地转化每个属性。
+:::
+
+3. `readonly`: 用于创建一个只读的响应式对象。它接收一个普通的JavaScript对象作为参数，并返回一个只读的响应式对象。只读响应式对象的属性是不可修改的，不能进行赋值操作。
+
+```js
+import { reactive, readonly } from 'vue';
+
+const state = reactive({
+  count: 0
+});
+
+const readOnlyState = readonly(state);
+
+readOnlyState.count++; // 无效
+
+console.log(readOnlyState.count); // 打印出0
+
+```
+
+4. `isRef`: 用于检查一个值是否为一个Ref对象。
+
+```js
+import { ref, isRef } from 'vue';
+
+const count = ref(0);
+
+console.log(isRef(count)); // true
+```
+
+5. `unref`: 用于将一个ref对象转为原始值。如果参数是一个ref对象，则直接返回原始值，否则返回参数本身。
+
+```js
+import { ref, isRef } from 'vue';
+const count = ref(0);
+
+console.log(unref(count)); // 0
+
+console.log(unref(1)); // 1
+```
+
+## 计算属性(Computed)
+
+### 介绍
+
+计算属性是Vue实例的一个属性，它是一个函数，返回一个值，这个值会被缓存，并且当依赖的响应式属性发生变化时，会重新计算。
+
+### 基本使用
+
+```vue
+<template>
+  <div>
+    <p>原始值：{{ state.count }}</p>
+    <p>计算值：{{ computedCount }}</p>
+  </div>
+</template>
+
+<script>
+import { reactive, computed } from 'vue';
+export default {
+  setup() {
+    const state = reactive({
+      count: 0
+    });
+
+    const computedCount = computed(() => {
+      return state.count * 2;
+    });
+
+    return {
+      state,
+      computedCount
+    };
+  }
+};
+</script>
+```
+
+### 计算属性缓存
+
+计算属性具有缓存机制，这意味着只要计算属性依赖的数据没有发生变化，计算属性的值就会被缓存起来，不会进行重复计算。
+
+### 计算属性依赖
+
+计算属性的值依赖于其他数据的值。Vue 3会自动追踪这些依赖，当依赖的数据发生变化时，计算属性会重新计算。如果没有依赖的数据发生变化，则计算属性将使用缓存的值
+
+### 计算属性应用场景
+
+计算属性在很多场景下非常有用，特别是在需要根据其他数据进行复杂计算的情况下。例如，可以使用计算属性从原始数据中过滤出特定的数据，或者根据一些条件计算出动态的样式。
+
+:::tip
+计算属性是惰性的，也就是说，只有当计算属性被访问时才会计算。计算属性是基于其他数据进行计算的，它们本身并不存储任何数据。如果需要修改依赖的数据，可以使用`watch`侦听器
+:::
+
+### 计算属性与方法的区别
+
+计算属性与方法最大的区别在于计算属性是基于它们的依赖进行缓存的，只有当依赖发生改变时，才会重新计算。
+
+## 侦听器（Watch）
+
+侦听器（Watcher）是用来观察 Vue 实例数据变化并执行相应逻辑的功能。在 Vue 3 中，侦听器的实现方式与之前的版本有些不同，它们被称为 "副作用函数"（Effect Functions）。
+
+在 Vue 3 中，可以使用 `watch` 函数来创建侦听器。`watch` 函数接收一个侦听的数据源，以及一个回调函数。当数据源发生变化时，回调函数会被触发执行。
+
+以下是创建侦听器的示例代码：
+
+```javascript
+import { reactive, watch } from 'vue';
+
+const myData = reactive({
+  foo: '123',
+  bar: '456',
+});
+
+watch(() => myData.foo, (newValue, oldValue) => {
+  console.log('foo 从', oldValue, '变为', newValue);
+});
+```
+
+上面的例子中，我们通过 `reactive` 函数创建了一个响应式对象 `myData`，它包含了两个属性 `foo` 和 `bar`。通过 `watch` 函数，我们对 `myData.foo` 进行了侦听，并在它的值发生变化时输出变化值。
+
+在回调函数中，我们可以获取到新旧两个值，即 `newValue` 和 `oldValue`，用来进行相应的处理。侦听器还支持可选的第三个参数，用来配置侦听器行为的选项。
+
+除了可以侦听单个属性外，我们还可以使用 `watch` 函数侦听一个函数的返回值。在这种情况下，当函数的返回值发生变化时，回调函数将被触发执行。
+
+```javascript
+import { reactive, watch } from 'vue';
+
+const myData = reactive({
+  foo: '123',
+  bar: '456',
+});
+
+watch(() => {
+  return myData.foo + myData.bar;
+}, (newValue, oldValue) => {
+  console.log('foo 和 bar 的总和从', oldValue, '变为', newValue);
+});
+```
+
+上面的例子中，我们将 `myData.foo` 和 `myData.bar` 的和作为侦听目标，并在它发生变化时输出变化值。
+
+需要注意的是，在 Vue 3 中，与 Vue 2 不同，`watch` 函数默认是在组件挂载时立即执行的。如果需要延迟执行侦听器，可以添加 `immediate: false` 的选项。
+
+此外，Vue 3 还提供了一些其他的侦听器相关的函数和API，如 `watchEffect`、`watchRef`、`watchEffectOnce` 等，用来实现更灵活的侦听器行为。可以根据具体需求选择合适的函数和API来使用。
+
+- `watchEffect`:是一个自动执行的侦听器，它接收一个函数作为参数，在每次组件更新时都会自动执行该函数。
+
+```javascript
+import { reactive, watchEffect } from 'vue';
+const myData = reactive({
+  foo: '123',
+  bar: '456',
+});
+
+watchEffect(() => {
+  console.log(myData.foo + myData.bar);
+});
+
+```
+
+- `watchRef`:用于侦听 `ref` 类型的数据，它接收一个 `ref` 对象作为参数，在每次组件更新时都会自动执行侦听器。
+
+```javascript
+import { ref, watchRef } from 'vue';
+const myData = ref('123');
+
+watchRef(myData, (newValue, oldValue) => {
+  console.log('foo 从', oldValue, '变为', newValue);
+});
+```
+
+- `watchEffectOnce`:是一个自动执行的侦听器，它接收一个函数作为参数，在组件第一次挂载时自动执行该函数，并在组件卸载时自动停止执行。
+
+```javascript
+import { reactive, watchEffectOnce } from 'vue';
+const myData = reactive({
+  foo: '123',
+  bar: '456',
+});
+
+watchEffectOnce(() => {
+  console.log(myData.foo + myData.bar);
+});
+
+```
+
+### 计算属性与侦听器的区别
+
+计算属性是基于它们的依赖进行缓存的，只有当依赖发生改变时，才会重新计算。
+
+侦听器是数据变化时执行的函数，它不会进行缓存，不会自动进行依赖收集。
+
+## 生命周期
+
+Vue 实例从创建到销毁的过程，就是生命周期。从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、销毁等一系列过程，称之为生命周期。
+### 生命周期图示
+
+![Alt](<https://cn.vuejs.org/images/lifecycle.png> "生命周期图示" =800x)
+
+### 生命周期函数
+
+1. `setup`:
 ## 节点、树和虚拟DOM
 
 ### 虚拟DOM(Virtual DOM)
+
 虚拟DOM（Virtual DOM）是一种用于提高Web应用性能的技术，它是在内存中以JavaScript对象的形式表示整个DOM树的副本。虚拟DOM可以通过比较前后两次虚拟DOM之间的差异，最小化DOM操作，从而减少了对浏览器的重绘和回流，提高了应用的性能和响应速度。
 
 以下是虚拟DOM的基本原理和工作流程：
@@ -1413,7 +1770,6 @@ DOM树是一个由各种类型的节点组成的树状结构。每个节点代�
 通过操作节点树，我们可以对HTML文档进行增加、删除、修改等操作，以实现对页面的动态更新和交互。
 
 需要注意的是，虽然DOM树是常用的节点树表示方式，但在其他领域，比如计算机科学中的树数据结构，节点树可以具有不同的定义和用途。
-
 
 1. [TODOMVC](/blog/code/todoMVC)
 
