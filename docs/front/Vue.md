@@ -1699,13 +1699,181 @@ watchEffectOnce(() => {
 ## 生命周期
 
 Vue 实例从创建到销毁的过程，就是生命周期。从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、销毁等一系列过程，称之为生命周期。
+
 ### 生命周期图示
 
-![Alt](<https://cn.vuejs.org/images/lifecycle.png> "生命周期图示" =800x)
+![Alt](<https://cn.vuejs.org/assets/lifecycle.16e4c08e.png> "生命周期图示" =800x)
 
 ### 生命周期函数
 
-1. `setup`:
+1. `setup`：在实例被创建之前调用。在 3.x 中， `setup` 函数现在位于 `beforeCreate` 之后，但在 2.x 中它们是并发执行的。
+2. `created`：在实例被创建后调用。此时，实例的属性已经被初始化，但DOM还没有被渲染。
+3. `beforeMount`：在挂载之前调用。此时，DOM还没有被渲染。
+4. `mounted`：在组件被挂载后调用。此时，组件已经渲染到了 DOM 中。
+5 `beforeUpdate`：在组件更新之前调用。此时，组件的属性已经被更新，但 DOM 还没有被更新。
+6. `updated`：在组件更新之后调用。此时，组件的属性已经被更新，DOM 也已经被更新。
+7. `beforeUnmount`：在组件被卸载之前调用。此时，组件仍然存在于 DOM 中。
+8. `unmounted`：在组件被卸载之后调用。此时，组件已经被从 DOM 中移除。
+
+## 依赖注入
+
+依赖注入（Dependency Injection，简称 DI）是一种软件设计模式，用于解决模块之间的依赖关系。在依赖注入模式中，一个模块不需要显式地声明依赖关系，而是由容器在运行时注入。
+
+1. `provide`: 在组件实例创建之前调用，用于配置依赖关系。
+2. `inject`: 用于从父组件接收依赖。
+
+> 示例
+
+```js
+// 父组件
+export default {
+  setup() {
+    provide('foo', 'foo');
+  }
+}
+
+// 子组件
+export default {
+  setup() {
+    const foo = inject('foo');
+  }
+}
+```
+
+## 内置组件
+
+1. `<Teleport>`:允许将一个组件的渲染位置移动到 DOM 树的另一个位置。
+
+> 示例
+
+```html
+<!-- 组件 A -->
+<template>
+  <div class="a">
+    <h1>A</h1>
+    <teleport to="body">
+      <div class="teleport-target">Teleport Target</div>
+    </teleport>
+  </div>
+</template>
+```
+
+```html
+<!-- 组件 B -->
+<template>
+  <div class="b">
+    <h1>B</h1>
+    <teleport to=".teleport-container">
+      <div class="teleport-container">
+        <h2>Teleport Container</h2>
+        <teleport to=".teleport-target">
+          <div class="teleport-target">Teleport Target</div>
+        </teleport>
+      </div>
+    </teleport>
+  </div>
+</template>
+```
+
+2. `<transition>`: 用于在组件切换时，在合适的时间添加/删除 CSS 类名。
+
+![Alt](<https://cn.vuejs.org/assets/transition-classes.f0f7b3c9.png> "过渡效果图示" =400x)
+
+### 过渡效果
+
+1. `<fade>`: 淡入淡出
+2. `<slide>`: 滑动
+3. `<zoom>`: 缩放
+
+::: vue-playground 过渡效果
+
+@file App.vue
+
+```vue
+
+
+```
+
+:::
+
+### 过渡状态
+
+1. `<appear>`: 首次渲染时生效
+2. `<appear-active>`: 首次渲染时生效，且在动画结束后保持动画效果
+3. `<enter>`: 首次渲染时生效，且在动画结束后保持动画效果
+4. `<enter-active>`: 首次渲染时生效，且在动画结束后保持动画效果
+5. `<leave>`: 离开时生效
+6. `<leave-active>`: 离开时生效，且在动画结束后保持动画效果
+
+> 注意：`<appear>` 和 `<appear-active>` 只适用于 `<transition>` 组件，不适用于 `<transition-group>` 组件
+>示例
+
+::: vue-playground 过渡状态
+
+@file App.vue
+
+```vue
+<template>
+  <div>
+    <h2>Transition</h2>
+    <transition appear appear-active>
+      <div class="fade-enter-active">Fade Enter Active</div>
+    </transition>
+    <transition appear>
+      <div class="fade-enter-active">Fade Enter</div>
+    </transition>
+    <transition>
+      <div class="fade-enter-active">Fade</div>
+    </transition>
+    <hr>
+    <h2>Transition Group</h2>
+    <transition-group appear appear-active>
+      <div class="fade-enter-active">Fade Enter Active</div>
+    </transition-group>
+    <transition-group appear>
+      <div class="fade-enter-active">Fade Enter</div>
+    </transition-group>
+    <transition-group>
+      <div class="fade-enter-active">Fade</div>
+    </transition-group>
+  </div>
+</template>
+```
+
+:::
+
+### 过渡模式
+
+1. `<in-out>`: 先执行离开动画，再执行进入动画
+2. `<out-in>`: 先执行进入动画，再执行离开动画
+
+### 过渡钩子
+
+1. `<before-enter>`: 动画开始前触发
+2. `<enter>`: 动画开始时触发
+3. `<after-enter>`: 动画结束时触发
+4. `<enter-cancelled>`: 动画结束时触发
+5. `<before-leave>`: 动画开始前触发
+6. `<leave>`: 动画开始时触发
+7. `<after-leave>`: 动画结束时触发
+8. `<leave-cancelled>`: 动画结束时触发
+
+### 过渡类名
+
+1. `v-enter-from`：进入动画的起始状态。在元素插入之前添加，在元素插入完成后的下一帧移除。
+
+2. `v-enter-active`：进入动画的生效状态。应用于整个进入动画阶段。在元素被插入之前添加，在过渡或动画完成之后移除。这个 `class` 可以被用来定义进入动画的持续时间、延迟与速度曲线类型。
+
+3. `v-enter-to`：进入动画的结束状态。在元素插入完成后的下一帧被添加 (也就是 `v-enter-from` 被移除的同时)，在过渡或动画完成之后移除。
+
+4. `v-leave-from`：离开动画的起始状态。在离开过渡效果被触发时立即添加，在一帧后被移除。
+
+5. `v-leave-active`：离开动画的生效状态。应用于整个离开动画阶段。在离开过渡效果被触发时立即添加，在过渡或动画完成之后移除。这个 `class` 可以被用来定义离开动画的持续时间、延迟与速度曲线类型。
+
+6. `v-leave-to`：离开动画的结束状态。在一个离开动画被触发后的下一帧被添加 (也就是 `v-leave-from` 被移除的同时)，在过渡或动画完成之后移除。
+
+7. `v-enter-active` 和 `v-leave-active` 给我们提供了为进入和离开动画指定不同速度曲线的能力.
+
 ## 节点、树和虚拟DOM
 
 ### 虚拟DOM(Virtual DOM)

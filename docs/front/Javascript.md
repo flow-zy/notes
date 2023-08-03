@@ -2274,4 +2274,56 @@ let result = "string".replace(regex, "replacement"); // 用指定的替换字符
 
 需要注意的是，深拷贝方法有时会有性能和限制方面的考量，特别是在处理包含循环引用、函数、正则表达式等特殊对象时。使用时要酌情选择。另外，对于拷贝大型对象或嵌套层级很深的对象，可能需要考虑性能和内存消耗。
 
+## API
+
+1. `formData`:
+FormData 是 JavaScript API 的一部分，用于收集和提交表单数据。它提供了一种简单的方式来构建表单数据，并通过 XMLHttpRequest 或 Fetch API 将其发送到服务器。
+
+要使用 FormData，首先需要创建一个空的 FormData 对象：
+
+```javascript
+var formdata = new FormData();
+```
+
+然后，可以使用 append() 方法添加表单数据。该方法接受两个参数，第一个参数是字段的名称，第二个参数是字段的值。可以多次调用 append() 来添加多个字段。
+
+```javascript
+formdata.append('username', 'John Doe');
+formdata.append('email', 'johndoe@example.com');
+```
+
+如果要添加文件，可以使用 append() 方法的第三个参数，将文件对象传递给它。
+
+```javascript
+var fileInput = document.querySelector('input[type="file"]');
+formdata.append('avatar', fileInput.files[0]);
+```
+
+FormData 对象还提供了其他方法来处理表单数据。以下是一些常用的方法：
+
+- delete(name)：从 FormData 对象中删除指定名称的字段和值。
+- get(name)：获取指定名称字段的第一个值。
+- getAll(name)：获取指定名称字段的所有值，返回一个数组。
+- has(name)：检查 FormData 对象中是否存在指定名称的字段。
+- set(name, value)：设置指定名称字段的值，如果字段不存在，则创建一个新字段。
+
+FormData 对象可以与 XMLHttpRequest 或 Fetch API 一起使用，将其发送到服务器。下面是一个使用 XMLHttpRequest 发送 FormData 的示例：
+
+```javascript
+var request = new XMLHttpRequest();
+request.open('POST', '/submit-form', true);
+request.onreadystatechange = function() {
+    if (request.readyState === XMLHttpRequest.DONE) {
+        if (request.status === 200) {
+            console.log('Form submitted successfully!');
+        } else {
+            console.error('Failed to submit form.');
+        }
+    }
+};
+request.send(formdata);
+```
+
+这样，FormData 中的表单数据将作为请求的主体发送到服务器。在服务器端，您可以根据您的需求处理 FormData 数据。
+
 <CommentService />
