@@ -1822,7 +1822,6 @@ app.component('my-component-name', {
 
 ```vue
 
-
 ```
 
 ## 依赖注入
@@ -2041,7 +2040,7 @@ export default {
 
 总的来说，虚拟DOM在性能优化和开发便利性方面提供了一些优势，但它可能会带来额外的内存消耗，并且对于简单的应用来说，直接操作真实DOM可能更为简单和高效。
 
-## 节点、树
+### 节点、树
 
 节点树（Node Tree）是指由节点组成的层次结构。在Web开发中，常用的节点树就是DOM树（Document Object Model Tree），它是通过HTML文档解析而得到的，表示了HTML文档的结构和内容。
 
