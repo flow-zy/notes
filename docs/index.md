@@ -2,12 +2,12 @@
 # 是否是首页，false表示是普通页面
 home: true
 # heroImage: /favicon.png
-heroText: flow Personal blog
+heroText: Study Note
 description: Includes most of the knowledge of programming languages
 tagline: Includes most of the knowledge of programming languages
 # pageClass: container
 actions:
-    - text: 开始学习
+    - text: Get Start
       link: front/html
       type: primary
 features:

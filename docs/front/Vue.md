@@ -1851,7 +1851,9 @@ export default {
 
 ## 内置组件
 
-1. `<Teleport>`:允许将一个组件的渲染位置移动到 DOM 树的另一个位置。
+### `<Teleport>`
+
+允许将一个组件的渲染位置移动到 DOM 树的另一个位置。
 
 > 示例
 
@@ -1884,11 +1886,13 @@ export default {
 </template>
 ```
 
-2. `<transition>`: 用于在组件切换时，在合适的时间添加/删除 CSS 类名。
+### `<transition>`
+
+ 用于在组件切换时，在合适的时间添加/删除 CSS 类名。
 
 ![Alt](<https://cn.vuejs.org/assets/transition-classes.f0f7b3c9.png> "过渡效果图示" =400x)
 
-### 过渡效果
+#### 过渡效果
 
 1. `<fade>`: 淡入淡出
 2. `<slide>`: 滑动
@@ -1926,7 +1930,7 @@ export default {
 
 :::
 
-### 过渡状态
+#### 过渡状态
 
 1. `<appear>`: 首次渲染时生效
 2. `<appear-active>`: 首次渲染时生效，且在动画结束后保持动画效果
@@ -1972,12 +1976,12 @@ export default {
 
 :::
 
-### 过渡模式
+#### 过渡模式
 
 1. `<in-out>`: 先执行离开动画，再执行进入动画
 2. `<out-in>`: 先执行进入动画，再执行离开动画
 
-### 过渡钩子
+#### 过渡钩子
 
 1. `<before-enter>`: 动画开始前触发
 2. `<enter>`: 动画开始时触发
@@ -1988,7 +1992,7 @@ export default {
 7. `<after-leave>`: 动画结束时触发
 8. `<leave-cancelled>`: 动画结束时触发
 
-### 过渡类名
+#### 过渡类名
 
 1. `v-enter-from`：进入动画的起始状态。在元素插入之前添加，在元素插入完成后的下一帧移除。
 
@@ -2003,6 +2007,49 @@ export default {
 6. `v-leave-to`：离开动画的结束状态。在一个离开动画被触发后的下一帧被添加 (也就是 `v-leave-from` 被移除的同时)，在过渡或动画完成之后移除。
 
 7. `v-enter-active` 和 `v-leave-active` 给我们提供了为进入和离开动画指定不同速度曲线的能力.
+
+### `<keep-alive>`
+
+`keep-alive` 用于缓存和保持组件的状态，以便在组件切换时可以保留之前的状态数据，提高性能并提供更好的用户体验。
+
+当一个组件被包裹在 `keep-alive` 标签内时，该组件会被缓存起来，而不是被销毁。当该组件在父组件中切换可见性时，它不会被销毁和重新创建，而是从缓存中取出并重新激活。
+
+`keep-alive` 可以接受一个 `include` 属性，用于指定哪些组件需要被缓存。它可以是一个字符串或数组，用来指定组件的名称。只有指定的组件会被缓存，其他组件则会被正常销毁和重新创建。
+
+另外，`keep-alive` 还可以接受一个 `exclude` 属性，用于指定不需要被缓存的组件。它也可以是一个字符串或数组，指定组件的名称。
+
+下面是一个示例，展示了如何使用 `keep-alive`：
+
+```html
+<template>
+  <div>
+    <button @click="toggleComponent">切换组件</button>
+    
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      currentComponent: 'ComponentA',
+    };
+  },
+  methods: {
+    toggleComponent() {
+      this.currentComponent = this.currentComponent === 'ComponentA' ? 'ComponentB' : 'ComponentA';
+    },
+  },
+};
+</script>
+```
+
+在上面的例子中，`currentComponent` 的初始值为 'ComponentA'。点击按钮后，它会在 'ComponentA' 和 'ComponentB' 之间切换。但是，无论切换多少次，每个组件都会保持它们的状态，而不会被销毁和重新创建。
+
+注意，`keep-alive` 只会缓存组件实例，而不会缓存组件的模板。这意味着每个被缓存的组件实例之间共享同一个模板。如果需要在每个组件实例之间保持不同的模板状态，可以通过在 `keep-alive` 标签内部使用 `<router-view>` 或条件渲染来实现。
 
 ## 节点、树和虚拟DOM
 
