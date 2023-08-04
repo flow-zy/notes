@@ -14,7 +14,6 @@ import { copyrightPlugin } from 'vuepress-plugin-copyright2'
 import { searchProPlugin } from 'vuepress-plugin-search-pro'
 import { commentPlugin } from 'vuepress-plugin-comment2'
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
-import { lastReadingPlugin } from '@yuannancheng/vuepress-plugin-last-reading'
 import { seoPlugin } from 'vuepress-plugin-seo2'
 import kanBanPlugin from 'vuepress-plugin-kanban-live2d'
 import goTopPlugin from 'vuepress-plugin-go-top'
@@ -115,7 +114,6 @@ export default defineUserConfig({
       category: 'Announcements',
       categoryId: 'DIC_kwDOKAlqH84CYPfm',
     }),
-    lastReadingPlugin(),
     seoPlugin({
       hostname: 'https://github.com',
       author: {
