@@ -1,7 +1,7 @@
 ---
 # 是否是首页，false表示是普通页面
 home: true
-# heroImage: /favicon.png
+heroImage: /images/logo.jpg
 heroText: Study Note
 description: Includes most of the knowledge of programming languages
 tagline: Includes most of the knowledge of programming languages

@@ -10,5 +10,18 @@ const head: HeadConfig[] = [
   ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
   ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
   ['link', { rel: 'apple-touch-icon', sizes: '152x152', href: 'favicon.ico' }],
+  [
+    'script',
+    {},
+    `
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?03eddaa3ebe0d209ce69f6aa129f64fd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+`,
+  ],
 ] as HeadConfig[]
 export default head

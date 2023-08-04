@@ -18,7 +18,6 @@ import { lastReadingPlugin } from '@yuannancheng/vuepress-plugin-last-reading'
 import { seoPlugin } from 'vuepress-plugin-seo2'
 import kanBanPlugin from 'vuepress-plugin-kanban-live2d'
 import goTopPlugin from 'vuepress-plugin-go-top'
-import metingPlugin from 'vuepress-plugin-meting'
 function isIterable(obj: any): Boolean {
   return (
     obj !== null &&
@@ -154,6 +153,7 @@ export default defineUserConfig({
     lastUpdatedText: '上次更新',
     contributorsText: '贡献者',
     contributors: false,
+    logo: '/images/logo.jpg',
     // 启动页面丝滑滚动
   }),
   head,
