@@ -18,7 +18,12 @@ const canvasOptions: CanvasOptions = {
   zIndex: MAX_Z_INDEX,
 }
 export default defineClientConfig({
-  enhance({ app, router, siteData }) {},
+  enhance({ app, router, siteData }) {
+    // 路由事件处理
+    router.beforeEach((to, form, next) => {
+      next()
+    })
+  },
   setup() {
     onBeforeMount(() => {
       const canvas = document && document.createElement('canvas')
