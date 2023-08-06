@@ -52,7 +52,9 @@ export default defineClientConfig({
       const el = document.getElementById('moefy-canvas');
       const popper = new Popper(themeConfig, canvasOptions);
       popper.mount(el as HTMLCanvasElement);
-      window && handleScroll(window);
+      process.env.NODE_ENV == 'development'
+        ? window && handleScroll(window)
+        : '';
     });
     window.addEventListener('scroll', () => {
       handleScroll(window);
