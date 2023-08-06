@@ -153,22 +153,18 @@ p.description {
 .hero,
 .features {
   color: #555 !important;
-  background-image: linear-gradient(
-      90deg,
+  background-image: linear-gradient(90deg,
       rgba(159, 219, 252, 0.15) 3%,
-      transparent 0
-    ),
+      transparent 0),
     linear-gradient(1turn, rgba(159, 219, 252, 0.15) 3%, transparent 0);
   background-size: 20px 20px;
   background-position: 50%;
 }
 
 .page .theme-default-content {
-  background-image: linear-gradient(
-      90deg,
+  background-image: linear-gradient(90deg,
       rgba(159, 219, 252, 0.15) 3%,
-      transparent 0
-    ),
+      transparent 0),
     linear-gradient(1turn, rgba(159, 219, 252, 0.15) 3%, transparent 0);
   background-size: 20px 20px;
   background-position: 50%;
@@ -339,6 +335,7 @@ canvas {
   border-bottom: none;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.04);
 }
+
 .back-to-top {
   mask: url(/images/claw.svg) no-repeat;
   cursor: pointer;
@@ -350,4 +347,19 @@ canvas {
   mask-size: cover;
   -webkit-mask-size: cover;
   background-color: var(--c-brand);
+}
+
+#progress {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  z-index: 9999;
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--c-brand-light);
+  border-radius: 30px;
 }

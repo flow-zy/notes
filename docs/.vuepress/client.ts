@@ -6,7 +6,7 @@ import {
   MAX_Z_INDEX,
   type CanvasOptions,
 } from '@moefy-canvas/theme-popper';
-import { onMounted, onBeforeMount } from 'vue';
+import { onMounted, onBeforeMount, ref } from 'vue';
 const themeConfig: PopperConfig = {
   shape: PopperShape.Star,
   size: 1.75,
@@ -25,18 +25,38 @@ export default defineClientConfig({
     });
   },
   setup() {
+    const value = ref(0);
     onBeforeMount(() => {
       const canvas = document && document.createElement('canvas');
       canvas.id = 'moefy-canvas';
       const doc = document.querySelector('#app') as HTMLDivElement;
       doc.appendChild(canvas);
+      const progress: HTMLProgressElement =
+        document && (document.createElement('progress') as HTMLProgressElement);
+      progress.id = 'progress';
+      progress.value = value.value;
+      progress.max = 100;
+      doc.appendChild(progress);
     });
+    const handleScroll = (e) => {
+      const progress = document.querySelector(
+        '#progress'
+      ) as HTMLProgressElement;
+      console.log(value.value);
+      value.value <= 1
+        ? (progress.style.display = 'none')
+        : (progress.style.display = 'block');
 
+      value.value = (window.scrollY / (document.body.clientHeight - 700)) * 100;
+
+      progress.value = value.value;
+    };
     onMounted(() => {
       const el = document.getElementById('moefy-canvas');
       const popper = new Popper(themeConfig, canvasOptions);
       popper.mount(el as HTMLCanvasElement);
     });
+    window.addEventListener('scroll', handleScroll);
   },
   rootComponents: [],
 });
