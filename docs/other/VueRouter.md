@@ -630,3 +630,63 @@ export default {
 };
 </script>
 ```
+
+## 路由元信息
+
+路由元数据（metadata）是一种在路由中添加额外信息的方式。这些信息可以用于在导航过程中执行一些特殊操作，例如在渲染组件之前设置一些状态。要添加路由元数据，可以在路由对象中使用 meta 属性。
+
+以下是一个简单的示例，展示了如何在 Vue 中使用路由元数据：
+
+```vue
+<template>
+<div>
+  <h1>{{ $route.params.id }}</h1>
+  <router-link to="/">Home</router-link>
+  <router-link to="/about">About</router-link>
+</div>
+</template>
+
+<script>
+export default {
+ data() {
+   return {
+     isLoggedIn: false,
+   };
+ },
+ metaInfo() {
+   return {
+     title: `Title: ${this.$route.params.id}`,
+   };
+ },
+};
+</script>
+```
+
+在这个示例中，我们使用 `metaInfo` 方法返回一个包含路由元数据的对象。在这个例子中，我们返回了一个包含页面标题的对象。在组件中，我们可以通过 `this.$route.meta.title`访问这个元数据。
+
+## 路由懒加载
+
+路由懒加载（Lazy Loading）是一种优化技术，用于按需加载路由组件，而不是一次性加载所有路由组件。这样可以减少首次加载的时间，并提升应用的性能。
+
+在 Vue Router 中，可以使用动态`import()`语法来实现路由懒加载。它允许将路由组件定义为一个返回组件的函数，在需要时才会进行异步加载。
+
+示例：
+
+```js
+const routes = [
+  {
+    path: '/home',
+    component: () => import('./components/HomeComponent.vue') // 路由懒加载
+  },
+  {
+    path: '/about',
+    component: () => import('./components/AboutComponent.vue') // 路由懒加载
+  },
+  // ...
+];
+
+```
+
+在上面的例子中，`import()`函数会在访问对应路由时动态地异步加载路由组件。这样就可以将路由组件打包成单独的文件，并在需要时按需加载，而不是一次性加载所有路由组件。
+
+需要注意的是，当使用路由懒加载时，产生的每个可被导航到的路由都会生成一个单独的异步块（chunk）。这将导致在首次访问该路由之前，将发起一个异步请求来获取该块，因此会有一个短暂的延迟。
