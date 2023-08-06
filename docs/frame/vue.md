@@ -2,11 +2,11 @@
 title: Vue
 #NavLink
 prev:
-  text: es6
-  link: /front/ECMAScript
+  text: spring
+  link: /frame/spring
 next:
   text: React
-  link: /front/react
+  link: /frame/react
 
 
 ---
