@@ -56,7 +56,7 @@ export default defineClientConfig({
         ? window && handleScroll(window)
         : '';
     });
-    window &&
+    process.env.NODE_ENV == 'development' &&
       window.addEventListener('scroll', () => {
         handleScroll(window);
       });

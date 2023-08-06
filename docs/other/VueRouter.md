@@ -534,5 +534,99 @@ export default {
 
 ## 路由守卫
 
-1. 前置路由守卫(`beforeEach`): 在导航进入该路由之前调用。
+1. 前置路由守卫(`beforeEach`): 全局前置守卫会在路由切换之前被调用，常用于身份验证、权限控制等逻辑的处理。
 
+```js
+router.beforeEach((to, from, next) => {
+  // ...
+  /**
+   * to: 跳转的路径
+   * from: 离开的路由
+   * next(false): 阻止导航
+   * next(path): 跳转到指定路径
+   * next(): 跳转到下一个钩子
+   * next(error): 处理错误
+   * 
+   */
+  next()
+})
+```
+
+2. 全局后置守卫(`afterEach`): 全局后置守卫会在每次路由切换之后被调用，常用于一些全局状态的更新，例如更新页面标题、更新当前选中的菜单等。
+
+```js
+router.afterEach((to, from) => {
+  // ...
+})
+```
+
+3. 路由独享守卫(`beforeEnter`): 路由独享守卫会在路由切换之前被调用，常用于一些局部状态的更新，例如更新当前选中的菜单等。
+
+```js
+const router = new VueRouter({
+  routes: [
+    {
+      path: '/user/:id',
+      component: User,
+      beforeEnter(to, from, next) {
+        // ...
+        next()
+      }
+    }
+  ]
+})
+```
+
+4. 组件内的路由守卫(`beforeRouteEnter`、`beforeRouteUpdate`、`beforeRouteLeave`): 组件内的路由守卫会在路由切换之前被调用，常用于一些局部状态的更新，例如更新当前选中的菜单等。
+
+```vue
+<template>
+ <div>
+   <h1>{{ $route.params.id }}</h1>
+   <router-link to="/">Home</router-link>
+   <router-link to="/about">About</router-link>
+ </div>
+</template>
+
+<script>
+export default {
+ beforeEnter(to, from, next) {
+   // 在这里添加一些逻辑，例如检查用户是否已登录
+   if (!isLoggedIn) {
+     next({ name: 'Login' });
+   } else {
+     next();
+   }
+ },
+ beforeRouteEnter(to, from, next) {
+   // 在这里添加一些逻辑，例如检查路由参数是否有效
+   if (!isValidId(to.params.id)) {
+     next({ name: 'Home' });
+   } else {
+     next();
+   }
+ },
+ beforeRouteUpdate(to, from, next) {
+   // 在这里添加一些逻辑，例如检查路由参数是否已更新
+   if (to.params.id !== from.params.id) {
+     // 如果路由参数已更新，可以在这里执行一些操作，例如获取新数据
+   }
+   next();
+ },
+ beforeRouteLeave(to, from, next) {
+   // 在这里添加一些逻辑，例如检查用户是否已确认离开页面
+   if (!confirmedLeave) {
+     next(false);
+   } else {
+     next();
+   }
+ },
+ beforeDestroy() {
+   // 在这里添加一些逻辑，例如清除一些资源，例如定时器
+ },
+ destroyed() {
+   // 在这里添加一些逻辑，例如清除一些资源，例如定时器
+ },
+};
+</script>
+```
