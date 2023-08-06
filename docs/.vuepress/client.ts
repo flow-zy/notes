@@ -38,23 +38,22 @@ export default defineClientConfig({
       progress.max = 100;
       doc.appendChild(progress);
     });
-    const handleScroll = (e) => {
+    const handleScroll = () => {
       const progress = document.querySelector(
         '#progress'
       ) as HTMLProgressElement;
-      console.log(value.value);
+      value.value =
+        window && (window.scrollY / (document.body.clientHeight - 700)) * 100;
       value.value <= 1
         ? (progress.style.display = 'none')
         : (progress.style.display = 'block');
-
-      value.value = (window.scrollY / (document.body.clientHeight - 700)) * 100;
-
       progress.value = value.value;
     };
     onMounted(() => {
       const el = document.getElementById('moefy-canvas');
       const popper = new Popper(themeConfig, canvasOptions);
       popper.mount(el as HTMLCanvasElement);
+      handleScroll();
     });
     window.addEventListener('scroll', handleScroll);
   },

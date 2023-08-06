@@ -1,8 +1,9 @@
-import s1 from '../sidebar'
-import s2 from '../sidebar/index.json'
-const isDev = process.env.NODE_ENV == 'development'
-const sidebar = isDev ? s1 : s2
-const navbar = [
+import s1 from '../sidebar';
+import s2 from '../sidebar/index.json';
+const isDev = process.env.NODE_ENV == 'development';
+const sidebar = isDev ? s1 : s2;
+import type { NarBarItem } from '@vuepress/theme-default';
+const navbar: NarBarItem[] = [
   // NavbarItem
   {
     text: '前端',
@@ -38,32 +39,6 @@ const navbar = [
     link: '/other',
   },
   {
-    text: '工具软件',
-    children: [
-      {
-        text: '编程软件',
-        children: [
-          {
-            text: 'visual studio code',
-            link: 'https://code.visualstudio.com',
-          },
-          {
-            text: 'chrome',
-            link: 'https://www.google.cn/chrome/index.html',
-          },
-          {
-            text: 'phpStorm',
-            link: 'https://www.jetbrains.com.cn/en-us/phpstorm',
-          },
-        ],
-      },
-      {
-        text: '效率提升',
-        children: [],
-      },
-    ],
-  },
-  {
     text: '面试题',
     link: '/interview',
   },
@@ -72,7 +47,7 @@ const navbar = [
     link: '/code',
   },
   { text: 'Gitee', link: 'https://gitee.com/overflow_z/blog' },
-]
+];
 Object.entries(sidebar).forEach(([key, value]) => {
   navbar.forEach((nav, i) => {
     if (nav.link && key.includes(nav.link)) {
@@ -80,14 +55,14 @@ Object.entries(sidebar).forEach(([key, value]) => {
       Array.isArray(value) &&
         value.length !== 0 &&
         value.forEach((side) => {
-          side.activeMatch = `^${side.link.slice(0, -3)}`
-        })
+          side.activeMatch = `^${side.link.slice(0, -3)}`;
+        });
 
       Array.isArray(value) && value.length !== 0
         ? (navbar[i].children = value.reverse())
-        : ''
+        : '';
     }
-  })
-})
+  });
+});
 
-export default navbar
+export default navbar;

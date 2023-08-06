@@ -3,10 +3,10 @@ title: VueRouter
 #NavLink
 prev:
   text: Vue
-  link: /front/Vue
+  link: /frame/Vue
 next:
   text: React
-  link: /front/react
+  link: /frame/react
 ---
 
 ## 介绍
@@ -399,3 +399,139 @@ const routes = [
 </template>
 ```
 
+## 重定向
+
+路由重定向来导航到指定的路径。要使用路由重定向，你需要在Vue路由的配置中定义一个重定向路由。
+
+以下是一个示例，展示如何使用路由重定向：
+
+``` js
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
+
+const routes = [
+  {
+    path: '/',
+    redirect: '/home' // 设置默认重定向至'/home'
+  },
+  {
+    path: '/home',
+    component: Home
+  },
+  {
+    path: '/about',
+    component: About
+  }
+]
+
+const router = new VueRouter({
+  routes
+})
+
+export default router;
+
+```
+
+在上面的示例中，我们设置了默认重定向路径为/home，这意味着当进入网站的根路径时，会自动跳转到/home。
+
+你可以根据需求设置任意的重定向路径。在routes数组中，如果某个路由对象的redirect属性的值不为空，则表示该路由需要重定向到指定路径。
+
+## 路由别名
+
+路由别名是指使用alias字段来为某个路由路径设置一个别名。这样当访问别名路径时，实际上是访问的原始路径。
+
+在 Vue Router 中使用路由别名有两种方式：
+
+使用alias选项
+示例代码：
+
+```javascript
+
+const routes = [
+  {
+    path: '/original',
+    component: OriginalComponent,
+    alias: '/alias' // 设置别名
+  }
+]
+
+```
+
+示例代码：
+
+```javascript
+const routes = [
+  {
+    path: '/original',
+    components: {
+      default: OriginalComponent,
+      alias: OriginalComponent // 设置别名
+    }
+  }
+]
+
+```
+
+## 路由组件传参
+
+可以使用路由组件传参。以下是详细的步骤和例子：
+
+1. 首先，我们需要在路由配置文件(通常是`router/index.js`)中定义一个路由，并使用`props`属性来接收参数。例如，我们可以定义一个名为`User`的路由，它接收一个名为`id`的参数：
+
+```javascript
+import Vue from 'vue'
+import Router from 'vue-router'
+import User from '@/components/User'
+
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+      path: '/user/:id',
+      name: 'User',
+      component: User,
+      props: true // 开启props模式
+    }
+  ]
+})
+```
+
+2. 然后，在`User`组件中，我们可以通过`$route.params`来获取传递的参数。例如，我们可以在`User`组件的模板中显示用户的ID:
+
+```html
+<template>
+  <div>
+    <h1>用户ID:{{ id }}</h1>
+  </div>
+</template>
+```
+
+3. 最后，在需要跳转到`User`组件的地方，我们可以使用`router-link`或者编程式导航来传递参数。例如，我们可以在`App.vue`组件中为一个按钮添加点击事件，当点击按钮时，跳转到用户详情页面，并传递用户的ID:
+
+```html
+<template>
+  <div id="app">
+    <button @click="goToUser">查看用户详情</button>
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    goToUser() {
+      const id = 1 // 这里可以根据实际情况获取用户的ID
+      this.$router.push({ name: 'User', params: { id } })
+    }
+  }
+}
+</script>
+```
+
+这样，当我们点击“查看用户详情”按钮时，就会跳转到用户详情页面，并显示用户的ID。
+
+## 路由守卫
+
+1. 前置路由守卫(`beforeEach`): 路由刚开始发生改变的时候触发的钩子
