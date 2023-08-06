@@ -1,36 +1,36 @@
-import { defineUserConfig, defaultTheme, HeadConfig } from 'vuepress'
-import { nprogressPlugin } from '@vuepress/plugin-nprogress'
-import { navbar, head as header } from './configs/index.js'
-import { pwaPlugin } from '@vuepress/plugin-pwa'
-import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
-import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
-import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
-import { containerPlugin } from '@vuepress/plugin-container'
-import { copyCodePlugin } from 'vuepress-plugin-copy-code2'
-import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup'
-import { dynamicTitlePlugin } from '@vuepress-denaro/vuepress-plugin-dynamic-title'
-import { readingTimePlugin } from 'vuepress-plugin-reading-time2'
-import { copyrightPlugin } from 'vuepress-plugin-copyright2'
-import { searchProPlugin } from 'vuepress-plugin-search-pro'
-import { commentPlugin } from 'vuepress-plugin-comment2'
-import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
-import { seoPlugin } from 'vuepress-plugin-seo2'
-import kanBanPlugin from 'vuepress-plugin-kanban-live2d'
-import goTopPlugin from 'vuepress-plugin-go-top'
+import { defineUserConfig, defaultTheme, HeadConfig } from 'vuepress';
+import { nprogressPlugin } from '@vuepress/plugin-nprogress';
+import { navbar, head as header } from './configs/index.js';
+import { pwaPlugin } from '@vuepress/plugin-pwa';
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
+import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon';
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
+import { containerPlugin } from '@vuepress/plugin-container';
+import { copyCodePlugin } from 'vuepress-plugin-copy-code2';
+import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup';
+import { dynamicTitlePlugin } from '@vuepress-denaro/vuepress-plugin-dynamic-title';
+import { readingTimePlugin } from 'vuepress-plugin-reading-time2';
+import { copyrightPlugin } from 'vuepress-plugin-copyright2';
+import { searchProPlugin } from 'vuepress-plugin-search-pro';
+import { commentPlugin } from 'vuepress-plugin-comment2';
+import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
+import { seoPlugin } from 'vuepress-plugin-seo2';
+import kanBanPlugin from 'vuepress-plugin-kanban-live2d';
+import goTopPlugin from 'vuepress-plugin-go-top';
 function isIterable(obj: any): Boolean {
   return (
     obj !== null &&
     obj !== undefined &&
     typeof obj[Symbol.iterator] === 'function'
-  )
+  );
 }
-const head: HeadConfig[] = isIterable(header) && header.map((i) => i)
+const head: HeadConfig[] = isIterable(header) && header.map((i) => i);
 
 export default defineUserConfig({
   lang: 'zh-CN',
   title: 'study note',
   description: 'Includes most of the knowledge of programming languages',
-  base: '/blog/',
+  base: '/notes/',
   plugins: [
     copyrightPlugin({
       author: 'flow-zy',
@@ -109,7 +109,7 @@ export default defineUserConfig({
     }),
     commentPlugin({
       provider: 'Giscus',
-      repo: 'flow-zy/blog',
+      repo: 'flow-zy/notes',
       repoId: 'R_kgDOKAlqHw',
       category: 'Announcements',
       categoryId: 'DIC_kwDOKAlqH84CYPfm',
@@ -155,4 +155,4 @@ export default defineUserConfig({
     // 启动页面丝滑滚动
   }),
   head,
-})
+});
