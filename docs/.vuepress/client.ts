@@ -56,9 +56,10 @@ export default defineClientConfig({
         ? window && handleScroll(window)
         : '';
     });
-    window.addEventListener('scroll', () => {
-      handleScroll(window);
-    });
+    window &&
+      window.addEventListener('scroll', () => {
+        handleScroll(window);
+      });
   },
   rootComponents: [],
 });
