@@ -14,6 +14,10 @@ const navbar: NarBarItem[] = [
     link: '/rear',
   },
   {
+    text: '数据库',
+    link: '/database',
+  },
+  {
     text: '项目管理',
     link: '/management',
   },
