@@ -835,6 +835,47 @@ function App() {
 
 通过这样的配置，当用户访问不同的路径时，React Router v6 会自动匹配到相应的子路由，并将其渲染在父组件中定义的 `Outlet` 组件位置上。
 
+## 路由懒加载
+
+路由懒加载是一种优化技术，用于延迟加载应用程序中的路由组件。这可以提高页面加载性能，减少初始加载时的资源消耗。
+
+在 React Router v6 中，路由懒加载可以使用 Suspense 和 lazy 函数来实现。
+
+首先，需要在项目中安装 React 和 React Router:
+
+```bash
+npm install react react-router-dom
+```
+
+然后，可以使用以下代码演示 React Router v6 中的路由懒加载:
+
+```jsx
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+const Home = lazy(() => import('./components/Home'));
+const About = lazy(() => import('./components/About'));
+
+const App = () => {
+  return (
+    <Router>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Suspense>
+    </Router>
+  );
+};
+
+export default App;
+```
+
+在上面的代码中，我们首先使用 `lazy` 函数从相应的路径导入需要懒加载的路由组件。然后，将这些懒加载的组件传递给 React Router 的 `Route` 组件的 `element` 属性中。此时，React Router 会在需要渲染该路由时自动加载该组件。
+
+注意，`Suspense` 组件用于指定在加载路由组件时显示的加载指示符（例如 "Loading..."）。它是 React 16.6 引入的新组件。
+
 ## 路由Hook
 
 React-Router v6已经引入了一些新的概念和API来管理路由。其中，使用路由钩子（Hooks）是一个重要且强大的特性。下面将详细介绍React-Router v6中的路由钩子。
