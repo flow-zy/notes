@@ -1,8 +1,9 @@
 ---
 title: todoMvc
 ---
+# VUE版
 
-## 创建一个新的 Vue 3 项目
+## 创建一个新的 Vue 2 项目
 
    1. 安装 Node.js（如果尚未安装）
    2. 打开终端并创建一个新的目录
@@ -225,7 +226,6 @@ export default {
 </script>
 
 <style scoped>
-/* add your custom styles here */
 </style>
 ```
 
@@ -239,4 +239,99 @@ export default {
 
    2. 打开浏览器，访问 `http://localhost:8080`，即可查看运行中的 Todo MVC 应用。
 
-这样，你就在 Vue 3 中创建了一个简单的 Todo MVC 应用。你可以根据需要添加其他功能和样式，以满足你的需求。
+这样，你就在 Vue 2 中创建了一个简单的 Todo MVC 应用。你可以根据需要添加其他功能和样式，以满足你的需求。
+
+# React 版
+
+1. 创建一个新的React项目，确保你已经安装了Node.js和npm。
+
+```shell
+npx create-react-app todo-app
+cd todo-app
+```
+
+2. 清除默认的React组件和样式，并创建一个新的`Todo`组件。
+
+```jsx
+// src/App.js
+
+import React from 'react';
+
+function Todo() {
+  return (
+    <div>
+      TODO MVC App
+    </div>
+  );
+}
+
+export default Todo;
+```
+
+3. 在`App.js`中添加Todo列表的组件。
+
+```jsx
+// src/App.js
+
+import React, { useState } from 'react';
+
+function Todo() {
+  const [todos, setTodos] = useState([]);
+  const [todoInput, setTodoInput] = useState('');
+
+  const handleAddTodo = () => {
+    setTodos([...todos, todoInput]);
+    setTodoInput('');
+  };
+
+  const handleDeleteTodo = (index) => {
+    const updatedTodos = [...todos];
+    updatedTodos.splice(index, 1);
+    setTodos(updatedTodos);
+  };
+
+  return (
+    <div>
+      <h1>Todo MVC App</h1>
+      <input type="text" value={todoInput} onChange={(e) => setTodoInput(e.target.value)} />
+      <button onClick={handleAddTodo}>Add Todo</button>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo}
+            <button onClick={() => handleDeleteTodo(index)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Todo;
+```
+
+4. 在`src/index.js`中使用`ReactDOM.render`将`Todo`组件渲染到DOM中。
+
+```jsx
+// src/index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Todo from './App';
+import './index.css';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Todo />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+5. 运行你的应用程序。
+
+```shell
+npm start
+```
+
+现在你应该可以在浏览器中看到一个简单的TodoMVC应用程序了。你可以添加和删除Todo。
