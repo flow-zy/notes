@@ -33,6 +33,7 @@ React具有以下特点：
 ### React的优点和特点
 
 - 优点
+
 1. 组件化开发：React采用组件化的开发思想，将界面拆分成独立的可复用组件，使得代码更易于理解、维护和测试。组件的高度复用性也提高了开发效率。
 
 2. 虚拟DOM：React使用虚拟DOM（Virtual DOM）来进行高效的页面更新。它将页面的状态映射到组件树上，并将变化部分与实际DOM进行对比，然后只更新需要变化的部分，减少了对实际DOM的操作次数，提高了性能。
@@ -146,6 +147,7 @@ JSX与HTML在外观上很相似，因为它们都使用了类似于HTML的标记
 以下是JSX和HTML的对比示例：
 
 JSX示例：
+
 ```jsx
 import React from 'react';
 
@@ -161,6 +163,7 @@ const element = (
 ```
 
 HTML示例：
+
 ```html
 <div class="container">
   <h1>Hello, John Doe!</h1>
@@ -398,12 +401,14 @@ function App() {
 在React组件中，状态（state）和属性（props）是两个重要的概念，用于管理组件的数据。它们有以下区别：
 
 属性（props）：
+
 - 属性是从组件的父组件传递给子组件的数据。
 - 属性是只读的，子组件不能直接修改父组件传递的属性。
 - 父组件可以在实例化或者渲染子组件时，通过在子组件上添加属性传递数据。
 - 子组件可以通过`this.props`来访问父组件传递的属性。例如：`this.props.name`将访问`name`属性的值。
 
 示例：
+
 ```jsx
 // 父组件
 function ParentComponent() {
@@ -417,12 +422,14 @@ function ChildComponent(props) {
 ```
 
 状态（state）：
+
 - 状态是组件内部管理的数据。
 - 状态是可变的，在组件的生命周期中可以通过`this.state`来访问和修改状态。
 - 状态初始化通常在构造函数`constructor`中进行，使用`this.state`来定义初始状态。
 - 可以使用`this.setState()`方法更新状态，并且React会自动重新渲染组件。
 
 示例：
+
 ```jsx
 class CounterComponent extends React.Component {
   constructor(props) {
@@ -459,6 +466,7 @@ class CounterComponent extends React.Component {
 无论是函数组件还是类组件，都必须实现一个`render`方法来返回组件的结构和内容。`render`方法应该只负责返回组件的UI表示，不应该包含副作用或直接修改状态。
 
 函数组件的渲染：
+
 ```jsx
 function FunctionComponent() {
   return <h1>Hello, World!</h1>;
@@ -468,6 +476,7 @@ function FunctionComponent() {
 上述函数组件的渲染非常简单，只需在函数体中直接返回JSX。在函数组件中，返回的JSX定义了组件渲染后的结构和内容。
 
 类组件的渲染：
+
 ```jsx
 class ClassComponent extends React.Component {
   render() {
@@ -496,21 +505,25 @@ ReactDOM.render(element, document.getElementById('root'));
 在React 16.3版本之前，组件的生命周期包括三个阶段：挂载（Mounting）、更新（Updating）和卸载（Unmounting）。从React 16.3版本开始，还引入了一些新的生命周期方法和改动。下面是组件的生命周期和对应的方法：
 
 1. 挂载阶段（Mounting）
+
 - constructor：组件实例化时调用，用于初始化状态和绑定事件处理程序。
 - static getDerivedStateFromProps：在渲染过程中调用，用于根据props初始化或更新state。
 - render：必需的方法，在这里返回组件的JSX表示。
 - componentDidMount：组件第一次渲染完成后调用，在这里进行异步数据加载、订阅事件等副作用操作。
 
 2. 更新阶段（Updating）
+
 - static getDerivedStateFromProps：在组件接收到新的props时调用，用于根据props更新state。
 - shouldComponentUpdate：在组件更新前调用，控制组件是否重新渲染，默认返回true。
 - render：重新渲染组件。
 - componentDidUpdate：组件更新完成后调用，进行DOM操作或在更新后的状态做一些操作。
 
 3. 卸载阶段（Unmounting）
+
 - componentWillUnmount：组件即将从DOM中移除时调用，进行清理工作，如取消订阅或清除计时器。
 
 还有一些React 16.3版本之后引入的新方法：
+
 - static getDerivedStateFromError：当组件的子组件抛出错误时调用，用于渲染出错处理。
 - componentDidCatch：当子组件抛出错误时调用，用于记录错误信息和报告。
 
@@ -524,6 +537,7 @@ ReactDOM.render(element, document.getElementById('root'));
 
 1. constructor：构造函数方法，在组件实例化时调用。初始化组件的状态（state），绑定方法的this指向等操作可以在这里进行。
 示例代码：
+
 ```jsx
 constructor(props) {
   super(props);
@@ -537,6 +551,7 @@ constructor(props) {
 
 2. static getDerivedStateFromProps：当组件接收到新的props时调用，用于根据props更新组件状态（state）。
 示例代码：
+
 ```jsx
 static getDerivedStateFromProps(nextProps, prevState) {
   if (nextProps.count !== prevState.count) {
@@ -548,6 +563,7 @@ static getDerivedStateFromProps(nextProps, prevState) {
 
 3. render：必需的方法，用于返回组件的JSX表示。在这里，我们可以创建组件的UI结构。
 示例代码：
+
 ```jsx
 render() {
   return (
@@ -561,6 +577,7 @@ render() {
 
 4. componentDidMount：在组件第一次渲染完成后调用，可以在这里进行异步数据加载、订阅事件等副作用操作。
 示例代码：
+
 ```jsx
 componentDidMount() {
   // 异步请求数据
@@ -577,6 +594,7 @@ componentDidMount() {
 
 5. shouldComponentUpdate：在组件更新前调用，返回一个布尔值，用于控制是否重新渲染组件。可以用于性能优化，避免不必要的重渲染。
 示例代码：
+
 ```jsx
 shouldComponentUpdate(nextProps, nextState) {
   if (this.props.count === nextProps.count && this.state.count === nextState.count) {
@@ -588,6 +606,7 @@ shouldComponentUpdate(nextProps, nextState) {
 
 6. componentDidUpdate：在组件更新完成后调用，可以进行DOM操作或在更新后的状态进行一些操作。
 示例代码：
+
 ```jsx
 componentDidUpdate(prevProps, prevState) {
   if (prevState.count !== this.state.count) {
@@ -598,6 +617,7 @@ componentDidUpdate(prevProps, prevState) {
 
 7. componentWillUnmount：在组件即将从DOM中移除时调用，可以进行一些清理工作，比如取消订阅或清除计时器。
 示例代码：
+
 ```jsx
 componentWillUnmount() {
   // 取消订阅
@@ -609,6 +629,85 @@ componentWillUnmount() {
 ```
 
 以上是React组件的常用生命周期方法，每个方法都有特定的用途和执行时机，通过重写这些方法，我们可以控制组件的行为，实现相应的操作和逻辑。需要根据具体的需求选择合适的生命周期方法来使用。
+
+### 高阶组件（HOC）
+
+高阶组件（Higher-Order Component，简称HOC）是一种在React中用来复用组件逻辑的高级技术。
+
+HOC本质上是一个函数，可以接受一个组件作为参数并返回一个新的组件。这种模式可以将组件逻辑进行抽象和封装，使得代码更具可重用性和可维护性。
+
+HOC可以用于很多场景，比如：
+
+属性代理：通过修改组件的props，可以将共享的props、事件处理函数等注入到原组件中。这种方式可以用于实现一些通用的逻辑，如日志记录、性能监测等。
+
+```js
+const withLogger = (WrappedComponent) => {
+  return function WithLogger(props) {
+    console.log('Props:', props);
+    return <WrappedComponent {...props} />;
+  }
+}
+
+const MyComponent = withLogger((props) => {
+  return <div>{props.name}</div>;
+});
+
+```
+
+渲染劫持：通过修改组件的渲染过程，可以动态地修改组件的行为和外观，比如添加条件渲染、添加loading状态等。
+
+```js
+const withLoading = (WrappedComponent) => {
+  return function WithLoading({ isLoading, ...restProps }) {
+    if (isLoading) {
+      return <div>Loading...</div>
+    } else {
+      return <WrappedComponent {...restProps} />;
+    }
+  }
+}
+
+const MyComponent = withLoading((props) => {
+  return <div>{props.name}</div>;
+});
+```
+
+响应式数据注入：通过使用容器组件包裹原组件，并将外部数据传递给原组件，可以实现数据的管理和状态的共享。
+
+```js
+const withData = (WrappedComponent) => {
+  return class WithData extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        data: []
+      };
+    }
+
+    componentDidMount() {
+      // 获取数据并更新state
+      fetch('api/data')
+        .then(response => response.json())
+        .then(data => this.setState({ data }));
+    }
+
+    render() {
+      return <WrappedComponent data={this.state.data} {...this.props} />;
+    }
+  }
+}
+
+const MyComponent = withData((props) => {
+  return (
+    <div>
+      {props.data.map(item => <div key={item.id}>{item.name}</div>)}
+    </div>
+  );
+});
+
+```
+
+通过使用HOC，我们可以将一些具有相似功能或具有共同需求的组件逻辑进行提取和复用，避免了代码的重复编写和重复维护。同时，HOC也提高了代码的可读性和可测试性，使得组件变得更加灵活和可扩展。
 
 ## 事件处理
 
@@ -672,6 +771,7 @@ componentWillUnmount() {
 需要注意的是，在使用事件处理程序时，要确保正确绑定和处理事件，以避免出现意外行为或性能问题。
 
 ### 绑定事件处理函数的方法
+
 在React中，有多种方法可以绑定事件处理函数。以下是常用的几种方法：
 
 1. 使用箭头函数：
@@ -1596,12 +1696,14 @@ function Counter() {
 Virtual DOM（虚拟DOM）是React框架的核心概念之一，它在React中起到了重要的作用。下面是Virtual DOM的原理和优势：
 
 Virtual DOM的原理：
+
 1. 虚拟DOM是一个轻量级的JavaScript对象，它是对实际DOM的抽象表示。
 2. 当应用的状态发生变化时，React会首先生成一个新的虚拟DOM树，与之前的虚拟DOM树进行比较。
 3. React会找出两个虚拟DOM树之间的差异，并只把实际DOM中需要变动的部分更新。
 4. 这种差异计算的方式可以最小化对实际DOM的操作，从而提高性能和效率。
 
 Virtual DOM的优势：
+
 1. 提高性能：由于实际DOM操作是非常昂贵的，Virtual DOM可以通过批量更新的方式减少对实际DOM的操作次数，从而提高性能。Virtual DOM会在内部使用算法来最小化对实际DOM的修改，只更新真正需要变动的部分，而不是整个页面。
 
 2. 简化开发：Virtual DOM提供了一种声明式的方式来描述想要渲染的UI。你只需要关注数据的变化，并用React组件来描述UI的结构和状态，而无需手动操作DOM。这样简化了开发流程，提高了开发效率。
@@ -1636,11 +1738,13 @@ Virtual DOM的优势：
 `PureComponent`是React中的一个基类组件，它自动实现了`shouldComponentUpdate`方法，用于进行浅层的props和state比较。如果当前和前一个渲染的props和state相等，`PureComponent`会阻止组件重新渲染，提高性能。
 
 使用场景：
+
 - 当props和state的数据是不可变的，或者通过深层比较可以轻松确定它们的变化时，可以将组件包装为`PureComponent`。
 - 适用于大多数简单的展示性组件，它们主要依赖props而不是内部状态。
 - 不适用于使用引用类型数据（如数组、对象）的情况，因为浅层比较可能会造成误判。
 
 示例代码：
+
 ```jsx
 class MyComponent extends React.PureComponent {
   // 省略其他方法...
@@ -1655,10 +1759,12 @@ class MyComponent extends React.PureComponent {
 `memo`是一个高阶组件，它类似于`PureComponent`，但用于函数式组件。`memo`接收一个组件作为参数，并返回一个具有性能优化的新组件。`memo`会对组件的props进行浅层比较，如果`props`没有变化，则阻止组件重新渲染。
 
 使用场景：
+
 - 适用于函数式组件，特别是当函数组件接收的props有限且不可变时。
 - 可以用于包裹那些在相同输入下保持相同输出的纯展示组件。
 
 示例代码：
+
 ```jsx
 const MyComponent = React.memo(({ text }) => {
   return <div>{text}</div>;
@@ -1702,6 +1808,7 @@ class MyComponent extends React.Component {
 3. `shouldComponentUpdate`方法的返回值会影响组件是否重新渲染。如果返回`false`，则组件不会重新渲染；如果返回`true`，则组件会继续执行后续的生命周期方法，进行更新。
 
 需要注意以下几点：
+
 - 在编写`shouldComponentUpdate`方法时，确保逻辑判断是准确的和高效的，避免引入不必要的复杂性和性能问题。
 - 在使用`shouldComponentUpdate`方法进行手动优化时，要特别注意对比引用类型（如数组、对象）的变化，因为对于引用类型，默认的浅层比较可能会导致误判。在这种情况下，需要自行实现深层比较或使用帮助函数（如`lodash`中的`isEqual`）来确保准确的比较。
 
