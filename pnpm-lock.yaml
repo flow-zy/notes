@@ -56,9 +56,6 @@ dependencies:
   '@vuepress/utils':
     specifier: 2.0.0-alpha.1
     version: 2.0.0-alpha.1
-  '@yuannancheng/vuepress-plugin-last-reading':
-    specifier: ^2.0.1
-    version: 2.0.1
   fs:
     specifier: 0.0.1-security
     version: 0.0.1-security
@@ -83,9 +80,6 @@ dependencies:
   vuepress-plugin-go-top:
     specifier: ^1.0.4
     version: 1.0.4
-  vuepress-plugin-kanban-live2d:
-    specifier: ^1.4.6
-    version: 1.4.6
 
 devDependencies:
   '@types/node':
@@ -2400,10 +2394,6 @@ packages:
   /@types/ms@0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
 
-  /@types/node@20.4.5:
-    resolution: {integrity: sha512-rt40Nk13II9JwQBdeYqmbn2Q6IVTA5uPhvSO+JVqdXw/6/4glI6oR9ezty/A9Hg5u7JH4OmYmuQ+XvjKm0Datg==}
-    dev: false
-
   /@types/node@20.4.8:
     resolution: {integrity: sha512-0mHckf6D2DiIAzh8fM8f3HQCvMKDpK94YQ0DSVkfWTG9BZleYIWudw9cJxX8oCk9bM+vAkDyujDV6dmKHbvQpg==}
 
@@ -3334,10 +3324,6 @@ packages:
 
   /@xtuc/long@4.2.2:
     resolution: {integrity: sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==}
-    dev: false
-
-  /@yuannancheng/vuepress-plugin-last-reading@2.0.1:
-    resolution: {integrity: sha512-wGw/rokjMgy1eIQmdMjdWDGxybJkMsNK228DDVYd1yLAm9lvKST/klxrXjDhhCfjQURaLc//lcbguM58U0YrhQ==}
     dev: false
 
   /JSONStream@1.3.5:
@@ -6336,7 +6322,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.4.5
+      '@types/node': 20.4.8
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false
@@ -9126,10 +9112,6 @@ packages:
 
   /vuepress-plugin-go-top@1.0.4:
     resolution: {integrity: sha512-VxYrZmvC9agXVOEzy1G7mJj23p17O7CVmcXhlaFtQ+J827OcIqNC1X646/gOI8Hfn8or17+J+8/Bg0ZSRyizEA==}
-    dev: false
-
-  /vuepress-plugin-kanban-live2d@1.4.6:
-    resolution: {integrity: sha512-S6D1pGexjiUodZoxeLIWluory3VgHamUa1jlnbpdRAU3iHGHhNQhfYMwHrSXIDjiaT97xZACQsyj+HmRWq9mnA==}
     dev: false
 
   /vuepress-plugin-md-enhance@2.0.0-beta.234(vuepress@2.0.0-beta.66):
