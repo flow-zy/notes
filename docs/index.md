@@ -12,11 +12,11 @@ actions:
       type: primary
 features:
     - title: Widely
-      details: 专注于前端开发的博客平台，旨在为广大前端开发者提供一个分享经验、学习技巧和解决问题的社区。在这里，你可以找到关于HTML、CSS、JavaScript等前端技术的知识点
+      details: The blog platform focused on front-end development aims to provide a community for front-end developers to share experiences, learn tips and solve problems. Here, you can find knowledge about HTML, CSS, JavaScript and other front-end technologies
     - title: Phased
-      details: 对前端技术感兴趣的人群，包括但不限于前端开发人员、设计师、学生、爱好者等。
+      details: People interested in front-end technology, including but not limited to front-end developers, designers, students, enthusiasts, etc.
     - title: Experience
-      details: 面试不仅需要技术，同时，也需要一些心理博弈。
+      details: Interviewing requires not only technical skills, but also some mental games.
 footer: MIT Licensed | Copyright © 2023-present CoolDream
 footerHtml: true
 ---
