@@ -3,8 +3,6 @@ export const pagesData = {
   "v-8daa1a0e": () => import(/* webpackChunkName: "v-8daa1a0e" */"I:/php/notes/docs/.vuepress/.temp/pages/index.html.js").then(({ data }) => data),
   // path: /code/todoMVC.html
   "v-55d4b2a4": () => import(/* webpackChunkName: "v-55d4b2a4" */"I:/php/notes/docs/.vuepress/.temp/pages/code/todoMVC.html.js").then(({ data }) => data),
-  // path: /database/mysql.html
-  "v-48187af2": () => import(/* webpackChunkName: "v-48187af2" */"I:/php/notes/docs/.vuepress/.temp/pages/database/mysql.html.js").then(({ data }) => data),
   // path: /frame/react.html
   "v-75b45195": () => import(/* webpackChunkName: "v-75b45195" */"I:/php/notes/docs/.vuepress/.temp/pages/frame/react.html.js").then(({ data }) => data),
   // path: /frame/spring.html
@@ -13,6 +11,8 @@ export const pagesData = {
   "v-04a4a898": () => import(/* webpackChunkName: "v-04a4a898" */"I:/php/notes/docs/.vuepress/.temp/pages/frame/thinkphp.html.js").then(({ data }) => data),
   // path: /frame/vue.html
   "v-148d48ae": () => import(/* webpackChunkName: "v-148d48ae" */"I:/php/notes/docs/.vuepress/.temp/pages/frame/vue.html.js").then(({ data }) => data),
+  // path: /database/mysql.html
+  "v-48187af2": () => import(/* webpackChunkName: "v-48187af2" */"I:/php/notes/docs/.vuepress/.temp/pages/database/mysql.html.js").then(({ data }) => data),
   // path: /front/css.html
   "v-5dd7b515": () => import(/* webpackChunkName: "v-5dd7b515" */"I:/php/notes/docs/.vuepress/.temp/pages/front/css.html.js").then(({ data }) => data),
   // path: /front/ECMAScript.html

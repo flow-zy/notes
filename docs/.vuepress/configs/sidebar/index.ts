@@ -16,6 +16,7 @@ const travel = (dir) => {
       ) {
         const pathName = path.join(dir, file)
         const pathNameArr = pathName.split('\\') // 根据这个判断当前遍历到第几次了
+        const len = pathNameArr.length
         if (pathNameArr.length === 2) {
           // 遍历第1层的时候 将文件夹作为pathNameSpace
           sidebar[`/${file}/`] = []
@@ -24,7 +25,7 @@ const travel = (dir) => {
           if (statSync(pathName).isDirectory()) {
             sidebar[`/${pathNameArr.at(1)}/`].unshift({
               text: capitalizeFirstLetter(
-                pathNameArr.at(-1).split('_').join(' ')
+                pathNameArr[len - 1].split('_').join(' ')
               ),
               link: (pathName.replace('docs', '') + '\\index.md')
                 .split('\\')
@@ -35,7 +36,7 @@ const travel = (dir) => {
           } else {
             sidebar[`/${pathNameArr.at(1)}/`].unshift({
               text: capitalizeFirstLetter(
-                pathNameArr.at(-1).replace('.md', '').split('_').join(' ')
+                pathNameArr[len - 1].replace('.md', '').split('_').join(' ')
               ),
               link: pathName.replace('docs', '').split('\\').join('/'),
             })
@@ -43,11 +44,11 @@ const travel = (dir) => {
         } else if (pathNameArr.length === 4) {
           // 遍历第3层的时候 3层的文件夹就是你的markdown，不能再有目录 我这里只支持两层嵌套目录
           const current = sidebar[`/${pathNameArr.at(1)}/`].find((item) => {
-            return item.text == pathNameArr.at(2).split('_').join(' ')
+            return item.text == pathNameArr[2].split('_').join(' ')
           })
           current.children.unshift({
             text: capitalizeFirstLetter(
-              pathNameArr.at(-1).replace('.md', '').split('_').join(' ')
+              pathNameArr[len - 1].replace('.md', '').split('_').join(' ')
             ),
             link: pathName.replace('docs', '').split('\\').join('/'),
           })
