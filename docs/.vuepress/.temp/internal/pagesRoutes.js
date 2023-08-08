@@ -1,11 +1,11 @@
 export const pagesRoutes = [
   ["v-8daa1a0e","/",{"title":""},["/index.md"]],
   ["v-55d4b2a4","/code/todoMVC.html",{"title":"todoMvc"},[":md"]],
+  ["v-48187af2","/database/mysql.html",{"title":"MySQL"},[":md"]],
   ["v-75b45195","/frame/react.html",{"title":"React"},[":md"]],
   ["v-8545f11e","/frame/spring.html",{"title":""},[":md"]],
   ["v-04a4a898","/frame/thinkphp.html",{"title":""},[":md"]],
   ["v-148d48ae","/frame/vue.html",{"title":"Vue"},[":md"]],
-  ["v-48187af2","/database/mysql.html",{"title":"MySQL"},[":md"]],
   ["v-5dd7b515","/front/css.html",{"title":"CSS"},[":md"]],
   ["v-3d3f98c6","/front/ECMAScript.html",{"title":"ECMAScript"},[":md"]],
   ["v-58f2a8e2","/front/html.html",{"title":"HTML"},[":md"]],
