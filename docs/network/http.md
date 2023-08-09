@@ -206,7 +206,7 @@ Cookie与Session的关系：
 总结：
 连接管理在HTTP协议中起着重要的作用，通过持久连接、连接超时、最大请求数限制和连接池等机制，可以有效地管理和优化网络连接，提高性能和响应速度。在实际的Web开发中，了解和合理使用连接管理的技术可以对应用的性能和可伸缩性带来积极的影响。
 
-## S
+## HTTPS
 
 HTTPS（Hypertext Transfer Protocol Secure）是一种通过加密和身份验证方式来保护传输数据安全性的网络通信协议。它是基于HTTP协议的加密版本，通过使用SSL（Secure Socket Layer）或TLS（Transport Layer Security）协议来建立安全的通信通道。
 
