@@ -153,18 +153,22 @@ p.description {
 .hero,
 .features {
   color: #555 !important;
-  background-image: linear-gradient(90deg,
+  background-image: linear-gradient(
+      90deg,
       rgba(159, 219, 252, 0.15) 3%,
-      transparent 0),
+      transparent 0
+    ),
     linear-gradient(1turn, rgba(159, 219, 252, 0.15) 3%, transparent 0);
   background-size: 20px 20px;
   background-position: 50%;
 }
 
 .page .theme-default-content {
-  background-image: linear-gradient(90deg,
+  background-image: linear-gradient(
+      90deg,
       rgba(159, 219, 252, 0.15) 3%,
-      transparent 0),
+      transparent 0
+    ),
     linear-gradient(1turn, rgba(159, 219, 252, 0.15) 3%, transparent 0);
   background-size: 20px 20px;
   background-position: 50%;
@@ -342,9 +346,37 @@ canvas {
   position: fixed;
   right: 50px;
   z-index: 123;
-  width: 50px;
-  height: 50px;
-  mask-size: cover;
-  -webkit-mask-size: cover;
+  box-sizing: border-box;
+  width: 57px;
+  height: 70px;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-position: center center;
   background-color: var(--c-brand);
+  mask-border: 1px solid var(--c-brand-dark);
+  -webkit-mask-position: center center;
+  -webkit-mask-border: 1px solid var(--c-brand-dark);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+#moefy-progress {
+  width: 100%;
+  left: 0;
+  position: fixed;
+  top: 56px;
+  height: 5px;
+  z-index: 999;
+  color: var(--c-brand-light);
+  // border: none;
+  // background-color: var(--c-brand-light);
+  &::-webkit-progress-bar,
+  &::-moz-progress-bar {
+    background-color: #fff;
+  }
+  &::-webkit-progress-value {
+    background-color: var(--c-brand);
+  }
 }
