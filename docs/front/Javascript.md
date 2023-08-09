@@ -21,27 +21,33 @@ javaScript（简称JS）是一种非常有用的编程语言。它可以用来�
 变量用于存储数据值或引用对象。下面是关于变量的一些重要概念：
 
 1. 变量声明：在使用变量之前，需要通过关键字var、let或const声明它们。例如：
+
 ```javascript
 var name;
 let age;
 const PI = 3.1415;
 ```
+
 在上述示例中，`name`、`age`和`PI`分别是变量的名称，通过关键字var、let或const进行声明。
 
 2. 变量赋值：在声明变量后，可以给它们赋值。例如：
+
 ```javascript
 name = "John";
 age = 25;
 ```
+
 可以将值直接赋给变量，也可以从其他变量中获取值赋给新变量。
 
 3. 变量命名规则：变量名可以包含字母、数字、美元符号($)和下划线(_)，但不能以数字开头。变量名区分大小写，且不能使用JavaScript的关键字或保留字作为变量名。例如：
+
 ```javascript
 var myVariable;
 var data1;
 ```
 
 4. 变量作用域：变量的作用域指的是该变量在代码中可访问的范围。在函数内部声明的变量具有局部作用域，而在函数外部声明的变量具有全局作用域。例如：
+
 ```javascript
 var globalVariable = "Global"; // 全局变量
 
@@ -57,14 +63,17 @@ console.log(localVariable); // 无法在函数外访问局部变量，会报错
 ```
 
 5. 变量类型：JavaScript是一种动态类型语言，变量的类型可以根据赋给它们的值自动推断和改变。例如：
+
 ```javascript
 var name = "John"; // 字符串类型
 var age = 25; // 数字类型
 var isStudent = true; // 布尔类型
 ```
+
 可以随时修改变量的值和类型，例如将`age`变量的类型从数字改为字符串。
 
 6. 变量提升：变量和函数的声明会被提前到其所在作用域的顶部。这意味着可以在声明之前使用变量或调用函数，而不会报错。然而，只有声明被提前，而不是赋值。例如：
+
 ```javascript
 console.log(name); // undefined
 var name = "John";
@@ -74,33 +83,38 @@ var name = "John";
 
 JavaScript中有许多内置的数据类型，每种类型用于存储不同类型的数据。
 
-### 常见数据类型：
+### 常见数据类型
 
 1. 字符串（String）：用于存储文本数据。字符串使用引号（单引号或双引号）将文本括起来。例如：
+
 ```javascript
 var name = "John";
 var message = 'Hello, world!';
 ```
 
 2. 数字（Number）：用于存储数值数据。它可以是整数或浮点数。例如：
+
 ```javascript
 var age = 25;
 var pi = 3.14;
 ```
 
 3. 布尔值（Boolean）：表示逻辑上的 true 或 false。用于进行条件测试和控制程序流程。例如：
+
 ```javascript
 var isStudent = true;
 var isAdult = false;
 ```
 
 4. 数组（Array）：用于存储多个值的有序集合。数组中的每个值称为元素，可以通过索引访问。数组可以包含不同类型的元素。例如：
+
 ```javascript
 var numbers = [1, 2, 3, 4, 5];
 var fruits = ["apple", "banana", "orange"];
 ```
 
 5. 对象（Object）：用于存储键值对形式的数据，可以通过键来访问值。对象可以包含不同类型的属性。例如：
+
 ```javascript
 var person = {
   name: "John",
@@ -110,17 +124,20 @@ var person = {
 ```
 
 6. 空值（Null）：表示一个空值或空对象引用。例如：
+
 ```javascript
 var data = null;
 ```
 
 7. 未定义（Undefined）：使用未初始化的变量或未声明的变量时，其值为 undefined。例如：
+
 ```javascript
 var x;
 console.log(x); // 输出：undefined
 ```
 
 8. 函数（Function）：函数是可执行的代码块，用于执行特定的任务或计算结果。函数可以接收参数，并可以返回一个值。例如：
+
 ```javascript
 function sayHello(name) {
   console.log("Hello, " + name + "!");
@@ -171,6 +188,7 @@ console.log(result); // 输出："1020"（字符串的拼接）
 在 JavaScript 中，可以使用 `typeof` 运算符和 `instanceof` 运算符进行类型检测。
 
 1. `typeof` 运算符：`typeof` 运算符可以用来检测一个值的数据类型。它返回一个表示数据类型的字符串。
+
    ```javascript
    console.log(typeof 42);               // 输出: "number"
    console.log(typeof "Hello");          // 输出: "string"
@@ -183,6 +201,7 @@ console.log(result); // 输出："1020"（字符串的拼接）
    ```
 
 2. `instanceof` 运算符：`instanceof` 运算符可以用来判断一个对象是否是某个类的实例。它检查给定对象的原型链是否存在于指定类的原型链中。
+
    ```javascript
    class MyClass {}
     
@@ -232,7 +251,7 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    var remainder = x % y; // 模运算符
    console.log(remainder); // 输出：0
    ```
-   
+
 2. 赋值运算符：用于将值赋给变量。
    - 等号运算符（=）：将右侧的值赋给左侧的变量。
    - 复合赋值运算符（+=、-=、*=、/=）：执行运算并将结果赋给左侧的变量。
@@ -253,7 +272,7 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    console.log(x); // 输出：4
    
    ```
-   
+
 3. 比较运算符：用于比较两个值并返回布尔值（true或false）。
    - 相等运算符（==）：检查两个值是否相等。
    - 不等运算符（!=）：检查两个值是否不相等。
@@ -263,7 +282,7 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    - 小于运算符（<）：检查第一个值是否小于第二个值。
    - 大于等于运算符（>=）：检查第一个值是否大于或等于第二个值。
    - 小于等于运算符（<=）：检查第一个值是否小于或等于第二个值。
-   
+
    ```javascript
    var x = 10;
    var y = 5;
@@ -277,7 +296,7 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    console.log(x >= y); // 大于等于运算符，输出：true
    console.log(x <= y); // 小于等于运算符，输出：false
    ```
-   
+
 4. 逻辑运算符：用于对布尔值进行逻辑操作并返回布尔值。
    - 逻辑与运算符（&&）：当两个值都为真时返回真。
    - 逻辑或运算符（||）：当两个值至少有一个为真时返回真。
@@ -291,17 +310,16 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    console.log(x > 0 || y > 0); // 逻辑或运算符，输出：true
    console.log(!(x > 0)); // 逻辑非运算符，输出：false
    ```
-   
+
 6. 三元条件运算符：根据条件返回不同的值。
    - 三元条件运算符（?:）：基于条件返回一个值。它的语法是`条件 ? 值1 : 值2`，如果条件为真，返回值1，否则返回值2。
-   
+
    ```javascript
    var age = 15;
    
    var result = age >= 18 ? "成年人" : "未成年人";
    console.log(result); // 根据条件输出：未成年人
    ```
-   
 
 除了以上列举的运算符，JavaScript还有位运算符、逗号运算符、typeof运算符、instanceof运算符等。这些运算符在不同的情况下有不同的用途，可以根据具体需求进行学习和使用。
 
@@ -500,7 +518,6 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
       console.log(str.trim()); // 返回去除开头和结尾空白字符的字符串 "Hello, World!"
       ```
 
-
 ## 数组（Array）
 
 数组是一种用于存储多个值的有序集合。数组可以包含任何类型的数据，包括数字、字符串、对象等。以下是一些关于 JavaScript 数组的基本操作和常见方法：
@@ -544,15 +561,15 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    JavaScript 提供了一系列的数组方法，用于执行各种操作，如添加、删除、查找、排序、切片等。一些常用的方法包括：
 
    - `push(element1, element2, ...)`: 将一个或多个元素添加到数组的末尾。这个方法会修改原数组，并返回数组的新长度。
-   
+
    ```javascript
    var arr = [1, 2, 3];
    arr.push(4, 5); // 在数组末尾添加元素
    console.log(arr); // 输出 [1, 2, 3, 4, 5]
    ```
-   
+
    - `pop()`: 从数组中删除最后一个元素，并返回删除的元素。这个方法会修改原数组。
-   
+
    ```javascript
    var arr = [1, 2, 3];
    var deletedElement = arr.pop(); // 删除数组的最后一个元素
@@ -561,14 +578,14 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    ```
 
    - `shift()`: 从数组中删除第一个元素，并返回删除的元素。这个方法会修改原数组。
-   
+
    ```javascript
    var arr = [1, 2, 3];
    var deletedElement = arr.shift(); // 删除数组的第一个元素
    console.log(deletedElement); // 输出被删除的元素 1
    console.log(arr); // 输出 [2, 3]
    ```
-   
+
    - `unshift(element1, element2, ...)`: 将一个或多个元素添加到数组的开头。这个方法会修改原数组，并返回数组的新长度。
 
    ```javascript
@@ -578,49 +595,49 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    ```
 
    - `concat(array1, array2, ...)`: 合并两个或多个数组，并返回一个新数组，而不修改原来的数组。
-   
+
    ```javascript
    var arr1 = [1, 2];
    var arr2 = [3, 4];
    var newArr = arr1.concat(arr2); // 合并两个数组
    console.log(newArr); // 输出 [1, 2, 3, 4]
    ```
-   
+
    - `join(separator)`: 将数组的所有元素连接成一个字符串，使用指定的分隔符。这个方法不会修改原数组。
-   
+
    ```javascript
    var arr = [1, 2, 3];
    var str = arr.join("-"); // 用分隔符连接数组的元素
    console.log(str); // 输出 "1-2-3"
    ```
-   
+
    - `indexOf(element)`: 返回指定元素在数组中首次出现的索引，如果找不到则返回 -1。
-   
+
    ```javascript
    var arr = [1, 2, 3, 2];
    console.log(arr.indexOf(2)); // 输出 1，因为 2 第一次出现在索引 1 的位置
    console.log(arr.indexOf(4)); // 输出 -1，因为 4 不在数组中
    ```
-   
+
    - `slice(start, end)`: 返回从起始索引到结束索引（不包括）之间的子数组。这个方法不会修改原数组。
-   
+
    ```javascript
    var arr = [1, 2, 3, 4, 5];
    var subArray = arr.slice(1, 4); // 获取索引 1 到 3 的元素
    console.log(subArray); // 输出 [2, 3, 4]
    ```
-   
+
    - `splice(start, deleteCount, item1, item2, ...)`: 从数组中删除指定数量的元素，并可选地插入新的元素。这个方法会修改原数组，并返回被删除的元素组成的数组。
-   
+
    ```javascript
    var arr = [1, 2, 3, 4, 5];
    var deletedElements = arr.splice(1, 2, 6, 7); // 从索引 1 开始删除 2 个元素，并插入 6 和 7
    console.log(deletedElements); // 输出被删除的元素组成的数组 [2, 3]
    console.log(arr); // 输出 [1, 6, 7, 4, 5]
    ```
-   
+
    - `sort()`: 对数组进行原地排序（默认按照字符串排序）。排序会修改原数组。
-   
+
    ```javascript
    var arr = [3,6,7,2,4]
    arr=arr.sort(function(a,b){
@@ -801,7 +818,6 @@ console.log(result); // 输出：5
 
    在这个例子中，`fetchData`函数模拟一个异步操作，并在操作完成后调用传递的回调函数`callback`来处理结果。
 
-
 ## 对象（Object）
 
 对象是一种复合数据类型，它可以存储相关数据和功能（方法）。对象由键值对的集合组成，其中每个键（属性）都有对应的值。
@@ -870,6 +886,7 @@ console.log(person.age); // 输出：26
      - `args`：要传递给回调函数的可选参数（可选）。
    - 返回值：一个唯一的标识符（timeout ID），可用于在需要时取消延迟执行。
    - 示例：
+
      ```javascript
      setTimeout(function() {
        console.log('延迟执行');
@@ -885,6 +902,7 @@ console.log(person.age); // 输出：26
      - `args`：要传递给回调函数的可选参数（可选）。
    - 返回值：一个唯一的标识符（interval ID），可用于在需要时停止周期性执行。
    - 示例：
+
      ```javascript
      var count = 0;
      var intervalId = setInterval(function() {
@@ -1601,7 +1619,7 @@ console.log(factorial(5)); // 输出 120
 
 递归在解决某些问题上非常有用，如树的遍历、复杂算法的实现等。然而，在一些情况下，迭代（循环）可能更简单和高效。因此，在使用递归之前，要仔细权衡使用递归和迭代的优缺点，并根据具体问题选择合适的方法。
 
-##  任务队列
+## 任务队列
 
 任务队列是用于管理和调度异步任务的一种数据结构。在 JavaScript 中，任务队列通常与事件循环搭配使用，用于处理异步操作和事件回调函数。
 
@@ -1757,7 +1775,7 @@ Timeout callback
 
 5. 打印出 "Promise callback"，这是微任务在当前宏任务执行完成后立即执行的结果。
 
-6. 2秒后，异步任务完成，打印出 "Received data: Data from https://example.com/api/data"。
+6. 2秒后，异步任务完成，打印出 "Received data: Data from <https://example.com/api/data"。>
 
 7. 打印出 "Timeout callback"，这是之前设置的宏任务。
 
@@ -1898,7 +1916,6 @@ JavaScript 异步编程是一种处理非阻塞操作的编程范式。它允许
    - 栈操作速度较快，因为数据的分配和释放都是通过移动栈指针来完成的。
    - 过多的栈内存使用可能导致栈溢出 (Stack Overflow) 错误。
 
-
 下面是一个栈的示例：
 
 ```javascript
@@ -1920,7 +1937,6 @@ foo();
    - 引用类型的值在堆中分配内存，并通过引用地址保存在栈指针中的变量中。
    - 引用类型的值可以共享和修改，因为多个变量可以引用相同的对象。
 
-
 下面是一个堆的示例：
 
 ```javascript
@@ -1933,6 +1949,7 @@ var arr = [1, 2, 3, 4, 5];
 在上面的示例中，`obj` 和 `arr` 变量存储的是对象和数组在堆中的引用地址。实际数据存储在堆中，而栈中的变量只是引用了堆中的数据。
 
 总结：
+
 - 栈用于存储简单数据类型，如数字、布尔值和指针等。它们在栈中直接分配和释放。
 - 堆用于存储复杂数据类型，如对象和数组等。数据在堆中动态分配和释放，而栈中的变量存储了堆中数据的引用地址。
 
@@ -2073,7 +2090,7 @@ console.log(area); // 输出 50
 
 3. 函数式编程 (Functional Programming)：
    函数式编程是一种将计算视为函数求值的开发模式。它强调使用纯函数（无副作用、无状态）来进行数据转换和操作。函数式编程更加注重代码的可测试性、可组合性，能够减少副作用和提高代码的健壮性。
-   
+
    以下是一个函数式编程的示例：
 
 ```javascript
@@ -2088,7 +2105,7 @@ console.log(doubledNumbers); // 输出 [2, 4, 6, 8, 10]
 
 4. 响应式编程 (Reactive Programming)：
    响应式编程是一种以数据流为基础的开发模式，它关注数据和数据流之间的关系。它使用观察者模式和数据订阅来处理异步数据流，通过响应式操作符进行数据的转换和组合。响应式编程适用于复杂的异步场景，如事件驱动的用户界面或实时数据流应用。
-   
+
    以下是一个响应式编程的示例：
 
 ```javascript
@@ -2104,7 +2121,7 @@ buttonClicks.subscribe(function() {
 
 5. 命令式编程 (Imperative Programming)：
    命令式编程是一种以编写明确指令的方式来描述计算过程和控制流程的开发模式。开发者按照执行的顺序编写代码，依次改变状态和执行操作。这种模式更接近机器的语言和底层的操作，但可能会产生复杂的控制流程和难以维护的代码。
-   
+
    以下是一个命令式编程的示例：
 
 ```javascript
@@ -2120,7 +2137,7 @@ console.log(count); // 输出 1
 
 6. 模块化开发 (Modular Development)：
    模块化开发是一种将代码拆分为互相独立的模块来进行开发的方法。每个模块有自己的功能和责任，并且可以在需要时被导入和使用。这种模式鼓励代码的重用性和可维护性，使开发更加高效和灵活。
-   
+
    以下是一个模块化开发的示例：
 
 ```javascript
@@ -2141,30 +2158,35 @@ console.log(message); // 输出 'Hello, John!'xxxxxxxxxx // moduleA.jsexport fu
 正则表达式（Regular Expression）是一种用来进行文本匹配和查找的强大工具，在JavaScript中也可以使用正则表达式来处理字符串。以下是一些常用的JavaScript正则表达式相关操作：
 
 创建正则表达式：
+
 ```javascript
 let regex = /pattern/; // 使用正斜杠（/）包裹模式字符串
 let regex = new RegExp("pattern"); // 使用RegExp对象构造函数创建正则表达式
 ```
 
 测试匹配：
+
 ```javascript
 let regex = /pattern/;
 let result = regex.test("string"); // 检测字符串是否匹配正则表达式
 ```
 
 查找匹配：
+
 ```javascript
 let regex = /pattern/;
 let result = "string".match(regex); // 返回匹配到的结果数组，如果没有匹配则返回null
 ```
 
 替换匹配：
+
 ```javascript
 let regex = /pattern/;
 let result = "string".replace(regex, "replacement"); // 用指定的替换字符串替换匹配到的部分
 ```
 
 常用的正则表达式模式：
+
 - `/abc/`: 匹配abc字符串
 - `/[a-z]/`: 匹配任意小写字母
 - `/[0-9]/`: 匹配任意数字
@@ -2202,12 +2224,14 @@ let result = "string".replace(regex, "replacement"); // 用指定的替换字符
    浅拷贝创建一个新的对象或数组，并复制原始对象或数组中的属性/元素的引用。这意味着如果原始对象或数组中的属性或元素是对象，那么拷贝后的对象或数组中的相应属性或元素仍然引用同一个对象。常用的浅拷贝方法包括：
 
    - 对象：使用 ES6 的展开运算符（Spread Operator）或 `Object.assign()` 方法：
+
      ```javascript
      let originalObj = { a: 1, b: 2 };
      let shallowCopyObj = { ...originalObj }; // 或 Object.assign({}, originalObj);
      ```
 
    - 数组：使用 `Array.from()` 方法或 `slice()` 方法：
+
      ```javascript
      let originalArr = [1, 2, 3];
      let shallowCopyArr = Array.from(originalArr); // 或 originalArr.slice();
@@ -2259,18 +2283,17 @@ let result = "string".replace(regex, "replacement"); // 用指定的替换字符
      需要注意的是，该函数仅处理对象和数组的深拷贝，对于包含其他特殊类型（如函数、正则表达式等）或循环引用的对象，可能需要进行额外的处理。此外，对于非常大的数据结构，递归拷贝可能会导致栈溢出，需要使用更高级的算法或库来处理。
 
    - 使用 JSON 序列化和反序列化：
+
      ```javascript
      let originalObj = { a: 1, b: { c: 2 } };
      let deepCopyObj = JSON.parse(JSON.stringify(originalObj));
      ```
 
    - 使用第三方库，如 Lodash 的 `cloneDeep()` 方法：
+
      ```javascript
      let deepCopyObj = _.cloneDeep(originalObj);
      ```
-
-     
-
 
 需要注意的是，深拷贝方法有时会有性能和限制方面的考量，特别是在处理包含循环引用、函数、正则表达式等特殊对象时。使用时要酌情选择。另外，对于拷贝大型对象或嵌套层级很深的对象，可能需要考虑性能和内存消耗。
 

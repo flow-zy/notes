@@ -34,27 +34,8 @@ export default defineClientConfig({
       canvas.id = 'moefy-canvas'
       const doc = document.querySelector('#app') as HTMLDivElement
       doc.appendChild(canvas)
-      // 创建一个阅读的进度条
-      const progress = document.createElement('progress') as HTMLProgressElement
-      progress.id = 'moefy-progress'
-      progress.value = 0
-      progress.max = 100
-      doc.appendChild(progress)
     })
 
-    const handleScroll = () => {
-      const scrollTop =
-        document.body.scrollTop || document.documentElement.scrollTop
-      const scrollHeight = (document.querySelector('main.page') as HTMLElement)
-        .offsetHeight
-      const progress = document.getElementById(
-        'moefy-progress'
-      ) as HTMLProgressElement
-      let step = Number(
-        ((scrollTop / (scrollHeight - navHeight.value - 600)) * 100).toFixed(2)
-      )
-      progress.value = step
-    }
     onMounted(() => {
       const el = document.getElementById('moefy-canvas') as HTMLCanvasElement
       const popper = new Popper(themeConfig, canvasOptions)
@@ -62,7 +43,6 @@ export default defineClientConfig({
       navHeight.value = (
         document.querySelector('header.navbar') as HTMLHeadElement
       ).clientHeight
-      window.addEventListener('scroll', handleScroll)
     })
   },
   rootComponents: [],

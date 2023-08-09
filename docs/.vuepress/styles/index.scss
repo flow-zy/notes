@@ -362,21 +362,6 @@ canvas {
   transition: transform 0.3s ease-in-out;
 }
 
-#moefy-progress {
-  width: 100%;
-  left: 0;
-  position: fixed;
-  top: 56px;
-  height: 5px;
-  z-index: 999;
-  color: var(--c-brand-light);
-  // border: none;
-  // background-color: var(--c-brand-light);
-  &::-webkit-progress-bar,
-  &::-moz-progress-bar {
-    background-color: #fff;
-  }
-  &::-webkit-progress-value {
-    background-color: var(--c-brand);
-  }
+div#oml-stage {
+  left: 80%;
 }

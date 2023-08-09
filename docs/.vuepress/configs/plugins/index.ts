@@ -15,6 +15,7 @@ import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
 import { seoPlugin } from 'vuepress-plugin-seo2'
 import goTopPlugin from 'vuepress-plugin-go-top'
 import { PluginConfig, PluginObject } from 'vuepress'
+import { ohmylive2dPlugin } from 'vuepress-plugin-oh-my-live2d'
 const plugins: PluginConfig | PluginObject[] = [
   copyrightPlugin({
     global: true,
@@ -109,6 +110,30 @@ const plugins: PluginConfig | PluginObject[] = [
     },
   }),
   goTopPlugin(),
+  ohmylive2dPlugin({
+    source: 'https://unpkg.com',
+    models: [
+      {
+        path: '/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json',
+        x: 30,
+      },
+      {
+        path: '/live2d-widget-model-tsumiki@1.0.5/assets/tsumiki.model.json',
+      },
+      {
+        path: '/live2d-widget-model-nico@1.0.5/assets/nico.model.json',
+      },
+      {
+        path: '/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json',
+        x: 60,
+      },
+    ],
+    tips: {
+      style: {
+        offsetY: 100,
+      },
+    },
+  }),
 ]
 
 export default plugins

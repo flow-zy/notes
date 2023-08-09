@@ -43,6 +43,7 @@
     "@commitlint/config-conventional": "^17.6.7",
     "@docsearch/js": "3",
     "@moefy-canvas/theme-popper": "^0.5.2",
+    "@noxone/vuepress-plugin-music-player": "^1.2.2",
     "@vue/component-compiler-utils": "^3.3.0",
     "@vuepress/plugin-active-header-links": "^1.9.9",
     "@vuepress/plugin-container": "2.0.0-beta.66",
@@ -64,6 +65,7 @@
     "markdownlint-cli2": "^0.8.1",
     "path": "^0.12.7",
     "vuepress-plugin-copyright2": "2.0.0-beta.234",
-    "vuepress-plugin-go-top": "^1.0.4"
+    "vuepress-plugin-go-top": "^1.0.4",
+    "vuepress-plugin-oh-my-live2d": "^0.6.0"
   }
 }
