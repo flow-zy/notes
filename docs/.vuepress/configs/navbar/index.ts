@@ -47,10 +47,10 @@ const navbar: NarBarItem[] = [
   },
   {
     text: '面试题',
-    link: 'https://interview.github.io',
+    link: 'https://flow-zy.github.io/interview/',
   },
 
-  { text: '博客', link: 'https://blog.github.io' },
+  { text: '博客', link: 'https://flow-zy.github.io/blog/' },
 ]
 Object.entries(sidebar).forEach(([key, value]) => {
   navbar.forEach((nav, i) => {
