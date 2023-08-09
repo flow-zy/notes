@@ -66,5 +66,5 @@ const travel = (dir) => {
 }
 
 const sidebar = travel('docs/')
-writeFileSync(path.join(__dirname, './sidebar.json'), JSON.stringify(sidebar))
+writeFileSync(path.join(__dirname, './index.json'), JSON.stringify(sidebar))
 export default sidebar

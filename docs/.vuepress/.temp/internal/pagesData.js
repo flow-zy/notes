@@ -25,20 +25,6 @@ export const pagesData = {
   "v-a3acd7c8": () => import(/* webpackChunkName: "v-a3acd7c8" */"I:/php/notes/docs/.vuepress/.temp/pages/front/Jquery.html.js").then(({ data }) => data),
   // path: /front/TypeScript.html
   "v-7ae919f5": () => import(/* webpackChunkName: "v-7ae919f5" */"I:/php/notes/docs/.vuepress/.temp/pages/front/TypeScript.html.js").then(({ data }) => data),
-  // path: /interview/css.html
-  "v-78b3c03d": () => import(/* webpackChunkName: "v-78b3c03d" */"I:/php/notes/docs/.vuepress/.temp/pages/interview/css.html.js").then(({ data }) => data),
-  // path: /interview/html.html
-  "v-142c0567": () => import(/* webpackChunkName: "v-142c0567" */"I:/php/notes/docs/.vuepress/.temp/pages/interview/html.html.js").then(({ data }) => data),
-  // path: /interview/java.html
-  "v-50515550": () => import(/* webpackChunkName: "v-50515550" */"I:/php/notes/docs/.vuepress/.temp/pages/interview/java.html.js").then(({ data }) => data),
-  // path: /interview/JavaScript.html
-  "v-619835e5": () => import(/* webpackChunkName: "v-619835e5" */"I:/php/notes/docs/.vuepress/.temp/pages/interview/JavaScript.html.js").then(({ data }) => data),
-  // path: /interview/php.html
-  "v-741ff1e8": () => import(/* webpackChunkName: "v-741ff1e8" */"I:/php/notes/docs/.vuepress/.temp/pages/interview/php.html.js").then(({ data }) => data),
-  // path: /interview/react.html
-  "v-05c6f081": () => import(/* webpackChunkName: "v-05c6f081" */"I:/php/notes/docs/.vuepress/.temp/pages/interview/react.html.js").then(({ data }) => data),
-  // path: /interview/vue.html
-  "v-ff5a9acc": () => import(/* webpackChunkName: "v-ff5a9acc" */"I:/php/notes/docs/.vuepress/.temp/pages/interview/vue.html.js").then(({ data }) => data),
   // path: /management/git.html
   "v-4f3198fa": () => import(/* webpackChunkName: "v-4f3198fa" */"I:/php/notes/docs/.vuepress/.temp/pages/management/git.html.js").then(({ data }) => data),
   // path: /management/svn.html
