@@ -17,6 +17,7 @@ features:
       details: People interested in front-end technology, including but not limited to front-end developers, designers, students, enthusiasts, etc.
     - title: Experience
       details: Interviewing requires not only technical skills, but also some mental games.
+      link: https://interview.github.io
 footer: MIT Licensed | Copyright © 2023-present CoolDream
 footerHtml: true
 ---

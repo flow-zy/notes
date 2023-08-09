@@ -1,10 +1,9 @@
-import s1 from '../sidebar';
-import s2 from '../sidebar/index.json';
-const isDev = process.env.NODE_ENV == 'development';
-const sidebar = isDev ? s1 : s2;
-import type { NarBarItem } from '@vuepress/theme-default';
+import s1 from '../sidebar'
+import s2 from '../sidebar/index.json'
+const isDev = process.env.NODE_ENV == 'development'
+const sidebar = isDev ? s1 : s2
+import type { NarBarItem } from '@vuepress/theme-default'
 const navbar: NarBarItem[] = [
-  // NavbarItem
   {
     text: '前端',
     link: '/front',
@@ -43,30 +42,30 @@ const navbar: NarBarItem[] = [
     link: '/other',
   },
   {
-    text: '面试题',
-    link: '/interview',
-  },
-  {
     text: '练习',
     link: '/code',
   },
-  { text: 'Gitee', link: 'https://gitee.com/overflow_z/blog' },
-];
+  {
+    text: '面试题',
+    link: 'https://interview.github.io',
+  },
+
+  { text: '博客', link: 'https://blog.github.io' },
+]
 Object.entries(sidebar).forEach(([key, value]) => {
   navbar.forEach((nav, i) => {
     if (nav.link && key.includes(nav.link)) {
-      // console.log(value);
       Array.isArray(value) &&
         value.length !== 0 &&
         value.forEach((side) => {
-          side.activeMatch = `^${side.link.slice(0, -3)}`;
-        });
+          side.activeMatch = `^${side.link.slice(0, -3)}`
+        })
 
       Array.isArray(value) && value.length !== 0
         ? (navbar[i].children = value.reverse())
-        : '';
+        : ''
     }
-  });
-});
+  })
+})
 
-export default navbar;
+export default navbar
