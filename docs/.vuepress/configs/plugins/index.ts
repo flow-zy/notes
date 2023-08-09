@@ -17,6 +17,7 @@ import goTopPlugin from 'vuepress-plugin-go-top'
 import { PluginConfig, PluginObject } from 'vuepress'
 const plugins: PluginConfig | PluginObject[] = [
   copyrightPlugin({
+    global: true,
     author: 'flow-zy',
     triggerWords: 20,
     license: '防守打法挥洒的',
