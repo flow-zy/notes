@@ -95,6 +95,9 @@ html.dark {
   --color-code-bg: rgba(90, 215, 231, 0.08);
   // 引用背景色
   --color-block-bg: rgba(108, 214, 228, 0.15);
+  .footer {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 }
 
 .navbar .site-name {
@@ -106,7 +109,7 @@ html.dark {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--c-white);
   z-index: 999;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -364,4 +367,9 @@ canvas {
 
 div#oml-stage {
   left: 80%;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }

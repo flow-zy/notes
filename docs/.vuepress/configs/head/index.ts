@@ -1,15 +1,47 @@
 import type { HeadConfig } from '@vuepress/core'
 
 const head: HeadConfig[] = [
+  [
+    'link',
+    {
+      rel: 'apple-touch-icon',
+      type: 'image/png',
+      sizes: '180x180',
+      href: '/images/favicon-180x180.png',
+    },
+  ],
+  [
+    'link',
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/images/favicon-32x32.png',
+    },
+  ],
+  [
+    'link',
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      href: '/images/favicon-16x16.png',
+    },
+  ],
   ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
-  ['link', { rel: 'icon', href: '/images/favicon.ico' }],
-  ['meta', { name: 'description', content: '包涵大量的编程知识' }],
-  ['meta', { name: 'keywords', content: '前端, 编程, 知识, 学习, 分享' }],
-  ['meta', { name: 'msapplication-TileColor', content: '#3eaf7c' }],
-  ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+  [
+    'link',
+    {
+      rel: 'mask-icon',
+      href: '/images/safari-pinned-tab.svg',
+    },
+  ],
   ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
   ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-  ['link', { rel: 'apple-touch-icon', sizes: '152x152', href: 'favicon.ico' }],
+  ['meta', { name: 'msapplication-TileColor', content: '#3eaf7c' }],
+  ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+  ['meta', { name: 'description', content: '包涵大量的编程知识' }],
+  ['meta', { name: 'keywords', content: '前端, 编程, 知识, 学习, 分享' }],
   [
     'script',
     {},

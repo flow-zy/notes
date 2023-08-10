@@ -59,7 +59,7 @@ const plugins: PluginConfig | PluginObject[] = [
     indexContent: true,
     autoSuggestions: true,
     locales: {
-      '/zh/': {
+      '/zh-CN/': {
         placeholder: '搜索文档',
         searching: '搜索中....',
       },
@@ -68,7 +68,7 @@ const plugins: PluginConfig | PluginObject[] = [
   copyCodePlugin({
     showInMobile: true,
     locales: {
-      '/zh/': {
+      '/zh-CN/': {
         copy: '复制',
         hint: '复制成功',
       },
@@ -119,6 +119,9 @@ const plugins: PluginConfig | PluginObject[] = [
       },
       {
         path: '/live2d-widget-model-tsumiki@1.0.5/assets/tsumiki.model.json',
+      },
+      {
+        path: '/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json',
       },
       {
         path: '/live2d-widget-model-nico@1.0.5/assets/nico.model.json',

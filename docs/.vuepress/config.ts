@@ -24,4 +24,9 @@ export default defineUserConfig({
     // 启动页面丝滑滚动
   }),
   head,
+  markdown: {
+    links: {
+      externalAttrs: { target: '_target', rel: 'nofollow noopener noreferrer' },
+    },
+  },
 })
