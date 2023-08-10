@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "ESNext",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "lib": ["DOM", "ES2020"]
+  },
+  "include": ["**/.vuepress/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

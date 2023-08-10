@@ -1,11 +1,6 @@
 import { defineClientConfig } from '@vuepress/client'
-import {
-  Popper,
-  PopperShape,
-  type PopperConfig,
-  MAX_Z_INDEX,
-  type CanvasOptions,
-} from '@moefy-canvas/theme-popper'
+import { Popper, PopperShape, MAX_Z_INDEX } from '@moefy-canvas/theme-popper'
+import type { CanvasOptions, PopperConfig } from '@moefy-canvas/theme-popper'
 import { onMounted, onBeforeMount, ref } from 'vue'
 const themeConfig: PopperConfig = {
   shape: PopperShape.Star,

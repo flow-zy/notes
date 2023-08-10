@@ -13,8 +13,8 @@ import { searchProPlugin } from 'vuepress-plugin-search-pro'
 import { commentPlugin } from 'vuepress-plugin-comment2'
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
 import { seoPlugin } from 'vuepress-plugin-seo2'
-import goTopPlugin from 'vuepress-plugin-go-top'
 import { PluginConfig, PluginObject } from 'vuepress'
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
 import { ohmylive2dPlugin } from 'vuepress-plugin-oh-my-live2d'
 const plugins: PluginConfig | PluginObject[] = [
   copyrightPlugin({
@@ -27,7 +27,7 @@ const plugins: PluginConfig | PluginObject[] = [
   readingTimePlugin({
     wordPerMinute: 400,
     locales: {
-      '/zh/': {
+      '/zh-CN/': {
         word: '总共{$word} 字',
         less1Minute: '少于1分钟',
         time: '读完大约需要 {time} 分钟',
@@ -47,7 +47,7 @@ const plugins: PluginConfig | PluginObject[] = [
     },
   }),
   registerComponentsPlugin({
-    componentsDir: './components',
+    componentsDir: '../components',
   }),
   externalLinkIconPlugin(),
   containerPlugin({
@@ -109,7 +109,6 @@ const plugins: PluginConfig | PluginObject[] = [
       email: 'wz19121@yeah.net',
     },
   }),
-  goTopPlugin(),
   ohmylive2dPlugin({
     source: 'https://unpkg.com',
     models: [
@@ -137,6 +136,7 @@ const plugins: PluginConfig | PluginObject[] = [
       },
     },
   }),
+  backToTopPlugin(),
 ]
 
 export default plugins

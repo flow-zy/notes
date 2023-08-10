@@ -344,29 +344,29 @@ canvas {
 }
 
 .back-to-top {
-  mask: url(/images/claw.svg) no-repeat;
-  cursor: pointer;
-  position: fixed;
-  right: 50px;
+  mask: url(/images/claw.svg) no-repeat !important;
+  cursor: pointer !important;
+  position: fixed !important;
+  right: 50px !important;
   z-index: 123;
-  box-sizing: border-box;
-  width: 57px;
-  height: 70px;
-  mask-size: contain;
-  -webkit-mask-size: contain;
-  mask-position: center center;
-  background-color: var(--c-brand);
-  mask-border: 1px solid var(--c-brand-dark);
-  -webkit-mask-position: center center;
-  -webkit-mask-border: 1px solid var(--c-brand-dark);
-  border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box !important;
+  width: 57px !important;
+  height: 70px !important;
+  mask-size: contain !important;
+  -webkit-mask-size: contain !important;
+  mask-position: center center !important;
+  background-color: var(--c-brand) !important;
+  mask-border: 1px solid var(--c-brand-dark) !important;
+  -webkit-mask-position: center center !important;
+  -webkit-mask-border: 1px solid var(--c-brand-dark) !important;
+  border-radius: 50% !important;
+  padding: 10px !important;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease-in-out !important;
 }
 
 div#oml-stage {
-  left: 80%;
+  left: 76%;
 }
 
 ::-webkit-scrollbar {
