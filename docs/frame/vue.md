@@ -1566,7 +1566,7 @@ console.log(converted.name.value); // 'Jane'
 
 ```
 
-在上面的示例中，我们首先创建了一个名为state的响应式对象，包含了三个属性：name、age和email。然后，我们使用toRefs函数将state对象转化为ref对象，并将结果保存在converted变量中。最后，我们可以通过converted对象访问state对象的属性和值，例如通过converted.name.value访问name属性的值。
+我们首先创建了一个名为state的响应式对象，包含了三个属性：name、age和email。然后，我们使用toRefs函数将state对象转化为ref对象，并将结果保存在converted变量中。最后，我们可以通过converted对象访问state对象的属性和值，例如通过converted.name.value访问name属性的值。
 
 >特点
 
@@ -1849,6 +1849,46 @@ export default {
 }
 ```
 
+## 代理
+
+使用代理（Proxy）来配置请求转发，以实现在开发环境下请求不同的后端接口。Vue CLI 提供了一个简单的方式来设置代理，让你能够在开发时与后端 API 进行交互。
+
+1. 打开项目根目录下的 `vue.config.js` 文件，如果没有该文件请创建一个。
+
+2. 在 `vue.config.js` 文件中，添加以下代码来配置代理：
+
+```javascript
+module.exports = {
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://backend-api.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
+  }
+}
+```
+
+通过 `devServer.proxy` 属性配置了一个代理。代理根路径为 `/api`，对应的目标地址是 `http://backend-api.com`。`changeOrigin` 选项用于控制请求头 `host` 的设置，而 `pathRewrite` 选项用于重写请求路径。
+
+3. 修改你的前端代码，将请求路径改为以 `/api` 为前缀：
+
+```javascript
+axios.get('/api/some-endpoint')
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+```
+
+使用 `axios` 库向 `/api/some-endpoint` 发送 GET 请求。实际上，该请求会被转发到 `http://backend-api.com/some-endpoint`。
+
 ## 内置组件
 
 ### `<Teleport>`
@@ -2110,7 +2150,7 @@ DOM树是一个由各种类型的节点组成的树状结构。每个节点代�
         - Text (This is a paragraph.)
 ```
 
-在上面的示例中，根节点是`Document`，它有两个子节点`DocumentType`和`Element`。`Element`节点又有子节点和兄弟节点，形成了树状结构。每个节点都包含了它们的类型和内容，在DOM操作中可以使用节点的属性和方法来访问和修改节点的属性和内容。
+根节点是`Document`，它有两个子节点`DocumentType`和`Element`。`Element`节点又有子节点和兄弟节点，形成了树状结构。每个节点都包含了它们的类型和内容，在DOM操作中可以使用节点的属性和方法来访问和修改节点的属性和内容。
 
 通过操作节点树，我们可以对HTML文档进行增加、删除、修改等操作，以实现对页面的动态更新和交互。
 
@@ -2118,6 +2158,6 @@ DOM树是一个由各种类型的节点组成的树状结构。每个节点代�
 
 1. [TODOMVC](/blog/code/todoMVC)
 
-2. [一个基于element-ui和vue2的后台管理系统](/blog/code/shop-admin)
+2. [一个基于element-ui和vue2的后台管理系统](https://flow-zy.github.io/shop-admin/)
 
 <CommentService />

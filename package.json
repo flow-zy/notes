@@ -18,7 +18,7 @@
     "docs:dev": "vuepress dev docs NODE_ENV=development",
     "docs:build": "vuepress build docs  NODE_ENV=production",
     "prepare": "husky install",
-    "lint": " eslint --ext .ts,.ts,.js . --fix"
+    "lint": " eslint --ext .ts,.js . --fix"
   },
   "engines": {
     "node": ">=16.0.0",

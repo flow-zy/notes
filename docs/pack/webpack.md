@@ -551,7 +551,7 @@ import('./module')
   });
 ```
 
-在上面的示例中，`import('./module')`使用了动态导入语法，它会返回一个Promise对象。当模块加载完成后，Promise的`then`回调会被执行，我们可以在回调中对模块进行操作。如果模块加载失败，`catch`回调可以处理异常情况。
+`import('./module')`使用了动态导入语法，它会返回一个Promise对象。当模块加载完成后，Promise的`then`回调会被执行，我们可以在回调中对模块进行操作。如果模块加载失败，`catch`回调可以处理异常情况。
 
 需要注意的是，动态导入的模块会被Webpack自动分割成独立的代码块，并按需加载。Webpack会根据配置文件中的`optimization.splitChunks`属性来决定如何拆分和加载这些代码块。
 

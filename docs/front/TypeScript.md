@@ -1960,7 +1960,7 @@ console.log(circle.getArea()); // 输出：78.53981633974483
 circle.print(); // 输出：Printing...
 ```
 
-在上面的示例中，我们定义了一个 `Printable` 类作为 mixin 类，它具有一个 `print` 方法。然后，我们定义了一个 `Circle` 类作为目标类，它具有 `radius` 属性和 `getArea` 方法。
+我们定义了一个 `Printable` 类作为 mixin 类，它具有一个 `print` 方法。然后，我们定义了一个 `Circle` 类作为目标类，它具有 `radius` 属性和 `getArea` 方法。
 
 通过使用声明合并和辅助函数 `applyMixins`，我们将 `Printable` 类混入到 `Circle` 类中，使得 `Circle` 类同时具有 `Printable` 类的 `print` 方法。
 

@@ -362,7 +362,7 @@ const routes = [
 ]
 ```
 
-在上面的示例中，我们定义了一个根路径为`/`的路由，并通过`components`属性指定了三个命名视图：`default`、`sidebar`和`header`。对应的组件分别是`HomeComponent`、`SidebarComponent`和`HeaderComponent`。
+我们定义了一个根路径为`/`的路由，并通过`components`属性指定了三个命名视图：`default`、`sidebar`和`header`。对应的组件分别是`HomeComponent`、`SidebarComponent`和`HeaderComponent`。
 
 - 在路由配置中通过`name`属性来定义命名视图：
 
@@ -385,7 +385,7 @@ const routes = [
 ]
 ```
 
-在上面的示例中，我们定义了一个根路径为`/`的路由，并在其子路由配置中通过`components`属性指定了两个命名视图：`default`和`header`。对应的组件分别是`SidebarComponent`和`HeaderComponent`。
+我们定义了一个根路径为`/`的路由，并在其子路由配置中通过`components`属性指定了两个命名视图：`default`和`header`。对应的组件分别是`SidebarComponent`和`HeaderComponent`。
 
 通过以上的配置，我们可以在页面中同时显示多个视图。在Vue模板中，可以通过指定`name`来加载对应的命名视图：
 
@@ -434,7 +434,7 @@ export default router;
 
 ```
 
-在上面的示例中，我们设置了默认重定向路径为/home，这意味着当进入网站的根路径时，会自动跳转到/home。
+我们设置了默认重定向路径为/home，这意味着当进入网站的根路径时，会自动跳转到/home。
 
 你可以根据需求设置任意的重定向路径。在routes数组中，如果某个路由对象的redirect属性的值不为空，则表示该路由需要重定向到指定路径。
 

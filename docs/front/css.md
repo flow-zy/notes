@@ -294,16 +294,13 @@ CSS样式属性是用于设置HTML元素的外观和布局的属性。以下是�
 }
 ```
 
-7. 尺寸属性（Dimension Properties）：			
+7. 尺寸属性（Dimension Properties）：   
 
       - `width`：设置元素的宽度。
 
-
       - `height`：设置元素的高度。
 
-
       - `max-width`：设置元素的最大宽度限制。
-
 
       - `max-height`：设置元素的最大高度限制。
 
@@ -312,8 +309,6 @@ CSS样式属性是用于设置HTML元素的外观和布局的属性。以下是�
       - `min-height`：设置元素的最小高度限制。
 
       - `box-sizing`：控制元素包含的内容对宽度和高度的影响。
-
-   
 
 ```css
 .image {
@@ -328,7 +323,7 @@ CSS样式属性是用于设置HTML元素的外观和布局的属性。以下是�
 
 .btn {
   min-width: 120px;
-}	
+} 
 ```
 
 8. 动画属性（Animation Properties）：
@@ -684,6 +679,7 @@ CSS提供了丰富的2D和3D转换功能，可以通过调整元素的位置、�
 4. 倾斜（skew）：通过`skew()`函数可以在水平和垂直方向上倾斜元素。例如：`transform: skew(20deg, -10deg);` 将元素水平方向上倾斜20度，垂直方向上倾斜-10度。
 
 3D转换：
+
 1. 透视（perspective）：通过`perspective`属性可以设置透视效果，使元素具有三维感。例如：`perspective: 500px;` 设置透视点的距离为500px。
 
 2. 旋转X轴（rotateX）：通过`rotateX()`函数可以绕X轴旋转元素。例如：`transform: rotateX(45deg);` 将元素绕X轴逆时针旋转45度。
@@ -697,11 +693,13 @@ CSS提供了丰富的2D和3D转换功能，可以通过调整元素的位置、�
 当然，这里有一个简单的例子来演示CSS的2D转换和3D转换。
 
 HTML：
+
 ```html
 <div class="box"></div>
 ```
 
 CSS：
+
 ```css
 .box {
   width: 100px;
@@ -791,11 +789,13 @@ CSS动画是通过CSS属性的变化和过渡效果来创建元素的动画效�
 当然，这里有一个简单的例子来演示CSS动画的使用。
 
 HTML：
+
 ```html
 <div class="box"></div>
 ```
 
 CSS：
+
 ```css
 .box {
   width: 100px;
@@ -827,6 +827,7 @@ CSS提供了两种类型的渐变：线性渐变（Linear Gradient）和径向�
 线性渐变沿着一条直线方向进行过渡。可以通过定义起始点和结束点来控制渐变的方向和长度。
 
 线性渐变的语法如下：
+
 ```css
 background: linear-gradient(direction, color-stop1, color-stop2, ...);
 ```
@@ -835,17 +836,20 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
 - `color-stop`：定义渐变的颜色。可以指定颜色的位置和颜色值，例如：`color-stop: 0% red, 50% blue, 100% green;`表示从0%位置（起始点）到50%位置过渡为蓝色，再从50%位置到100%位置过渡为绿色。
 
 以下是一个示例：
+
 ```css
 .bg-gradient {
   background: linear-gradient(to right, red, orange, yellow);
 }
 ```
+
 上述示例表示创建一个从红色到橙色再到黄色的水平线性渐变。
 
 2. 径向渐变（Radial Gradient）：
 径向渐变以一个中心点为基准，向外辐射状进行颜色过渡。
 
 径向渐变的语法如下：
+
 ```css
 background: radial-gradient(shape, start, end, color-stop1, color-stop2, ...);
 ```
@@ -855,11 +859,13 @@ background: radial-gradient(shape, start, end, color-stop1, color-stop2, ...);
 - `color-stop`：和线性渐变的`color-stop`属性相同，用于定义径向渐变的颜色过渡。
 
 以下是一个示例：
+
 ```css
 .bg-gradient {
   background: radial-gradient(circle, red, orange, yellow);
 }
 ```
+
 上述示例表示创建一个以圆形为形状的径向渐变，颜色从红色到橙色再到黄色。
 
 通过调整渐变的方向、形状、颜色以及添加更多的颜色过渡点，可以创建各种各样的渐变效果。同时，渐变可以应用于背景、边框和文本等元素的样式中，使得页面更具吸引力和多样性。
@@ -1068,15 +1074,15 @@ CSS框架是预先编写好的CSS样式集合，旨在简化网页开发流程�
 
 以下是一些常见的CSS框架：
 
-1. Bootstrap（https://getbootstrap.com）：Bootstrap是最受欢迎的CSS框架之一，提供了大量的CSS类和组件，用于创建响应式网页布局和常见的UI组件。
+1. Bootstrap（<https://getbootstrap.com）：Bootstrap是最受欢迎的CSS框架之一，提供了大量的CSS类和组件，用于创建响应式网页布局和常见的UI组件。>
 
-2. Foundation（https://foundation.zurb.com）：Foundation是另一个流行的CSS框架，具有灵活的栅格系统和各种可定制的组件，适用于构建各种类型的网站和应用程序。
+2. Foundation（<https://foundation.zurb.com）：Foundation是另一个流行的CSS框架，具有灵活的栅格系统和各种可定制的组件，适用于构建各种类型的网站和应用程序。>
 
-3. Bulma（https://bulma.io）：Bulma是一个轻量级的CSS框架，以简洁和现代的设计风格为特点。它提供了直观的类和组件，易于使用和定制。
+3. Bulma（<https://bulma.io）：Bulma是一个轻量级的CSS框架，以简洁和现代的设计风格为特点。它提供了直观的类和组件，易于使用和定制。>
 
-4. Tailwind CSS（https://tailwindcss.com）：Tailwind CSS是一个功能丰富且高度可定制的CSS框架，使用一组小型类来构建网页布局和组件。
+4. Tailwind CSS（<https://tailwindcss.com）：Tailwind> CSS是一个功能丰富且高度可定制的CSS框架，使用一组小型类来构建网页布局和组件。
 
-5. Semantic UI（https://semantic-ui.com）：Semantic UI是一个语义化的CSS框架，通过使用具有表义的类名，提供了易于阅读和维护的代码，并支持响应式设计和大量的UI组件。
+5. Semantic UI（<https://semantic-ui.com）：Semantic> UI是一个语义化的CSS框架，通过使用具有表义的类名，提供了易于阅读和维护的代码，并支持响应式设计和大量的UI组件。
 
 这些CSS框架都有自己的特点和优势，可以根据项目需求和个人喜好选择适合的框架。它们提供了一些常用的样式和组件，帮助开发者快速搭建网页，节省开发时间和精力。
 
@@ -1120,7 +1126,7 @@ CSS预处理器是一种将具有扩展语法的CSS代码转换成标准CSS的�
    }
    ```
 
-   在上面的示例中，我们首先定义了两个Sass变量：`$primary-color`和`$secondary-color`，分别代表主要颜色和次要颜色。然后，我们创建了一个混合器`gradient-background`，它会在生成的CSS中插入一个线性渐变背景样式。
+   我们首先定义了两个Sass变量：`$primary-color`和`$secondary-color`，分别代表主要颜色和次要颜色。然后，我们创建了一个混合器`gradient-background`，它会在生成的CSS中插入一个线性渐变背景样式。
 
    接下来，我们在`.container`类中使用了混合器`gradient-background`，这样每个`.container`元素都会具有一个渐变背景。
 
@@ -1186,7 +1192,7 @@ CSS预处理器是一种将具有扩展语法的CSS代码转换成标准CSS的�
    }
    ```
 
-   在上面的示例中，我们使用Less语法进行变量和混合器的定义。与Sass不同的是，在Less中使用`@`符号表示变量。我们定义了两个变量：`@primary-color`和`@secondary-color`，分别代表主要颜色和次要颜色。
+   我们使用Less语法进行变量和混合器的定义。与Sass不同的是，在Less中使用`@`符号表示变量。我们定义了两个变量：`@primary-color`和`@secondary-color`，分别代表主要颜色和次要颜色。
 
    然后，我们创建了一个混合器`.gradient-background()`，它将在生成的CSS中插入一个线性渐变背景样式。
 
@@ -1250,7 +1256,7 @@ CSS预处理器是一种将具有扩展语法的CSS代码转换成标准CSS的�
        background-color darken(primary-color, 10%)
    ```
 
-   在上面的示例中，我们使用Stylus的语法来定义变量和混合器。在Stylus中，变量直接采用赋值符号`=`进行定义，而不需要添加`$`或`@`等符号。
+   我们使用Stylus的语法来定义变量和混合器。在Stylus中，变量直接采用赋值符号`=`进行定义，而不需要添加`$`或`@`等符号。
 
    我们定义了两个变量：`primary-color`和`secondary-color`，分别代表主要颜色和次要颜色。
 
@@ -1285,7 +1291,6 @@ CSS预处理器是一种将具有扩展语法的CSS代码转换成标准CSS的�
    ```
 
    这个例子展示了如何使用Stylus的变量、混合器和嵌套选择器来简化CSS的编写，并提供了更灵活和可维护的样式规则。Stylus使用了一种更简化和紧凑的语法，可以通过简单的操作实现复杂的样式生成。
-
 
 这些CSS预处理器都提供了类似于变量、嵌套选择器、Mixin等功能，以及更强大的语法和特性，让开发者能够更高效地编写CSS样式。预处理器可以在开发过程中增加灵活性和可维护性，并自动转换为标准的CSS文件，以便在浏览器中使用。选择哪个预处理器取决于个人偏好、项目需求和团队共识。
 <CommentService />

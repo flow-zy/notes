@@ -634,7 +634,7 @@ const store = new Vuex.Store({
 });
 ```
 
-在上面的示例中，我们创建了一个名为`myPlugin`的插件对象，它接受一个`store`对象作为参数。插件对象通过`store.subscribe`方法注册一个订阅函数，该函数会在每次mutation被提交后执行。在这个示例中，我们简单地打印出了提交的mutation类型和新的state。
+我们创建了一个名为`myPlugin`的插件对象，它接受一个`store`对象作为参数。插件对象通过`store.subscribe`方法注册一个订阅函数，该函数会在每次mutation被提交后执行。在这个示例中，我们简单地打印出了提交的mutation类型和新的state。
 
 然后，在创建Vuex store时，通过将插件对象放入`plugins`选项中注册插件。这样，在每次mutation被提交时，插件中的订阅函数都会被执行。
 
@@ -718,7 +718,7 @@ const store = new Vuex.Store({
 });
 ```
 
-在上面的示例中，我们将`vuex-persistedstate`插件注册到Vuex store中，并将`key`设置为"myApp"，这将作为存储在本地的键。通过`paths`选项，我们指定了要持久化的模块为"auth"和"cart"，这意味着只有这些模块的状态会被持久化。默认情况下，插件会使用`window.sessionStorage`进行持久化，但我们可以通过传递`storage`选项来指定其他的存储方式，例如`window.localStorage`。
+我们将`vuex-persistedstate`插件注册到Vuex store中，并将`key`设置为"myApp"，这将作为存储在本地的键。通过`paths`选项，我们指定了要持久化的模块为"auth"和"cart"，这意味着只有这些模块的状态会被持久化。默认情况下，插件会使用`window.sessionStorage`进行持久化，但我们可以通过传递`storage`选项来指定其他的存储方式，例如`window.localStorage`。
 
 4. **完成！**现在，当你使用Vuex存储和修改状态时，插件会自动将状态持久化到本地存储中。在每次加载应用程序时，它会从本地存储中恢复持久化的状态。
 

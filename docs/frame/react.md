@@ -454,7 +454,7 @@ class CounterComponent extends React.Component {
 }
 ```
 
-在上面的示例中，`CounterComponent`是一个类组件，它包含一个状态`count`。在`render`方法中，通过`this.state.count`访问状态的值。在点击按钮时，调用`incrementCount`方法更新状态，使用`this.setState`方法更新`count`的值，并触发重新渲染。
+`CounterComponent`是一个类组件，它包含一个状态`count`。在`render`方法中，通过`this.state.count`访问状态的值。在点击按钮时，调用`incrementCount`方法更新状态，使用`this.setState`方法更新`count`的值，并触发重新渲染。
 
 总结：
 属性是从父组件传递给子组件的只读数据， 而状态是组件内部管理的可变数据。通过属性，组件可以接收外部的数据，而通过状态，组件可以管理自己的数据。
@@ -1362,7 +1362,7 @@ function Counter() {
 }
 ```
 
-在上面的示例中，我们使用useState创建了一个名为count的状态变量和一个名为setCount的更新状态的函数。每次点击按钮时，调用increment函数会将count的值增加1，从而更新界面上的计数。
+我们使用useState创建了一个名为count的状态变量和一个名为setCount的更新状态的函数。每次点击按钮时，调用increment函数会将count的值增加1，从而更新界面上的计数。
 
 2. useEffect: useEffect用于处理副作用操作，比如执行订阅、数据获取等。它接收一个副作用函数和一个依赖项数组作为参数。副作用函数在组件渲染到屏幕上后执行，并且可以返回一个清理函数用于取消副作用。
 
@@ -1401,7 +1401,7 @@ function DataFetcher() {
 }
 ```
 
-在上面的示例中，useEffect函数用于异步获取数据，并通过setData函数更新组件的状态。我们使用一个空的依赖项数组([])，表示副作用只在组件挂载时执行一次。
+useEffect函数用于异步获取数据，并通过setData函数更新组件的状态。我们使用一个空的依赖项数组([])，表示副作用只在组件挂载时执行一次。
 当然，还有其他常用的Hooks函数。接下来我将介绍一些常用的Hooks函数及其用法：
 
 3. useContext: useContext用于在函数式组件中访问Context（上下文）的值。它接收一个Context对象作为参数，并返回该Context的当前值。
@@ -1422,7 +1422,7 @@ function ThemeComponent() {
 }
 ```
 
-在上面的示例中，我们创建了一个名为ThemeContext的Context对象，并将其默认值设置为'light'。在ThemeComponent中，通过调用useContext(ThemeContext)来获取当前的主题值。
+我们创建了一个名为ThemeContext的Context对象，并将其默认值设置为'light'。在ThemeComponent中，通过调用useContext(ThemeContext)来获取当前的主题值。
 
 4. useRef: useRef用于在函数式组件中创建一个可变的引用。它返回一个对象，该对象的current属性可以被赋值为任意值。这个引用在组件重新渲染时不会改变。
 
@@ -1445,7 +1445,7 @@ function TextInput() {
 }
 ```
 
-在上面的示例中，我们使用useRef创建了一个名为inputRef的引用。当点击按钮时，调用focusInput函数将焦点设置到input元素上。
+我们使用useRef创建了一个名为inputRef的引用。当点击按钮时，调用focusInput函数将焦点设置到input元素上。
 
 5. useReducer: useReducer用于在函数式组件中管理复杂的状态逻辑。它类似于Redux中的reducer函数，接收一个reducer函数和初始状态作为参数，并返回当前状态和一个dispatch函数，用于触发状态更新。
 
@@ -1485,7 +1485,7 @@ function Counter() {
 }
 ```
 
-在上面的示例中，我们定义了一个reducer函数来处理状态的更新逻辑。通过useReducer将reducer函数和初始状态0传递进去，然后通过dispatch函数来触发状态更新。
+我们定义了一个reducer函数来处理状态的更新逻辑。通过useReducer将reducer函数和初始状态0传递进去，然后通过dispatch函数来触发状态更新。
 
 6. useCallback: useCallback用于优化函数的性能，它接收一个回调函数和一个依赖项数组，返回一个被记忆化的回调函数。只有当依赖项发生变化时，才会重新创建回调函数。
 
@@ -1537,7 +1537,7 @@ function ExpensiveComponent({ a, b }) {
 }
 ```
 
-在上面的示例中，我们使用useMemo来缓存a + b的计算结果。只有当a或b发生变化时，才会重新计算结果。
+我们使用useMemo来缓存a + b的计算结果。只有当a或b发生变化时，才会重新计算结果。
 
 8. useLayoutEffect: useLayoutEffect与useEffect非常相似，但会在DOM更新之后同步触发。它在DOM更新前同步执行，可以使用它来读取DOM节点的布局信息，或者在DOM更新之后执行同步任务。
 
@@ -1567,7 +1567,7 @@ function HeightMeasurement() {
 }
 ```
 
-在上面的示例中，我们使用useLayoutEffect来在DOM更新之后同步测量内容的高度。在组件挂载期间（由于传入了空依赖项数组），useLayoutEffect会在DOM更新前同步触发measureHeight函数，并更新height状态。
+我们使用useLayoutEffect来在DOM更新之后同步测量内容的高度。在组件挂载期间（由于传入了空依赖项数组），useLayoutEffect会在DOM更新前同步触发measureHeight函数，并更新height状态。
 
 9. useImperativeHandle: useImperativeHandle用于在父组件中自定义向子组件公开的实例值或方法。它允许你指定子组件实例的暴露给父组件的api。
 
@@ -1610,7 +1610,7 @@ function ParentComponent() {
 }
 ```
 
-在上面的示例中，我们通过useImperativeHandle定义了子组件（ChildComponent）向父组件（ParentComponent）暴露的api。父组件可以通过ref来调用这些暴露出来的方法。
+我们通过useImperativeHandle定义了子组件（ChildComponent）向父组件（ParentComponent）暴露的api。父组件可以通过ref来调用这些暴露出来的方法。
 
 ### 自定义Hooks
 

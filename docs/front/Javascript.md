@@ -1588,7 +1588,7 @@ var closure = outerFunction();
 closure(); // 输出 'Hello'
 ```
 
-在上面的示例中，`innerFunction` 是在 `outerFunction` 中定义的内部函数，它可以访问并打印 `outerVariable` 的值。尽管 `outerFunction` 已经执行完毕，但通过在 `outerFunction` 中调用 `innerFunction` 并返回它，我们创建了一个闭包。闭包中的 `innerFunction` 仍然可以访问和引用 `outerVariable`。
+`innerFunction` 是在 `outerFunction` 中定义的内部函数，它可以访问并打印 `outerVariable` 的值。尽管 `outerFunction` 已经执行完毕，但通过在 `outerFunction` 中调用 `innerFunction` 并返回它，我们创建了一个闭包。闭包中的 `innerFunction` 仍然可以访问和引用 `outerVariable`。
 
 需要注意的是，闭包可能会引发内存泄漏问题。由于闭包中引用了外部作用域的变量，即使外部函数执行完毕，这些变量也无法被垃圾回收。因此，在使用闭包时，需要注意避免过度使用和循环引用，及时释放不再需要的资源。
 
@@ -1929,7 +1929,7 @@ function foo() {
 foo();
 ```
 
-在上面的示例中，`a` 和 `b` 变量被创建在栈中，随着函数 `foo()` 的调用，它们会被压入栈中的函数调用栈帧中。当函数执行完毕后，栈将释放这些变量。
+`a` 和 `b` 变量被创建在栈中，随着函数 `foo()` 的调用，它们会被压入栈中的函数调用栈帧中。当函数执行完毕后，栈将释放这些变量。
 
 2. 堆 (Heap)：
    - 堆是动态分配内存的区域，存储的是复杂数据类型（引用类型）的值，如对象和数组等。
@@ -1946,7 +1946,7 @@ var arr = [1, 2, 3, 4, 5];
 // obj 和 arr 的值存储在堆中，变量存储的是引用地址
 ```
 
-在上面的示例中，`obj` 和 `arr` 变量存储的是对象和数组在堆中的引用地址。实际数据存储在堆中，而栈中的变量只是引用了堆中的数据。
+`obj` 和 `arr` 变量存储的是对象和数组在堆中的引用地址。实际数据存储在堆中，而栈中的变量只是引用了堆中的数据。
 
 总结：
 

@@ -42,10 +42,10 @@ function example() {
 }
 ```
 
-2.  const
+2. const
 
-   - 使用`const`关键字声明的变量也具有块级作用域，其值在声明后就不可修改（常量）。
-   - `const`声明的变量必须在声明时进行初始化，且不能再次赋值。
+- 使用`const`关键字声明的变量也具有块级作用域，其值在声明后就不可修改（常量）。
+- `const`声明的变量必须在声明时进行初始化，且不能再次赋值。
 
 示例：
 
@@ -67,6 +67,7 @@ pi = 3; // 报错，常量 pi 不可修改
 数组解构赋值使用`[]`来进行匹配和赋值。
 
 示例：
+
 ```javascript
 let [a, b, c] = [1, 2, 3];
 
@@ -78,6 +79,7 @@ console.log(c); // 输出 3
 数组解构赋值可以忽略某些元素，使用逗号来跳过对应的位置。
 
 示例：
+
 ```javascript
 let [a, , c] = [1, 2, 3];
 
@@ -88,6 +90,7 @@ console.log(c); // 输出 3
 也可以设置默认值，在解构得到的值为`undefined`时使用默认值。
 
 示例：
+
 ```javascript
 let [a = 0, b = 0, c = 0] = [1, undefined, 3];
 
@@ -101,6 +104,7 @@ console.log(c); // 输出 3
 对象解构赋值使用`{}`来进行匹配和赋值。
 
 示例：
+
 ```javascript
 let {x, y} = {x: 1, y: 2};
 
@@ -111,6 +115,7 @@ console.log(y); // 输出 2
 对象解构赋值可以设置默认值，并在对象属性不存在时使用默认值。
 
 示例：
+
 ```javascript
 let {x = 0, y = 0} = {};
 
@@ -121,6 +126,7 @@ console.log(y); // 输出 0
 可以通过别名重命名解构得到的变量。
 
 示例：
+
 ```javascript
 let {x: a, y: b} = {x: 1, y: 2};
 
@@ -131,6 +137,7 @@ console.log(b); // 输出 2
 对象解构赋值也支持嵌套的解构模式。
 
 示例：
+
 ```javascript
 let {x, nestedObj: {y}, z = 0} = {x: 1, nestedObj: {y: 2}};
 
@@ -142,6 +149,7 @@ console.log(z); // 输出 0
 解构赋值还可以与函数参数、函数返回值等结合使用，以便更方便地处理复杂的数据结构。
 
 示例：
+
 ```javascript
 function getCoords() {
   return {x: 1, y: 2};
@@ -196,7 +204,6 @@ console.log(multiline);
    - `trimStart()`：删除字符串开头的空格
 
    - `trimEnd()`：删除字符串结尾的空格
-
 
 例如：
 
@@ -1031,8 +1038,6 @@ Set 是一种值的有序列表，它具有唯一性，不允许重复值。Set 
   console.log(set.size); // 输出：0
   ```
 
-  
-
 ### Map（映射）
 
 Map 是一种键值对的集合，其中每个键和值都可以是任意类型。相比于对象，Map 具有更强大的功能和更容易使用的 API。Map 常用的方法有：
@@ -1283,7 +1288,7 @@ console.log(rectangle.area); // 输出：50
    person.sayHello(); // 输出：Hello, my name is Alice and I am 25 years old.
    ```
 
-   在上面的示例中，name 和 age 属性被封装在 Person 类的内部，并通过 sayHello 方法暴露给外部访问。
+   name 和 age 属性被封装在 Person 类的内部，并通过 sayHello 方法暴露给外部访问。
 
    - 继承（Inheritance）：继承是指一个类（子类）可以继承另一个类（父类）的属性和方法。通过继承，子类可以获得父类的特性，并可以在此基础上添加自己独有的属性和方法。继承实现了代码的重用和层次化的组织。
 
@@ -1316,7 +1321,7 @@ console.log(rectangle.area); // 输出：50
    dog.fetch(); // 输出：Buddy fetches the ball.
    ```
 
-   在上面的示例中，Dog 类继承了 Animal 类，因此它拥有 Animal 类的属性和方法，并添加了自己的 fetch 方法。
+   Dog 类继承了 Animal 类，因此它拥有 Animal 类的属性和方法，并添加了自己的 fetch 方法。
 
    - 多态（Polymorphism）：多态是指在不同的对象上调用相同的方法，实现不同的行为。多态允许我们使用统一的接口来处理不同的对象，并根据对象类型的不同而执行不同的操作。多态提高了代码的灵活性、可扩展性和可维护性。
 
@@ -1359,7 +1364,7 @@ console.log(rectangle.area); // 输出：50
    console.log(circle.calculateArea()); // 输出：153.93804002589985
    ```
 
-   在上面的示例中，Shape 类定义了一个抽象方法 calculateArea，Rectangle 和 Circle 类都继承了 Shape 类，并实现了各自的 calculateArea 方法。通过多态，我们可以统一地调用 calculateArea 方法，但每个对象根据自身的类型来执行不同的计算。
+   Shape 类定义了一个抽象方法 calculateArea，Rectangle 和 Circle 类都继承了 Shape 类，并实现了各自的 calculateArea 方法。通过多态，我们可以统一地调用 calculateArea 方法，但每个对象根据自身的类型来执行不同的计算。
 
    封装、继承和多态是面向对象编程的核心特性，它们有助于构建灵活、可扩展和易于维护的代码。理解和合理运用这些特性对于设计和实现面向对象的系统非常重要。
 
@@ -1377,7 +1382,7 @@ console.log(iterator.next()); // 输出：{ value: 3, done: false }
 console.log(iterator.next()); // 输出：{ value: undefined, done: true }
 ```
 
-在上面的示例中，我们使用数组的Symbol.iterator方法获取迭代器对象，然后通过调用迭代器的next()方法逐个访问数组中的元素。每次调用next()方法时，迭代器会返回一个对象，其中value属性表示当前迭代的值，done属性表示迭代是否已结束。
+我们使用数组的Symbol.iterator方法获取迭代器对象，然后通过调用迭代器的next()方法逐个访问数组中的元素。每次调用next()方法时，迭代器会返回一个对象，其中value属性表示当前迭代的值，done属性表示迭代是否已结束。
 
 迭代器具有非常广泛的应用，不仅可以对数组进行迭代，还可以对字符串、Set、Map等数据结构进行迭代。你还可以使用自定义对象实现迭代器协议，以便可以像处理数组一样处理自定义对象。
 
@@ -1411,7 +1416,7 @@ console.log(iterator.next()); // 输出：{ value: 'c', done: false }
 console.log(iterator.next()); // 输出：{ value: undefined, done: true }
 ```
 
-在上面的示例中，我们定义了一个obj对象，通过Symbol.iterator方法返回一个迭代器对象。在迭代器对象中，我们实现了next()方法，用于逐个返回data数组中的元素。
+我们定义了一个obj对象，通过Symbol.iterator方法返回一个迭代器对象。在迭代器对象中，我们实现了next()方法，用于逐个返回data数组中的元素。
 
 通过迭代器，我们可以以统一的方式遍历不同类型的数据集合，使数据处理更加灵活和便捷。迭代器的应用可以在各种场景中发挥作用，如迭代器模式、迭代器生成器等。
 
@@ -1486,8 +1491,6 @@ for (const value of obj) {
 // 3
 ```
 
-
-
 ## 生成器（Generator ）
 
 ES6引入了生成器（Generator）函数作为一种特殊的函数类型，用于生成迭代器。生成器函数通过使用 function* 声明，并包含一个或多个 yield 语句，来控制迭代器的行为。生成器函数返回一个迭代器对象，可以通过调用 next() 方法逐步执行生成器函数，并在每个 yield 语句处暂停执行。以下是生成器函数的基本概念和用法：
@@ -1507,7 +1510,7 @@ console.log(generator.next()); // 输出：{ value: '!', done: false }
 console.log(generator.next()); // 输出：{ value: undefined, done: true }
 ```
 
-在上面的示例中，generatorFunction 是一个生成器函数，包含三个 yield 语句。通过调用 generatorFunction() 创建生成器对象 generator。使用 generator.next() 方法逐步执行生成器函数，每次执行到 yield 语句时会返回一个包含 value 和 done 属性的对象，value 表示生成器当前暂停的值，done 表示生成器是否已完成。
+generatorFunction 是一个生成器函数，包含三个 yield 语句。通过调用 generatorFunction() 创建生成器对象 generator。使用 generator.next() 方法逐步执行生成器函数，每次执行到 yield 语句时会返回一个包含 value 和 done 属性的对象，value 表示生成器当前暂停的值，done 表示生成器是否已完成。
 
 除了生成器函数返回的迭代器对象具有 next() 方法外，它还可以通过 return() 方法提前终止生成器。可以在生成器函数内部使用 try...finally 块来处理清理和善后的逻辑。
 
@@ -1530,7 +1533,7 @@ console.log(generator.return('Early Termination')); // 输出：{ value: 'Early 
 // 输出：Cleanup
 ```
 
-在上面的示例中，调用 generator.return() 方法提供了一个参数，用于指定生成器终止时要返回的值。同时，在 finally 块中的代码会在生成器终止前被执行。
+调用 generator.return() 方法提供了一个参数，用于指定生成器终止时要返回的值。同时，在 finally 块中的代码会在生成器终止前被执行。
 
 生成器函数的特点是可以生成可迭代的序列，可以通过 yield 语句逐个产生值，并通过迭代器的 next() 方法进行遍历。生成器函数在处理需要逐步执行、懒加载或大量数据的场景中非常有用。
 
@@ -1568,7 +1571,7 @@ console.log(generator.next()); // 输出：{ value: 'World!', done: false }
 console.log(generator.next()); // 输出：{ value: undefined, done: true }
 ```
 
-3. yield* 语句：在生成器函数中，可以使用 yield* 语句来代理（delegate）另一个生成器函数或可迭代对象的迭代。
+3. yield*语句：在生成器函数中，可以使用 yield* 语句来代理（delegate）另一个生成器函数或可迭代对象的迭代。
 
 ```javascript
 function* generatorFunction1() {
@@ -1662,7 +1665,7 @@ proxy.age = 25; // 拦截属性的写入，输出：Setting age to 25
 console.log(proxy.age); // 拦截属性的读取，输出：Getting age，25
 ```
 
-在上面的示例中，创建了一个名为 `target` 的对象，然后通过 `Proxy` 创建了一个代理对象 `proxy`。通过在 `handler` 对象中定义 `get` 和 `set` 方法，我们可以拦截属性的读取和写入操作，并在控制台输出相应的信息。
+创建了一个名为 `target` 的对象，然后通过 `Proxy` 创建了一个代理对象 `proxy`。通过在 `handler` 对象中定义 `get` 和 `set` 方法，我们可以拦截属性的读取和写入操作，并在控制台输出相应的信息。
 
 除了拦截属性的读取和写入，代理还可以拦截一系列操作，例如函数调用、构造函数、in运算符等。以下是一些常用的代理拦截操作：
 
@@ -1700,7 +1703,7 @@ console.log(proxy.age); // 输出：25
 console.log(proxy.greeting()); // 输出：Calling greeting()，Hello, John!
 ```
 
-在上面的示例中，我们通过在 `handler` 对象中定义 `get` 和 `apply` 方法，实现了对属性读取和函数调用的拦截。`get` 方法可以在读取属性时返回特定的值，`apply` 方法可以在调用函数时添加额外的操作。
+我们通过在 `handler` 对象中定义 `get` 和 `apply` 方法，实现了对属性读取和函数调用的拦截。`get` 方法可以在读取属性时返回特定的值，`apply` 方法可以在调用函数时添加额外的操作。
 
 代理是一个强大的特性，它提供了修改和控制对象行为的灵活性。通过使用代理，你可以在不改变原始对象的情况下进行自定义操作和增加功能。
 
@@ -1726,7 +1729,7 @@ delete proxy.name; // 拦截属性的删除操作，输出：Deleting name
 console.log(proxy.name); // 输出：undefined
 ```
 
-2. `getPrototypeOf `和 `setPrototypeOf`：拦截获取和设置原型操作。
+2. `getPrototypeOf`和 `setPrototypeOf`：拦截获取和设置原型操作。
 
 ```javascript
 const target = { name: 'John' };
@@ -1918,7 +1921,7 @@ console.log(Object.getPrototypeOf(proxy)); // 输出：Getting prototype，{}
 Object.setPrototypeOf(proxy, {}); // 拦截设置原型操作，输出：Setting prototype
 ```
 
-10. `construct `和 `apply`：拦截构造函数和函数的调用操作。
+10. `construct`和 `apply`：拦截构造函数和函数的调用操作。
 
 ```javascript
 function Person(name) {
@@ -1993,7 +1996,7 @@ console.log(proxy2.name); // 先调用 handler2 的 get 陷阱，输出：Inside
 
 ES6 中的 `Reflect` 是一个内置对象，提供了一组静态方法，用于对对象进行操作。`Reflect` 的目的是将一些常见的对象操作功能从原始对象上分离出来，使代码更加清晰、简洁和易于理解。
 
-### 常用方法：
+### 常用方法
 
 1. `Reflect.get(target, propertyKey [, receiver])`：获取目标对象中指定属性的值，类似于 `target[propertyKey]`。
 
@@ -2131,7 +2134,7 @@ for (const key of Reflect.enumerate(person)) {
 
 需要注意的是，《ECMAScript 6》已经废弃了`Reflect.enumerate()` 方法，并且在ES6规范的最终版本中不再推荐使用。
 
-## Promise 
+## Promise
 
 ES6 引入的 `Promise` 是一种用于处理异步操作的对象。它提供了一种更优雅的方式来管理和处理异步操作，避免了回调地狱（Callback Hell）的问题。
 
@@ -2394,7 +2397,8 @@ fetchData()
     console.error("Error:", error);
   });
 ```
-在上面的示例中，如果发生了错误，fetchData 函数中的 catch 块将捕获错误并进行处理。然后，通过使用 `then` 方法和相应的回调函数，以及 `catch` 方法捕获错误，从 Promise 对象中获得数据或者处理错误。 
+
+如果发生了错误，fetchData 函数中的 catch 块将捕获错误并进行处理。然后，通过使用 `then` 方法和相应的回调函数，以及 `catch` 方法捕获错误，从 Promise 对象中获得数据或者处理错误。
 
 5. 多个异步操作的并行与顺序执行：使用 `await` 关键字，可以实现多个异步操作的并行或顺序执行。可以使用 `Promise.all` 方法将多个 Promise 对象封装成一个新的 Promise 对象，在 `await` 关键字后面等待这个新的 Promise 对象解决（即所有操作完成）。
 
@@ -2408,7 +2412,8 @@ async function fetchMultipleData() {
   return [data1, data2, data3];
 }
 ```
-在上面的示例中，fetchMultipleData 函数使用 `Promise.all` 将多个异步操作封装成一个 Promise 对象，并使用 `await` 关键字等待所有操作完成。然后，将每个异步操作的结果存储在变量中并返回。
+
+fetchMultipleData 函数使用 `Promise.all` 将多个异步操作封装成一个 Promise 对象，并使用 `await` 关键字等待所有操作完成。然后，将每个异步操作的结果存储在变量中并返回。
 
 ## Generator函数的异步应用
 
@@ -2475,7 +2480,7 @@ const data = [1, 2, 3, 4, 5];
 processData(data);
 ```
 
-在上面的示例中，`streamData` 是一个生成器函数，它逐步返回数据源中的每一项数据。`processData` 函数使用 `for await...of` 循环遍历生成器函数的结果，并对每一项数据进行处理。
+`streamData` 是一个生成器函数，它逐步返回数据源中的每一项数据。`processData` 函数使用 `for await...of` 循环遍历生成器函数的结果，并对每一项数据进行处理。
 
 2. 异步迭代器：生成器函数可以实现异步迭代器，用于遍历异步数据集合或处理需要异步操作的迭代任务。
 
@@ -2646,6 +2651,7 @@ CommonJS模块化是一种用于服务器端和非浏览器环境的模块化规
 下面是使用CommonJS模块化的示例：
 
 导出模块内容：
+
 ```javascript
 // calculator.js
 function add(a, b) {
@@ -2665,6 +2671,7 @@ module.exports = {
 在上述示例中，使用`module.exports`将`add`和`subtract`函数作为一个对象导出。
 
 导入模块内容：
+
 ```javascript
 // index.js
 const calculator = require('./calculator');
@@ -2696,6 +2703,7 @@ ES6模块化是JavaScript的官方模块化标准，在现代浏览器和各种J
 ES6模块使用`import`和`export`关键字来导入和导出模块。下面是使用ES6模块化的示例：
 
 导出模块内容：
+
 ```javascript
 // calculator.js
 export function add(a, b) {
@@ -2708,6 +2716,7 @@ export function subtract(a, b) {
 ```
 
 导入模块内容：
+
 ```javascript
 // index.js
 import { add, subtract } from './calculator';
@@ -2732,7 +2741,7 @@ ES6模块化的特点和优势包括：
 
 ES6模块化提供了一种强大且标准的方式来开发和组织JavaScript代码，它已成为现代前端开发的主流模块化方案，推荐在项目中使用。
 
-####  用法
+#### 用法
 
 1. 默认导出和导入：
 除了通过`export`和`import`关键字导入和导出具名的模块内容，ES6模块化还支持默认导出和导入。
@@ -2830,7 +2839,7 @@ console.log("Initializing...");
 
 在上述示例中，`app.js`模块导入了`initialize.js`模块，导入时会立即执行`initialize.js`模块中的代码。
 
-###  CommonJs和ES模块的区别
+### CommonJs和ES模块的区别
 
 1. 语法差异：
    - CommonJS采用`require`和`module.exports`关键字进行模块的导入和导出。
@@ -2858,7 +2867,7 @@ console.log("Initializing...");
 
 总之，CommonJS模块化适用于服务器端和构建工具，而ES模块化适用于现代前端开发，在浏览器中具有原生支持。使用哪种模块化取决于项目的需求和环境，可以根据具体情况选择最合适的模块化方案。在实际开发中，常见的做法是使用构建工具（如Webpack、Rollup等）来处理模块化代码，使得CommonJS模块和ES模块能够共存和互相转换。
 
-##  装饰器
+## 装饰器
 
 ES6装饰器是一种用于增强或修改类、方法、属性等的语法特性。它是一种元编程的概念，通过在声明或定义时为目标对象应用装饰器来改变其行为或功能。
 
