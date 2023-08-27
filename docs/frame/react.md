@@ -6,8 +6,6 @@ prev:
   link: /front/Vue
 ---
 
-以下是一个React学习笔记的大纲，希望能够帮助你更好地学习React：
-
 ## 基础知识
 
 ### 什么是React

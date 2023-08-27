@@ -1,8 +1,8 @@
-import s1 from '../sidebar'
-import s2 from '../sidebar/index.json'
-const isDev = process.env.NODE_ENV == 'development'
-const sidebar = isDev ? s1 : s2
-import type { NarBarItem } from '@vuepress/theme-default'
+import s1 from '../sidebar';
+import s2 from '../sidebar/index.json';
+const isDev = process.env.NODE_ENV == 'development';
+const sidebar = isDev ? s1 : s2;
+import type { NarBarItem } from '@vuepress/theme-default';
 const navbar: NarBarItem[] = [
   {
     text: '前端',
@@ -35,11 +35,14 @@ const navbar: NarBarItem[] = [
   {
     text: '打包工具',
     link: '/pack',
-    activeMatch: '^/pack',
   },
   {
     text: '其他',
     link: '/other',
+  },
+  {
+    text: '代码人生',
+    link: '/problem',
   },
   {
     text: '练习',
@@ -49,23 +52,21 @@ const navbar: NarBarItem[] = [
     text: '面试题',
     link: 'https://flow-zy.github.io/interview/',
   },
-
-  { text: '博客', link: 'https://flow-zy.github.io/blog/' },
-]
+];
 Object.entries(sidebar).forEach(([key, value]) => {
   navbar.forEach((nav, i) => {
     if (nav.link && key.includes(nav.link)) {
       Array.isArray(value) &&
         value.length !== 0 &&
         value.forEach((side) => {
-          side.activeMatch = `^${side.link.slice(0, -3)}`
-        })
+          side.activeMatch = `^${side.link.slice(0, -3)}`;
+        });
 
       Array.isArray(value) && value.length !== 0
         ? (navbar[i].children = value.reverse())
-        : ''
+        : '';
     }
-  })
-})
+  });
+});
 
-export default navbar
+export default navbar;
