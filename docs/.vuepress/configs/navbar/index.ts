@@ -45,7 +45,7 @@ const navbar: NarBarItem[] = [
     link: '/problem',
   },
   {
-    text: '练习',
+    text: '案例',
     link: '/code',
   },
   {

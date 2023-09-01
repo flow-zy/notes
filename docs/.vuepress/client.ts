@@ -38,6 +38,7 @@ export default defineClientConfig({
       navHeight.value = (
         document.querySelector('header.navbar') as HTMLHeadElement
       ).clientHeight
+      window.doc=document
     })
   },
   rootComponents: [],
