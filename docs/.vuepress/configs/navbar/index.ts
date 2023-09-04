@@ -5,40 +5,65 @@ const sidebar = isDev ? s1 : s2;
 import type { NarBarItem } from '@vuepress/theme-default';
 const navbar: NarBarItem[] = [
   {
-    text: '前端',
-    link: '/front',
+    text:'首页',
+    link:'/'
   },
   {
-    text: '后端',
-    link: '/rear',
-  },
-  {
-    text: '数据库',
-    link: '/database',
-  },
-  {
-    text: '项目管理',
-    link: '/management',
-  },
-  {
-    text: '网络',
-    link: '/network',
-  },
-  {
-    text: '小程序',
-    link: '/program',
-  },
-  {
-    text: '框架',
-    link: '/frame',
-  },
-  {
-    text: '打包工具',
-    link: '/pack',
-  },
-  {
-    text: '其他',
-    link: '/other',
+    text:'笔记',
+    children:[
+      {
+        text: '三剑客',
+        link: '/front',
+      },
+      {
+        text:'vue系列',
+        link:'/vue'
+      },
+      {
+        text:'react系列',
+        link:'/react'
+      },
+      {
+        text:'node系列',
+        link:'/node'
+      },
+      {
+        text:'php系列',
+        link:'/php'
+      },
+      {
+        text: 'java系列',
+        link: '/java',
+      },
+      {
+        text: '数据库',
+        link: '/database',
+      },
+      {
+        text: '版本控制',
+        link: '/management',
+      },
+      {
+        text: '网络',
+        link: '/network',
+      },
+      {
+        text: '小程序',
+        link: '/program',
+      },
+      {
+        text: '构建工具',
+        link: '/pack',
+      },
+      {
+        text:'预处理器',
+        link:'/preprocessor'
+      },
+      {
+        text: '其他',
+        link: '/other',
+      },
+    ]
   },
   {
     text: '代码人生',
@@ -54,19 +79,13 @@ const navbar: NarBarItem[] = [
   },
 ];
 Object.entries(sidebar).forEach(([key, value]) => {
-  navbar.forEach((nav, i) => {
-    if (nav.link && key.includes(nav.link)) {
-      Array.isArray(value) &&
-        value.length !== 0 &&
-        value.forEach((side) => {
-          side.activeMatch = `^${side.link.slice(0, -3)}`;
-        });
-
-      Array.isArray(value) && value.length !== 0
-        ? (navbar[i].children = value.reverse())
-        : '';
+  navbar[1].children.forEach((side, i) => {
+    if(side.link && key.includes(side.link)){
+      side.collapsible=true
+      side.children=value
     }
-  });
+  })
+
 });
 
 export default navbar;

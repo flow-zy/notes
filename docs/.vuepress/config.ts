@@ -7,12 +7,13 @@ function isIterable(obj: any): Boolean {
     typeof obj[Symbol.iterator] === 'function'
   )
 }
-const head: HeadConfig[] = isIterable(header) && header.map((i) => i)
+const head: HeadConfig[] = isIterable(header) && header.map((i: any) => i)
+const mode=process.env.NODE_ENV==='production'
 export default defineUserConfig({
   lang: 'zh-CN',
-  title: 'study note',
+  title: 'ZY Blog',
   description: 'Includes most of the knowledge of programming languages',
-  base: '/notes/',
+  base: mode?'/notes/':'/',
   plugins,
   theme: defaultTheme({
     sidebar: 'auto',

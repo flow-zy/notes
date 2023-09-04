@@ -1,9 +1,8 @@
 ---
-title: Redux
 #NavLink
 prev:
   text: React
-  link: /frame/react
+  link: ./
 ---
 
 ## 什么是Redux
@@ -39,7 +38,7 @@ Store提供了几个核心的方法来操作状态：
 
 使用Redux的过程中，开发者可以通过Store的`getState()`方法来获取当前的状态，然后将该状态提供给应用程序的组件。组件可以订阅Store的状态变化通过`subscribe(listener)`方法，以便在状态发生变化时获取新的状态并更新视图。
 
-总之，Store在Redux中扮演着存储和管理应用程序状态的角色，它提供了一种集中式的状态管理机制，使得应用程序的不同组件可以共享和访问同一个状态树。
+Store在Redux中扮演着存储和管理应用程序状态的角色，它提供了一种集中式的状态管理机制，使得应用程序的不同组件可以共享和访问同一个状态树。
 2. Action（动作）
 在Redux中，Action（动作）是描述状态变化的普通JavaScript对象。它是触发状态更新的一种方式，当应用程序中某个操作需要触发状态的改变时，会创建一个Action对象并将其派发（Dispatch）到Redux的Store中。
 
@@ -99,7 +98,7 @@ function counterReducer(state = { counter: 0 }, action) {
 
 在上面的例子中，当Action类型为"INCREMENT"时，Reducer会返回一个新的状态对象，其中counter属性的值加1。当Action类型为"DECREMENT"时，Reducer会返回一个新的状态对象，其中counter属性的值减1。如果Action类型不匹配任何已知的类型，则Reducer会返回当前的状态对象。
 
-需要注意的是，Redux要求Reducer是纯函数，所以在Reducer中不能直接修改原状态对象，而是应该返回一个全新的状态对象。这可以通过使用对象展开语法（Spread Syntax）或Immutable.js等库来实现。
+Redux要求Reducer是纯函数，所以在Reducer中不能直接修改原状态对象，而是应该返回一个全新的状态对象。这可以通过使用对象展开语法（Spread Syntax）或Immutable.js等库来实现。
 
 总结一下，Reducer是一个纯函数，用于处理状态的更新逻辑。它根据Action的类型来返回一个新的状态对象，并且遵循Redux的规范要求，保持纯粹性和可预测性。
 4. Dispatch（派发）
@@ -123,7 +122,7 @@ store.dispatch(incrementAction);
 
 通过派发不同类型的Action，我们可以在Redux中实现各种不同的状态操作，比如添加或删除数据、更新数据、异步操作等等。
 
-需要注意的是，Dispatch是一个同步的操作，它会立即触发状态的更新。如果需要进行异步操作，比如处理网络请求等，可以使用Redux中的中间件（middleware），如Redux Thunk或Redux Saga。
+Dispatch是一个同步的操作，它会立即触发状态的更新。如果需要进行异步操作，比如处理网络请求等，可以使用Redux中的中间件（middleware），如Redux Thunk或Redux Saga。
 
 总结一下，Dispatch是将一个Action发送到Redux的Store以触发状态更新的过程。通过派发不同类型的Action，可以实现不同的状态操作。
 5. Subscribe（订阅）
@@ -148,7 +147,7 @@ store.subscribe(handleStateChange);
 
 通过订阅函数，我们可以在状态变化时执行各种操作，如更新UI、持久化数据等。
 
-需要注意的是，订阅的回调函数将在状态发生变化时被调用，而不是在每次派发一个Action时都被调用。因此，Redux的订阅机制能够帮助我们有效地监听状态的变化，并在必要时进行相应的处理。
+订阅的回调函数将在状态发生变化时被调用，而不是在每次派发一个Action时都被调用。因此，Redux的订阅机制能够帮助我们有效地监听状态的变化，并在必要时进行相应的处理。
 
 如果要取消订阅，可以调用`unsubscribe()`函数，它是`store.subscribe()`方法的返回值。例如：
 
@@ -267,7 +266,7 @@ Redux的工作原理可以概括为三个关键概念：**Store**、**Actions**�
 
 Redux的工作原理借助了纯函数和单一数据源的思想，通过Actions和Reducers的配合来实现应用程序状态的管理和更新。这种机制使得状态变化可预测、可追溯，并能够提供一种可维护的方式来处理复杂的状态逻辑。
 
-这个应用程序有两个按钮：一个用于增加计数器的值，一个用于减少计数器的值。以下是实现该应用程序的Redux工作原理的例子：
+这个应用程序有两个按钮：一个用于增加计数器的值，一个用于减少计数器的值。实现该应用程序的Redux工作原理的例子：
 
 首先，我们需要安装Redux库：
 
@@ -669,7 +668,7 @@ export default App;
 
 10. 结合使用React Context：React Context和Redux可以结合使用。使用React Context可以将某些只在特定组件层级中使用的状态提升到Redux之外，减少不必要的状态管理。
 
-以下是一个使用Redux的简单实例：
+一个使用Redux的简单实例：
 
 假设我们正在构建一个待办事项列表的应用程序。该应用程序具有添加待办事项、完成待办事项和过滤待办事项的功能。
 

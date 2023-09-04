@@ -66,5 +66,10 @@ const travel = (dir) => {
 };
 
 const sidebar = travel('docs/');
+Object.entries(sidebar).forEach(([key, value]) => {
+  value.forEach((item)=>{
+    item.activeMatch=item.link.split('.')[0]
+  })
+})
 writeFileSync(path.join(__dirname, './index.json'), JSON.stringify(sidebar));
 export default sidebar;

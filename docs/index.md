@@ -1,8 +1,8 @@
 ---
 # 是否是首页，false表示是普通页面
 home: true
-heroImage: /images/logo.jpg
-heroText: Study Note
+# heroImage: /images/logo.jpg
+heroText: If you can't learn, find a reason to learn
 description: Includes most of the knowledge of programming languages
 tagline: Includes most of the knowledge of programming languages
 # pageClass: container
@@ -17,7 +17,7 @@ features:
       details: People interested in front-end technology, including but not limited to front-end developers, designers, students, enthusiasts, etc.
     - title: Experience
       details: Interviewing requires not only technical skills, but also some mental games.
-      link: https://interview.github.io
+      link: https://flow-zy.github.io/interview/
 footer: MIT Licensed | Copyright © 2023-present CoolDream
 footerHtml: true
 ---

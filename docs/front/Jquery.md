@@ -1,5 +1,4 @@
 ---
-title: jQuery
 #NavLink
 prev:
   text: JavaScript
