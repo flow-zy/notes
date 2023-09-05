@@ -5,31 +5,32 @@ const sidebar = isDev ? s1 : s2;
 import type { NarBarItem } from '@vuepress/theme-default';
 const navbar: NarBarItem[] = [
   {
-    text:'首页',
-    link:'/'
+    text: '首页',
+    link: '/',
   },
   {
-    text:'笔记',
-    children:[
+    text: '笔记',
+    link: '/notes',
+    children: [
       {
         text: '三剑客',
         link: '/front',
       },
       {
-        text:'vue系列',
-        link:'/vue'
+        text: 'vue系列',
+        link: '/vue',
       },
       {
-        text:'react系列',
-        link:'/react'
+        text: 'react系列',
+        link: '/react',
       },
       {
-        text:'node系列',
-        link:'/node'
+        text: 'node系列',
+        link: '/node',
       },
       {
-        text:'php系列',
-        link:'/php'
+        text: 'php系列',
+        link: '/php',
       },
       {
         text: 'java系列',
@@ -56,14 +57,18 @@ const navbar: NarBarItem[] = [
         link: '/pack',
       },
       {
-        text:'预处理器',
-        link:'/preprocessor'
+        text: '预处理器',
+        link: '/preprocessor',
       },
       {
         text: '其他',
         link: '/other',
       },
-    ]
+    ],
+  },
+  {
+    text: '软件教程',
+    link: '/software',
   },
   {
     text: '代码人生',
@@ -78,14 +83,25 @@ const navbar: NarBarItem[] = [
     link: 'https://flow-zy.github.io/interview/',
   },
 ];
-Object.entries(sidebar).forEach(([key, value]) => {
-  navbar[1].children.forEach((side, i) => {
-    if(side.link && key.includes(side.link)){
-      side.collapsible=true
-      side.children=value
-    }
-  })
 
+navbar.forEach((nav) => {
+  sidebar.forEach((side: { link: any; children: any[] }) => {
+    if (nav.link === side.link) {
+      if (nav.hasOwnProperty('children')) {
+        nav.children.forEach(
+          (child: { link: any; children: any; activeMatch: any }) => {
+            side.children.forEach((s) => {
+              if (s.link.includes(child.link)) {
+                child.link = s.link;
+                child.children = s.children;
+                child.activeMatch = s.activeMatch;
+              }
+            });
+          }
+        );
+      }
+    }
+  });
 });
 
 export default navbar;
