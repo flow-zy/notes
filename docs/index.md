@@ -8,7 +8,7 @@ tagline: Includes most of the knowledge of programming languages
 # pageClass: container
 actions:
     - text: Get Start
-      link: front/html
+      link: /notes/front/html
       type: primary
 features:
     - title: Widely
