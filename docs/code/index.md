@@ -40,7 +40,7 @@
 .container {
   max-width: 600px;
   margin: auto;
-} 
+}
 input {
   position: absolute;
   opacity: 0;
@@ -1708,7 +1708,42 @@ body {
 
 ## js
 
-### 时钟切换
+### 变量作用域和with关键字
+
+:::normal-demo 变量作用域和with关键字
+
+```js
+var b;
+void function () {
+  var env = { b: 1 };
+  b = 2;
+  console.log("In function b:", b);
+  with (env) {
+    var b = 3;
+    console.log("In with b:", b);
+  }
+}()
+console.log("Global b:", b);
+```
+
+:::
+>解释
+
+1. `var b;`：这一行声明了一个全局变量 `b`，但没有给它赋初值，所以它的值为 `undefined`。
+
+2. `void function () { ... }()`：这是一个立即执行的函数表达式 (IIFE)，用于创建一个函数作用域。在这个函数内部，会创建一个名为 `env` 的局部变量，并给它赋值 `{ b: 1 }`。
+
+3. `b = 2;`：在函数内部，将全局变量 `b` 的值设为 `2`。
+
+4. `console.log("In function b:", b);`：输出函数内部的 `b` 值，这时候输出的是 `2`。
+
+5. `with (env) { ... }`：`with` 关键字用于创建一个临时的作用域，将 `env` 对象的属性当作局部变量来使用。
+
+6. `var b = 3;`：在 `with` 作用域内部，声明了一个名为 `b` 的局部变量，并赋值为 `3`。这个局部变量 `b` 遮蔽了外部函数内的全局变量 `b`。
+
+7. `console.log("In with b:", b);`：输出 `with` 作用域内部的 `b` 值，这时候输出的是 `3`。
+
+8. 最后一行 `console.log("Global b:", b);`：在全局作用域中输出全局变量 `b` 的值，由于在函数内部有一个局部变量 `b`，但它不会影响全局变量，所以输出的是全局变量 `b` 的值，也就是 `2`。
 
 ::: normal-demo 时钟切换
 
@@ -1855,22 +1890,22 @@ function timeRoll(obj,i){
     var pImg=obj[i].getElementsByTagName("img")[0];
       var nImg=obj[i].getElementsByTagName("img")[1];
     if(pNumber!==tNumber&&parseInt(getStyle(nImg,'top'))==92){
-      
+
       nImg.src=arr[nstr.charAt(i)];
       doMove(nImg,'top',5,0,function(){
-          
+
       });
       doMove(pImg,'top',5,-92,function(){
           pImg.style.top='92px';
           pImg.src=arr[str.charAt(i)];
 
       });
-      
+
     }else if(pNumber!==tNumber&&parseInt(getStyle(pImg,'top'))==92){
 
       pImg.src=arr[nstr.charAt(i)];
       doMove(pImg,'top',5,0,function(){
-          
+
       });
       doMove(nImg,'top',5,-92,function(){
           nImg.style.top='92px';
@@ -1929,7 +1964,7 @@ ul li .pic02{
    </li>
    <li>
     <img src="">
-    
+
    </li>
    <li>
     <img src="" class="pic01"> <img src="" class="pic02">
@@ -1939,7 +1974,7 @@ ul li .pic02{
    </li>
    <li>
     <img src="">
-    
+
    </li>
    <li>
     <img src="" class="pic01"> <img src="" class="pic02">
@@ -2302,73 +2337,73 @@ img {
 
 ```html
 <div class="tab-container">
-  <div id="tabs">  
-    <div class="tab active">选项卡1</div>  
-    <div class="tab">选项卡2</div>  
-    <div class="tab">选项卡3</div>  
-  </div>  
+  <div id="tabs">
+    <div class="tab active">选项卡1</div>
+    <div class="tab">选项卡2</div>
+    <div class="tab">选项卡3</div>
+  </div>
 
-  <div id="panels">  
-    <div class="panel active">面板1的内容</div>  
-    <div class="panel">面板2的内容</div>  
-    <div class="panel">面板3的内容</div>  
+  <div id="panels">
+    <div class="panel active">面板1的内容</div>
+    <div class="panel">面板2的内容</div>
+    <div class="panel">面板3的内容</div>
   </div>
 </div>
 ```
 
 ```js
-var currentTab = 0;  
-var tabs = document.querySelectorAll('.tab');  
-var panels = document.querySelectorAll('.panel');  
+var currentTab = 0;
+var tabs = document.querySelectorAll('.tab');
+var panels = document.querySelectorAll('.panel');
 
-tabs[currentTab].classList.add('active');  
-panels[currentTab].style.display = 'block';  
+tabs[currentTab].classList.add('active');
+panels[currentTab].style.display = 'block';
 
-tabs.forEach(function(tab) {  
-  tab.addEventListener('click', function () {  
-      tabs.forEach(function(tab){ tab.classList.remove('active')});  
-      this.classList.add('active');  
-      panels.forEach(function(panel){panel.style.display = 'none'});  
-      currentTab = Array.prototype.indexOf.call(tabs, this);  
-      panels[currentTab].style.display = 'block';  
-  });  
+tabs.forEach(function(tab) {
+  tab.addEventListener('click', function () {
+      tabs.forEach(function(tab){ tab.classList.remove('active')});
+      this.classList.add('active');
+      panels.forEach(function(panel){panel.style.display = 'none'});
+      currentTab = Array.prototype.indexOf.call(tabs, this);
+      panels[currentTab].style.display = 'block';
+  });
 });
 ```
 
 ```css
-/* 样式化选项卡 */  
-#tabs {  
-  width: 100%;  
-  overflow: hidden;  
-}  
+/* 样式化选项卡 */
+#tabs {
+  width: 100%;
+  overflow: hidden;
+}
 
-.tab {  
-  display: inline-block;  
-  padding: 10px;  
-  background-color: #fff;  
-  cursor: pointer;  
-}  
-
-/* 样式化面板 */  
-#panels {  
-  width: 100%;  
-  overflow: auto;  
-}  
-
-.panel {  
-  display: none;  
-  padding: 10px;  
-  border: 1px solid #ccc;  
-}  
-
-/* 高亮激活的选项卡和显示面板 */  
-.tab.active {  
-  background-color: #123456; 
-  color:#fff;
-}  
-.panel.active {  
+.tab {
+  display: inline-block;
+  padding: 10px;
   background-color: #fff;
-  display: block;  
+  cursor: pointer;
+}
+
+/* 样式化面板 */
+#panels {
+  width: 100%;
+  overflow: auto;
+}
+
+.panel {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* 高亮激活的选项卡和显示面板 */
+.tab.active {
+  background-color: #123456;
+  color:#fff;
+}
+.panel.active {
+  background-color: #fff;
+  display: block;
 }
 ```
 
@@ -2396,28 +2431,28 @@ tabs.forEach(function(tab) {
 ```
 
 ```css
-/* 样式化容器 */  
-.container {  
-  width: 600px;  
+/* 样式化容器 */
+.container {
+  width: 600px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-}  
+}
 
-/* 样式化省份选择框 */  
-.province,.city,.county {  
+/* 样式化省份选择框 */
+.province,.city,.county {
   flex:0.3;
-  padding: 10px;  
-  border: 1px solid #ccc;  
-  border-radius: 5px; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   display:flex;
   justify-content:space-around;
-}  
+}
 
-.title {  
-  font-weight: bold;  
-  margin-bottom: 10px;  
-}  
+.title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
 ```
 
