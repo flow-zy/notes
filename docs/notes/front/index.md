@@ -11,3 +11,5 @@
 - [ECMAScript](./ECMAScript.md) 是 JavaScript 的标准，它定义了 JavaScript 的语法和基本对象。ECMAScript 6（ES6）是 JavaScript 的最新版本，它引入了许多新特性，如类、模块和箭头函数等。
 
 - [typescript](./TypeScript.md) 是 JavaScript 的一个超集，它提供了更强的类型检查和代码自动补全等功能。它与 JavaScript 的互操作性很好，可以轻松地将 JavaScript 代码转换为 TypeScript 代码。
+
+- [Web Components](./webComponents.md )是一组标准，用于创建可重用的组件，并将其封装在自定义元素中。它允许开发人员创建自己的组件，并将它们插入到网页中，而不必担心它们与网页的其他部分兼容。

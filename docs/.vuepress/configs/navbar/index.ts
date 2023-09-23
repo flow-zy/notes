@@ -1,8 +1,8 @@
+import type { NarBarItem } from '@vuepress/theme-default';
 import s1 from '../sidebar';
 import s2 from '../sidebar/index.json';
 const isDev = process.env.NODE_ENV == 'development';
 const sidebar = isDev ? s1 : s2;
-import type { NarBarItem } from '@vuepress/theme-default';
 const navbar: NarBarItem[] = [
   {
     text: '首页',
