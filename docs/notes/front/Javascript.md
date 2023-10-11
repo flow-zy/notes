@@ -172,11 +172,11 @@ console.log(convertedNum); // 输出：20（数字类型）
 var convertedStr = String(num);
 console.log(convertedStr); // 输出："10"（字符串类型）
 
-var convertedBool = Boolean(""); 
+var convertedBool = Boolean("");
 console.log(convertedBool); // 输出：false（布尔类型）
 
 // 隐式类型转换
-var result = num + str; 
+var result = num + str;
 console.log(result); // 输出："1020"（字符串的拼接）
 ```
 
@@ -203,13 +203,13 @@ console.log(result); // 输出："1020"（字符串的拼接）
 
    ```javascript
    class MyClass {}
-    
+
    var obj1 = new MyClass();
    console.log(obj1 instanceof MyClass);            // 输出: true
-   
+
    var obj2 = {};
    console.log(obj2 instanceof Object);             // 输出: true
-   
+
    var arr = [1, 2, 3];
    console.log(arr instanceof Array);               // 输出: true
    console.log(arr instanceof Object);              // 输出: true
@@ -234,19 +234,19 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    ```javascript
    var x = 10;
    var y = 5;
-   
+
    var sum = x + y; // 加法运算符
    console.log(sum); // 输出：15
-   
+
    var difference = x - y; // 减法运算符
    console.log(difference); // 输出：5
-   
+
    var product = x * y; // 乘法运算符
    console.log(product); // 输出：50
-   
+
    var quotient = x / y; // 除法运算符
    console.log(quotient); // 输出：2
-   
+
    var remainder = x % y; // 模运算符
    console.log(remainder); // 输出：0
    ```
@@ -257,19 +257,19 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
 
    ```javascript
    var x = 5;
-   
+
    x += 10; // 复合赋值运算符（相当于 x = x + 10）
    console.log(x); // 输出：15
-   
+
    x -= 3; // 复合赋值运算符（相当于 x = x - 3）
    console.log(x); // 输出：12
-   
+
    x *= 2; // 复合赋值运算符（相当于 x = x * 2）
    console.log(x); // 输出：24
-   
+
    x /= 6; // 复合赋值运算符（相当于 x = x / 6）
    console.log(x); // 输出：4
-   
+
    ```
 
 3. 比较运算符：用于比较两个值并返回布尔值（true或false）。
@@ -285,7 +285,7 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    ```javascript
    var x = 10;
    var y = 5;
-   
+
    console.log(x == y); // 相等运算符，输出：false
    console.log(x != y); // 不等运算符，输出：true
    console.log(x === y); // 全等运算符，输出：false
@@ -304,7 +304,7 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    ```javascript
    var x = 10;
    var y = 5;
-   
+
    console.log(x > 0 && y > 0); // 逻辑与运算符，输出：true
    console.log(x > 0 || y > 0); // 逻辑或运算符，输出：true
    console.log(!(x > 0)); // 逻辑非运算符，输出：false
@@ -315,7 +315,7 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
 
    ```javascript
    var age = 15;
-   
+
    var result = age >= 18 ? "成年人" : "未成年人";
    console.log(result); // 根据条件输出：未成年人
    ```
@@ -337,7 +337,7 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    } else {
      // 条件不满足时执行的代码
    }
-   
+
    if (condition1) {
      // 条件1满足时执行的代码
    } else if (condition2) {
@@ -357,7 +357,7 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
      // 在条件满足时执行的代码
      i++;
    }
-   
+
    for (var i = 0; i < length; i++) {
      // 在每次循环时执行的代码
    }
@@ -402,7 +402,7 @@ JavaScript提供了各种运算符，用于执行各种数学和逻辑操作。�
    - 使用反引号（`）创建模板字符串（支持多行文本和插入表达式）。
 
    ```javascript
-   var str1 = 'Hello'; 
+   var str1 = 'Hello';
    var str2 = "World";
    var str3 = `Hello, ${name}!`; // 模板字符串
    ```
@@ -687,7 +687,7 @@ console.log(result); // 输出：5
    var add = function(num1, num2) {
      return num1 + num2;
    };
-   
+
    var result = add(2, 3);
    console.log(result); // 输出：5
    ```
@@ -699,7 +699,7 @@ console.log(result); // 输出：5
 
    ```javascript
    var add = (num1, num2) => num1 + num2;
-   
+
    var result = add(2, 3);
    console.log(result); // 输出：5
    ```
@@ -713,7 +713,7 @@ console.log(result); // 输出：5
    function greet(name = 'Guest') {
      console.log('Hello, ' + name + '!');
    }
-   
+
    greet(); // 输出：Hello, Guest!
    greet('John'); // 输出：Hello, John!
    ```
@@ -730,10 +730,10 @@ console.log(result); // 输出：5
        return number * factor;
      };
    }
-   
+
    var double = multiplyBy(2);
    var triple = multiplyBy(3);
-   
+
    console.log(double(5)); // 输出：10
    console.log(triple(5)); // 输出：15
    ```
@@ -748,14 +748,14 @@ console.log(result); // 输出：5
    var greet = function() {
      console.log('Hello!');
    };
-   
+
    greet(); // 输出：Hello!
-   
+
    // 具名函数表达式
    var multiply = function multiplyNumbers(num1, num2) {
      return num1 * num2;
    };
-   
+
    var result = multiply(2, 3);
    console.log(result); // 输出：6
    ```
@@ -770,7 +770,7 @@ console.log(result); // 输出：5
      var name = 'John';
      console.log('Hello, ' + name + '!');
    })();
-   
+
    // 输出：Hello, John!
    ```
 
@@ -782,13 +782,13 @@ console.log(result); // 输出：5
    ```javascript
    function counter() {
      var count = 0;
-   
+
      return function() {
        count++;
        console.log(count);
      };
    }
-   
+
    var increment = counter();
    increment(); // 输出：1
    increment(); // 输出：2
@@ -807,11 +807,11 @@ console.log(result); // 输出：5
        callback(data);
      }, 2000);
    }
-   
+
    function processData(data) {
      console.log('Data received:', data);
    }
-   
+
    fetchData(processData); // 输出：Data received: Hello, world!
    ```
 
@@ -985,11 +985,11 @@ outerFunction();
 
    ```javascript
    console.log(this === window); // 输出：true
-   
+
    function globalFunc() {
      console.log(this === window); // 输出：true
    }
-   
+
    globalFunc();
    ```
 
@@ -1006,7 +1006,7 @@ outerFunction();
          console.log('Hello, ' + this.name + '!');
        }
      };
-     
+
      person.sayHello(); // 输出：Hello, John!
      ```
 
@@ -1018,7 +1018,7 @@ outerFunction();
        console.log(this === window); // 输出：true（非严格模式）
        console.log(this === undefined); // 输出：true（严格模式）
      }
-     
+
      regularFunc();
      ```
 
@@ -1029,7 +1029,7 @@ outerFunction();
      function Person(name) {
        this.name = name;
      }
-     
+
      var john = new Person('John');
      console.log(john.name); // 输出：John
      ```
@@ -1041,9 +1041,9 @@ outerFunction();
      function greet() {
        console.log('Hello, ' + this.name + '!');
      }
-     
+
      var person = { name: 'John' };
-     
+
      greet.call(person); // 输出：Hello, John!
      greet.apply(person); // 输出：Hello, John!
      var boundGreet = greet.bind(person);
@@ -1059,18 +1059,18 @@ outerFunction();
      lastName: 'Doe',
      fullName: function() {
        console.log(this.firstName + ' ' + this.lastName); // 此处的this指向person对象
-   
+
        function nestedFunc() {
          console.log(this.firstName + ' ' + this.lastName); // 此处的this可能指向全局对象（非严格模式）
-   
+
          var self = this;
          console.log(self.firstName + ' ' + self.lastName); // 使用self变量捕获正确的this值
        }
-   
+
        nestedFunc();
      }
    };
-   
+
    person.fullName();  // 输出：John Doe
    ```
 
@@ -1133,16 +1133,16 @@ outerFunction();
    ```js
    var button = document.getElementById('myButton');
    var container = document.getElementById('container');
-   
+
    button.addEventListener('click', function(event) {
      console.log('Button clicked');
      event.stopPropagation();
    });
-   
+
    container.addEventListener('click', function(event) {
      console.log('Container clicked');
    });
-   
+
    // 当点击按钮时，只会输出'Button clicked'，而'Container clicked'不会被执行
    ```
 
@@ -1248,7 +1248,7 @@ DOM（文档对象模型）操作提供了许多方法来操纵网页的内容�
    ```javascript
    var newElement = document.createElement('div');
    newElement.textContent = 'Hello World';
-   
+
    var parentElement = document.getElementById('parent');
    parentElement.appendChild(newElement);
    ```
@@ -1342,7 +1342,7 @@ DOM（文档对象模型）操作提供了许多方法来操纵网页的内容�
     var parentElement = document.getElementById('parent');
     var newElement = document.createElement('div');
     newElement.textContent = 'New Element';
-    
+
     var oldElement = document.getElementById('oldElement');
     parentElement.replaceChild(newElement, oldElement);
     ```
@@ -1355,7 +1355,7 @@ DOM（文档对象模型）操作提供了许多方法来操纵网页的内容�
     ```javascript
     var originalElement = document.getElementById('original');
     var clonedElement = originalElement.cloneNode(true);
-    
+
     var container = document.getElementById('container');
     container.appendChild(clonedElement);
     ```
@@ -1450,11 +1450,11 @@ student.sayHello();         // 输出: "Hello, my name is Bob."
    function Person(name) {
      this.name = name;
    }
-   
+
    Person.prototype.greet = function() {
      console.log(`Hello, my name is ${this.name}.`);
    };
-   
+
    const person = new Person('Alice');
    person.greet();  // 输出: "Hello, my name is Alice."
    ```
@@ -1469,10 +1469,10 @@ student.sayHello();         // 输出: "Hello, my name is Bob."
        console.log(`Hello, my name is ${this.name}.`);
      }
    };
-   
+
    const child = Object.create(parent);
    child.name = 'Bob';
-   
+
    child.greet();  // 输出: "Hello, my name is Bob."
    ```
 
@@ -1483,14 +1483,14 @@ student.sayHello();         // 输出: "Hello, my name is Bob."
    function Person(name) {
      this.name = name;
    }
-   
+
    const person1 = new Person('Alice');
    const person2 = new Person('Bob');
-   
+
    Person.prototype.greet = function() {
      console.log(`Hello, my name is ${this.name}.`);
    };
-   
+
    person1.greet();  // 输出: "Hello, my name is Alice."
    person2.greet();  // 输出: "Hello, my name is Bob."
    ```
@@ -1506,14 +1506,14 @@ student.sayHello();         // 输出: "Hello, my name is Bob."
    function Person(name) {
      this.name = name;
    }
-   
+
    Person.prototype.greet = function() {
      console.log(`Hello, my name is ${this.name}.`);
    };
-   
+
    const person1 = new Person('Alice');
    const person2 = new Person('Bob');
-   
+
    person1.greet();  // 输出: "Hello, my name is Alice."
    person2.greet();  // 输出: "Hello, my name is Bob."
    ```
@@ -1525,7 +1525,7 @@ student.sayHello();         // 输出: "Hello, my name is Bob."
 
    ```javascript
    const obj = {};
-   
+
    console.log(obj.toString());  // 输出: "[object Object]"
    console.log(obj.valueOf() === obj);  // 输出: true
    ```
@@ -1542,12 +1542,12 @@ student.sayHello();         // 输出: "Hello, my name is Bob."
        console.log(`Hello, my name is ${this.name}.`);
      }
    };
-   
+
    const student = {
      __proto__: person,
      name: 'Bob'
    };
-   
+
    student.greet();  // 输出: "Hello, my name is Bob."
    ```
 
@@ -1797,11 +1797,11 @@ JavaScript 异步编程是一种处理非阻塞操作的编程范式。它允许
        callback(data);
      }, 2000);
    }
-   
+
    function processData(data) {
      console.log(`Received data: ${data}`);
    }
-   
+
    fetchData(processData);
    ```
 
@@ -1819,7 +1819,7 @@ JavaScript 异步编程是一种处理非阻塞操作的编程范式。它允许
        }, 2000);
      });
    }
-   
+
    fetchData().then((data) => {
      console.log(`Received data: ${data}`);
    });
@@ -1839,7 +1839,7 @@ JavaScript 异步编程是一种处理非阻塞操作的编程范式。它允许
        }, 2000);
      });
    }
-   
+
    async function processData() {
      try {
        const data = await fetchData();
@@ -1848,7 +1848,7 @@ JavaScript 异步编程是一种处理非阻塞操作的编程范式。它允许
        console.error('Error:', error);
      }
    }
-   
+
    processData();
    ```
 
@@ -1859,7 +1859,7 @@ JavaScript 异步编程是一种处理非阻塞操作的编程范式。它允许
 
    ```js
    const button = document.querySelector('button');
-   
+
    button.addEventListener('click', () => {
      console.log('Button clicked!');
    });
@@ -1873,29 +1873,29 @@ JavaScript 异步编程是一种处理非阻塞操作的编程范式。它允许
    ```js
    const pubSub = (function() {
      const subscribers = {};
-   
+
      function subscribe(event, callback) {
        if (!subscribers[event]) {
          subscribers[event] = [];
        }
        subscribers[event].push(callback);
      }
-   
+
      function publish(event, data) {
        if (!subscribers[event]) return;
        subscribers[event].forEach((callback) => callback(data));
      }
-   
+
      return {
        subscribe,
        publish
      };
    })();
-   
+
    function handleEvent(data) {
      console.log('Event received:', data);
    }
-   
+
    pubSub.subscribe('customEvent', handleEvent);
    pubSub.publish('customEvent', 42);
    ```
@@ -1922,7 +1922,7 @@ JavaScript 异步编程是一种处理非阻塞操作的编程范式。它允许
 function foo() {
   var a = 10;
   var b = true;
-  
+
   // 函数调用栈
 }
 
@@ -2247,7 +2247,7 @@ let result = "string".replace(regex, "replacement"); // 用指定的替换字符
        if (typeof obj !== "object" || obj === null) {
          return obj; // 如果是基本类型或 null，则直接返回
        }
-     
+
        let copy;
        if (Array.isArray(obj)) {
          copy = [];
@@ -2262,7 +2262,7 @@ let result = "string".replace(regex, "replacement"); // 用指定的替换字符
            }
          }
        }
-     
+
        return copy;
      }
      ```
@@ -2272,7 +2272,7 @@ let result = "string".replace(regex, "replacement"); // 用指定的替换字符
      ```javascript
      let originalObj = { a: 1, b: { c: 2 } };
      let deepCopyObj = deepCopy(originalObj);
-     
+
      console.log(deepCopyObj); // { a: 1, b: { c: 2 } }
      console.log(deepCopyObj === originalObj); // false，不是同一个对象
      console.log(deepCopyObj.b === originalObj.b); // false，嵌套对象也是深拷贝
@@ -2297,9 +2297,12 @@ let result = "string".replace(regex, "replacement"); // 用指定的替换字符
 
 深拷贝方法有时会有性能和限制方面的考量，特别是在处理包含循环引用、函数、正则表达式等特殊对象时。使用时要酌情选择。另外，对于拷贝大型对象或嵌套层级很深的对象，可能需要考虑性能和内存消耗。
 
+## 设计模式
+
 ## API
 
-1. `formData`:
+1. `formData`
+
 FormData 是 JavaScript API 的一部分，用于收集和提交表单数据。它提供了一种简单的方式来构建表单数据，并通过 XMLHttpRequest 或 Fetch API 将其发送到服务器。
 
 要使用 FormData，首先需要创建一个空的 FormData 对象：
@@ -2348,5 +2351,7 @@ request.send(formdata);
 ```
 
 这样，FormData 中的表单数据将作为请求的主体发送到服务器。在服务器端，您可以根据您的需求处理 FormData 数据。
+
+2. ``
 
 <CommentService />
