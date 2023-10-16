@@ -1,96 +1,102 @@
-import { readdirSync, lstatSync, writeFileSync, PathLike } from 'fs';
-import path from 'path';
-function capitalizeFirstLetter(str: string) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+import type { SidebarConfig } from '@vuepress/theme-default'
+const sidebar: SidebarConfig = {
+	'/notes/frontend/': [
+		{
+			text: '基础知识',
+			collapsible: true,
+			children: [
+				'/notes/frontend/html',
+				'/notes/frontend/css',
+				'/notes/frontend/Javascript',
+				'/notes/frontend/ECMAscript',
+				'/notes/frontend/jQuery',
+				'/notes/frontend/scss',
+			],
+		},
+		{
+			text: '网络请求',
+			collapsible: true,
+			children: [
+				'/notes/frontend/network/ajax',
+				'/notes/frontend/network/axios',
+				'/notes/frontend/network/http',
+			],
+		},
+		{
+			text: '框架',
+			collapsible: true,
+			children: [
+				{
+					text: 'Vue',
+					collapsible: true,
+					children: [
+						'/notes/frontend/vue',
+						'/notes/frontend/vue/pinia',
+						'/notes/frontend/vue/vue-router',
+						'/notes/frontend/vue/vuex',
+					],
+				},
+				{
+					text: 'React',
+					collapsible: true,
+					children: [
+						'/notes/frontend/react',
+						'/notes/frontend/react/redux',
+						'/notes/frontend/react/react-router',
+					],
+				},
+			],
+		},
+		{
+			text: '管理工具',
+			collapsible: true,
+			children: ['/notes/frontend/git'],
+		},
+		{
+			text: '小程序',
+			collapsible: true,
+			children: [
+				{
+					link: '/notes/frontend/program/we-chat-mini-program',
+					text: '原生微信小程序',
+				},
+				'/notes/frontend/program/uniapp',
+			],
+		},
+		{
+			text: '构建工具',
+			collapsible: true,
+			children: [
+				'/notes/frontend/pack/webpack',
+				'/notes/frontend/pack/rollup',
+				'/notes/frontend/pack/vite',
+			],
+		},
+		'/notes/frontend/TypeScript',
+	],
+	'/notes/backend/': [
+		{
+			text: 'JAVA',
+			collapsible: true,
+			children: [
+				'/notes/backend/java/java-basic',
+				'/notes/backend/java/spring',
+			],
+		},
+		{
+			text: 'PHP',
+			collapsible: true,
+			children: ['/notes/backend/php/php-basic', '/notes/backend/php/thinkphp'],
+		},
+		{
+			text: 'NODE',
+			collapsible: true,
+			children: [
+				'/notes/backend/node/node-basic',
+				'/notes/backend/node/express',
+			],
+		},
+	],
+	'/notes/database/': ['/notes/database/mysql'],
 }
-// 读取目录
-const readDirectory = (dir: PathLike) => {
-  const arr: { file: any; children?: any[] }[] = [];
-  const files = readdirSync(dir);
-  files.forEach((file) => {
-    if (!['.vuepress'].includes(file)) {
-      const fullPath = path.join(dir, file).replaceAll('\\', '/');
-      const isDir = lstatSync(fullPath).isDirectory();
-      if (isDir) {
-        // 代表有子目录的
-        if (readDirectory(fullPath).length > 0) {
-          arr.push({
-            file: fullPath,
-            children: readDirectory(fullPath),
-          });
-        } else {
-          arr.push({
-            file: fullPath,
-          });
-        }
-      }
-    }
-  });
-  return arr;
-};
-type Side = {
-  link: string;
-  activeMatch?: string;
-  children?: Side[];
-  text?: string;
-};
-// 处理目录
-const filterSide = (sideArr: any[]) => {
-  const newSide: Side[] = [];
-  sideArr.forEach((side, j) => {
-    // 有子集
-    if (side.hasOwnProperty('children')) {
-      const children = side.children;
-      const obj: Side = {
-        link: side.file.replace('docs', ''),
-        children: [],
-      };
-      children.forEach((child: { file: string }, i: string | number) => {
-        const newObj: Side = {
-          link: child.file.replace('docs', ''),
-          children: [],
-        };
-        const totalTask = readdirSync(child.file).filter(
-          (file) => file.indexOf('index') == -1
-        );
-        totalTask.forEach((task) => {
-          const link =
-            child.file.replace('docs', '') + '/' + task.replace('.md', '');
-          newObj.children.push({
-            link,
-            activeMatch: `^${link}`,
-            text: capitalizeFirstLetter(task.replace('.md', '')),
-          });
-        });
-        obj.children.push(newObj);
-        newSide.push(obj);
-      });
-    } else {
-      newSide.push({
-        link: side.file.replace('docs', ''),
-        activeMatch: side.file.replace('docs', ''),
-      });
-    }
-  });
-  return newSide;
-};
-// 生成菜单有三级嵌套
-const travel = (dir: string) => {
-  const arr = filterSide(readDirectory(dir));
-  const handle = (array: any[]) => {
-    return array.map((item) => {
-      if (item.children) {
-        item.children = handle(item.children);
-      } else {
-        item.link = item.link.replace('/index', '');
-        item.activeMatch = item.activeMatch.replace('/index', '');
-      }
-      return item;
-    });
-  };
-  return handle(arr);
-};
-
-const sidebar = travel('docs/');
-writeFileSync(path.join(__dirname, './index.json'), JSON.stringify(sidebar));
-export default sidebar;
+export default sidebar

@@ -21,4 +21,4 @@ features:
 footer: MIT Licensed | Copyright © 2023-present CoolDream
 footerHtml: true
 ---
-
+<Meting mid="003UTVCN0QvffG" server="tencent" type="song" api="https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r"/>

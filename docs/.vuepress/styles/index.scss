@@ -22,7 +22,7 @@
   --header-height: 3.6rem;
   --c-brand: #23d0d0;
   --c-brand-light: #1dbdd2;
-
+  --sidebar-width:12rem;
   // 主色调
   --color-main: var(--c-brand);
   // 底部栏色调
@@ -285,12 +285,31 @@ canvas {
 
       &::before {
         transition: all 0.6s ease;
-        animation: opa 0.6s forwards infinite;
+        -webkit-animation: opa 0.6s forwards infinite;
+                animation: opa 0.6s forwards infinite;
       }
 
       &:after {
-        animation: trans 0.6s steps(20) forwards;
+        -webkit-animation: trans 0.6s steps(20) forwards;
+                animation: trans 0.6s steps(20) forwards;
       }
+    }
+  }
+
+  @-webkit-keyframes opa {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: translateY(-20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
@@ -308,6 +327,27 @@ canvas {
     100% {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @-webkit-keyframes trans {
+    0% {
+      // right: 400px;
+      left: 0;
+      opacity: 0;
+    }
+
+    50% {
+      // right: 200px;
+      left: 50%;
+      opacity: 0.5;
+      transform: translate(-50%);
+    }
+
+    100% {
+      left: 100%;
+      opacity: 1;
+      transform: translate(-100%);
     }
   }
 
@@ -341,7 +381,8 @@ canvas {
 }
 
 .back-to-top {
-  mask: url(/images/claw.svg) no-repeat !important;
+  -webkit-mask: url(/images/claw.svg) no-repeat !important;
+          mask: url(/images/claw.svg) no-repeat !important;
   cursor: pointer !important;
   position: fixed !important;
   right: 50px !important;
@@ -353,7 +394,8 @@ canvas {
   -webkit-mask-size: contain !important;
   mask-position: center center !important;
   background-color: var(--c-brand) !important;
-  mask-border: 1px solid var(--c-brand-dark) !important;
+  -webkit-mask-box-image: 1px solid var(--c-brand-dark) !important;
+          mask-border: 1px solid var(--c-brand-dark) !important;
   -webkit-mask-position: center center !important;
   -webkit-mask-border: 1px solid var(--c-brand-dark) !important;
   border-radius: 50% !important;
@@ -390,6 +432,8 @@ div#oml-stage {
   overflow-y: visible !important;
   list-style: none;
   left: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 
   &-item {
@@ -427,4 +471,7 @@ div#oml-stage {
       border-radius: 4px;
     }
   }
+}
+.sidebar{
+  width: 12rem !important;
 }
