@@ -84,7 +84,7 @@ class Word extends HTMLElement {
 ```
 
 > 效果
-![Alt text](/images/web-components)
+![Alt text](/images/web-components.png)
 
 ### 生命周期
 
