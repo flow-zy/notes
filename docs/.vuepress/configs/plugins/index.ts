@@ -13,11 +13,34 @@ import { commentPlugin } from 'vuepress-plugin-comment2'
 import { copyCodePlugin } from 'vuepress-plugin-copy-code2'
 import { copyrightPlugin } from 'vuepress-plugin-copyright2'
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
-import metingPlugin from 'vuepress-plugin-meting2'
 import { readingTimePlugin } from 'vuepress-plugin-reading-time2'
 import { searchProPlugin } from 'vuepress-plugin-search-pro'
 import { seoPlugin } from 'vuepress-plugin-seo2'
+import musicPlugin from './modules/music'
 const plugins: PluginConfig | PluginObject[] = [
+	musicPlugin({
+		metingOptions: {
+			global: true,
+			server: 'tencent',
+			api: 'https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r',
+			type: 'playlist',
+			mid: '851947617',
+		},
+		aplayerOptions: {
+			mini: false,
+			autoplay: false,
+			theme: '#FADFA3',
+			loop: 'all',
+			order: 'random',
+			preload: 'auto',
+			volume: 0.7,
+			mutex: true,
+			fixed: true,
+			listFolded: false,
+			listMaxHeight: 90,
+			lrcType: 3,
+		},
+	}),
 	copyrightPlugin({
 		global: true,
 		author: 'flow-zy',
@@ -112,20 +135,6 @@ const plugins: PluginConfig | PluginObject[] = [
 		},
 	}),
 	backToTopPlugin(),
-	metingPlugin({
-		metingOptions: {
-			global: true, // 开启关闭全局播放器
-			server: 'tencent',
-			api: 'https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r',
-			type: 'playlist',
-			mid: '851947617',
-		},
-		aplayerOptions: {
-			autoplay: true,
-			fixed: true,
-			audio: [],
-		},
-	}),
 ]
 
 export default plugins
