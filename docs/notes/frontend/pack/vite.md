@@ -489,7 +489,9 @@ module.exports = {
      "welcome": "Welcome",
      "greeting": "Hello, {name}!"
    }
+   ```
 
+   ```json
    // zh-CN.json
    {
      "welcome": "欢迎",
