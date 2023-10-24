@@ -68,6 +68,7 @@
 		"@vuepress/plugin-register-components": "2.0.0-beta.66",
 		"@vuepress/theme-default": "^1.9.9",
 		"@vuepress/utils": "2.0.0-alpha.1",
+		"deepmerge-ts": "^5.1.0",
 		"eslint-config-vuepress": "^4.3.0",
 		"eslint-config-vuepress-typescript": "^4.4.0",
 		"fs": "0.0.1-security",
