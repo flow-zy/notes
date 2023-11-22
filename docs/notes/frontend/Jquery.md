@@ -1,18 +1,9 @@
 ---
 title: jQuery
-#NavLink
-prev:
-  text: JavaScript
-  link: ./JavaScript
-next:
-  text: Es6
-  link: ./ECMAScript
-
-
+date: 2020-03-14 10:57:00
+tags: jQuery
+categories: jQuery
 ---
-
-
-
 ## 引入jQuery库
 
 - 下载最新版本的jQuery库并将其引入到HTML文件中。例如：
@@ -420,5 +411,3 @@ var $j = $.noConflict(); // 将jQuery的$符号赋给变量$j，避免冲突
 // 使用$j来代替$
 $j("#myElement").hide();
 ```
-
-<CommentService />

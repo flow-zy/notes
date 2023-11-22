@@ -1,12 +1,8 @@
 ---
 title: ES6
-#NavLink
-prev:
-  text: jQuery
-  link: ./Jquery
-next:
-  text: TypeScript
-  link: ./TypeScript
+date: 2020-03-14 10:57:00
+tags:  ES6
+categories:  ES6
 ---
 ## 简介
 
@@ -3001,5 +2997,3 @@ ES6装饰器是一种用于增强或修改类、方法、属性等的语法特�
 参考网站：
 
 [阮一峰Es6入门教程](https://es6.ruanyifeng.com/#docs/decorator)
-
-<CommentService />

@@ -6,7 +6,6 @@ const navbar: NarBarItem[] = [
 	},
 	{
 		text: '笔记',
-		link: '/notes',
 		children: [
 			{
 				text: '前端笔记',
@@ -28,7 +27,12 @@ const navbar: NarBarItem[] = [
 	},
 	{
 		text: '代码人生',
-		link: '/problem',
+		children: [
+			{
+				text: '使用react搭建后台',
+				link: '/problem/custom',
+			},
+		],
 	},
 	{
 		text: '案例',
@@ -38,6 +42,6 @@ const navbar: NarBarItem[] = [
 		text: '面试题',
 		link: 'https://flow-zy.github.io/interview/',
 	},
-]
+];
 
 export default navbar

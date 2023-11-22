@@ -17,6 +17,7 @@ export default defineUserConfig({
 	plugins,
 	theme: defaultTheme({
 		sidebar,
+		sidebarDepth: 4,
 		navbar,
 		lastUpdatedText: '上次更新',
 		contributorsText: '贡献者',
@@ -30,4 +31,4 @@ export default defineUserConfig({
 			externalAttrs: { target: '_target', rel: 'nofollow noopener noreferrer' },
 		},
 	},
-})
+});

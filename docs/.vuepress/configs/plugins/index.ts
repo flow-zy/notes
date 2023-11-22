@@ -111,6 +111,7 @@ const plugins: PluginConfig | PluginObject[] = [
 		imgMark: true,
 		// 启用图片大小
 		imgSize: true,
+		tabs: true,
 	}),
 	dynamicTitlePlugin({
 		showIcon: '', // The icon displayed when the document is in the current tab.
@@ -135,6 +136,6 @@ const plugins: PluginConfig | PluginObject[] = [
 		},
 	}),
 	backToTopPlugin(),
-]
+];
 
 export default plugins

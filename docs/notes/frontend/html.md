@@ -1,12 +1,9 @@
 ---
-title: HTML
-#NavLink
-prev:
-  text: Get Started
-  link: /
-next:
-  text: Css
-  link: ./css
+title: HTMl
+description: HTML 是一种用于创建网页的标记语言。
+date: 2020-03-14 10:57:00
+tags: HTMl
+categories: HTMl
 ---
 ## 介绍
 

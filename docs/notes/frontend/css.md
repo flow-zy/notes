@@ -1,12 +1,8 @@
 ---
 title: CSS
-#NavLink
-prev:
-  text: HTML
-  link: ./html
-next:
-  text: Javascript
-  link: ./javascript
+date: 2020-03-14 10:57:00
+tags: CSS
+categories: CSS
 ---
 ## 介绍
 
@@ -1287,4 +1283,3 @@ CSS预处理器是一种将具有扩展语法的CSS代码转换成标准CSS的�
    这个例子展示了如何使用Stylus的变量、混合器和嵌套选择器来简化CSS的编写，并提供了更灵活和可维护的样式规则。Stylus使用了一种更简化和紧凑的语法，可以通过简单的操作实现复杂的样式生成。
 
 这些CSS预处理器都提供了类似于变量、嵌套选择器、Mixin等功能，以及更强大的语法和特性，让开发者能够更高效地编写CSS样式。预处理器可以在开发过程中增加灵活性和可维护性，并自动转换为标准的CSS文件，以便在浏览器中使用。选择哪个预处理器取决于个人偏好、项目需求和团队共识。
-<CommentService />

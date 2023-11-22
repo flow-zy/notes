@@ -32,16 +32,29 @@ export default defineClientConfig({
 		})
 
 		onMounted(() => {
-			const div = document.createElement('div')
-			div.classList.add('aplayer')
-			document.body.appendChild(div)
-			const el = document.getElementById('moefy-canvas') as HTMLCanvasElement
-			const popper = new Popper(themeConfig, canvasOptions)
-			popper.mount(el as HTMLCanvasElement)
+			const div = document.createElement('div');
+			div.classList.add('aplayer');
+			document.body.appendChild(div);
+			const el = document.getElementById('moefy-canvas') as HTMLCanvasElement;
+			const popper = new Popper(themeConfig, canvasOptions);
+			popper.mount(el as HTMLCanvasElement);
 			navHeight.value = (
 				document.querySelector('header.navbar') as HTMLHeadElement
-			).clientHeight
-			window.doc = document
+			).clientHeight;
+			window.doc = document;
+			const arrow = Array.from(
+				document.querySelectorAll(
+					'.sidebar-item.collapsible'
+				) as NodeListOf<HTMLElement>
+			).filter((el) => !el.classList.contains('sidebar-heading'));
+			console.log(arrow);
+			arrow.forEach((el) => {
+				el.addEventListener('click', ({ target }) => {
+					const _tar = target as HTMLElement;
+					_tar.nextSibling.style.display = 'block';
+				});
+			});
+
 		})
 	},
 	rootComponents: [],
