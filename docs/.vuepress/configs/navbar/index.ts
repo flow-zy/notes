@@ -40,7 +40,7 @@ const navbar: NarBarItem[] = [
 	},
 	{
 		text: '面试题',
-		link: 'https://flow-zy.github.io/interview/',
+		link: 'https://flow-zy.github.io/notesV2/interview/interview_frontend/html.html',
 	},
 ];
 
