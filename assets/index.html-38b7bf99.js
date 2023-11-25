@@ -1,0 +1,1 @@
+import{_ as t,r as n,o as r,c as o,a as c}from"./app-491f955e.js";const s={};function a(i,_){const e=n("Meting");return r(),o("div",null,[c(e,{mid:"003UTVCN0QvffG",server:"tencent",type:"song",api:"https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r"})])}const d=t(s,[["render",a],["__file","index.html.vue"]]);export{d as default};
